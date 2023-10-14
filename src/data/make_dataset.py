@@ -1,30 +1,85 @@
-# -*- coding: utf-8 -*-
-import click
-import logging
-from pathlib import Path
-from dotenv import find_dotenv, load_dotenv
+import pandas as pd
+from datetime import datetime, timedelta
+from pandas import DataFrame
+import numpy as np
+from tqdm import tqdm
+
+class makeDataset:
+    def __init__(self, raw_path: str, interim_path: str, processed_path):
+        self.raw_path = raw_path
+        self.interim_path = interim_path
+        self.processed_path = processed_path
 
 
-@click.command()
-@click.argument('input_filepath', type=click.Path(exists=True))
-@click.argument('output_filepath', type=click.Path())
-def main(input_filepath, output_filepath):
-    """ Runs data processing scripts to turn raw data from (../raw) into
-        cleaned data ready to be analyzed (saved in ../processed).
-    """
-    logger = logging.getLogger(__name__)
-    logger.info('making final data set from raw data')
+    def loadRawData(self, filename: str):
+        dataframe = pd.read_csv(self.raw_path+"/"+filename, header=None, sep=' ', names=['MeterID', 'codeDateTime', 'kWh'])
 
+        return dataframe
+    
+    def saveInterimData(self, filename: str, dataframe: DataFrame):
+        dataframe.to_csv(self.interim_path+"/"+filename, index=True, header=True)
+    
+    def saveProcessedData(self, filename: str, dataframe: DataFrame):
+        dataframe.to_csv(self.processed_path+"/"+filename, index=True, header=True)
+    
+    @staticmethod
+    def code_to_datetime(code: int):
+        if len(str(code)) != 5:
+            raise ValueError("Input code must be a 5-digit integer.")
 
-if __name__ == '__main__':
-    log_fmt = '%(asctime)s - %(name)s - %(levelname)s - %(message)s'
-    logging.basicConfig(level=logging.INFO, format=log_fmt)
+        day_code = int(str(code)[:3])
+        time_code = int(str(code)[3:5])
 
-    # not used in this stub but often useful for finding various files
-    project_dir = Path(__file__).resolve().parents[2]
+        # Calculate the date
+        base_date = datetime(2009, 1, 1)
+        delta = timedelta(days=day_code)
+        target_date = base_date + delta
 
-    # find .env automagically by walking up directories until it's found, then
-    # load up the .env entries as environment variables
-    load_dotenv(find_dotenv())
+        # Calculate the time
+        hours = (time_code) // 2
+        minutes = 30 * (time_code % 2)
 
-    main()
+        target_time = timedelta(hours=hours, minutes=minutes)
+
+        # Combine the date and time to create the datetime object
+        result_datetime = target_date + target_time
+
+        return result_datetime
+    
+    @staticmethod
+    def group_by_meter_id(df: DataFrame):
+        # Initialize an empty DataFrame with 'DateTime' as the index
+        unique_datetimes = df['DateTime'].unique()
+        new_df = pd.DataFrame(index=unique_datetimes)
+
+        # Iterate through MeterIDs and populate the new DataFrame with progress tracking
+        meter_ids = df['MeterID'].unique()
+        for meter_id in tqdm(meter_ids, desc="Processing MeterIDs"):
+            meter_data = df[df['MeterID'] == meter_id]
+            new_df[meter_id] = new_df.index.map(
+                lambda dt: meter_data[meter_data['DateTime'] == dt]['kWh'].values[0] if len(meter_data[meter_data['DateTime'] == dt]['kWh']) > 0 else np.nan
+            )
+
+        # Reset the index of the new DataFrame
+        new_df.reset_index(inplace=True)
+        new_df.set_index('index', inplace=True)
+
+        return new_df
+
+    
+    def applyDateTimeTransform(self, dataframe: DataFrame):
+        # Use tqdm to track progress
+        tqdm.pandas(desc="Converting")
+
+        # Apply the conversion function to the 'code' column
+        dataframe['DateTime'] = dataframe['codeDateTime'].progress_apply(self.code_to_datetime)
+
+        return dataframe
+    
+
+if __name__ == "__main__":
+    make_data = makeDataset("./data/raw", "./data/interim", "./data/processed")
+    file_1 = make_data.loadRawData("File1.txt")
+    transformed_file_1 = make_data.applyDateTimeTransform(file_1)
+    grouped_file_1 = make_data.group_by_meter_id(transformed_file_1)
+    make_data.saveInterimData("grouped_File1.csv", grouped_file_1)
