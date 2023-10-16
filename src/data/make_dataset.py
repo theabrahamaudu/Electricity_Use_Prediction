@@ -1,8 +1,10 @@
+import os
 import pandas as pd
 from datetime import datetime, timedelta
 from pandas import DataFrame
 import numpy as np
 from tqdm import tqdm
+from src.utils.pipeline_log_config import pipeline as logger
 
 class makeDataset:
     def __init__(self, raw_path: str, interim_path: str, processed_path):
@@ -10,6 +12,23 @@ class makeDataset:
         self.interim_path = interim_path
         self.processed_path = processed_path
 
+
+    def scan_directory(self, extension: str) -> list:
+        """Check `raw_path` directory and return list of files with
+        specified extension
+
+        Args:
+            extension (str): extension type to be searched for e.g. ".txt"
+
+        Returns:
+            list: strings of file names with specified extension
+        """
+        directory = self.raw_path    
+        files: list = []
+        for filename in os.listdir(directory):
+            if filename.endswith(extension):
+                files.append(filename)
+        return files
 
     def loadRawData(self, filename: str):
         dataframe = pd.read_csv(self.raw_path+"/"+filename, header=None, sep=' ', names=['MeterID', 'codeDateTime', 'kWh'])
