@@ -89,3 +89,168 @@
 2023-10-16 19:53:24,194:make_dataset.py:loadData:INFO:Loading transformed_File1.txt:
 2023-10-16 19:53:28,701:make_dataset.py:loadData:INFO:Loaded 24465838 rows from transformed_File1.txt:
 2023-10-16 19:53:28,701:make_dataset.py:group_by_meter_id:INFO:Grouping data by MeterID:
+2023-10-16 20:46:45,276:make_dataset.py:loadTransform:INFO:Loading and transforming 6 files:
+2023-10-16 20:46:45,276:make_dataset.py:loadData:INFO:Loading File1.txt:
+2023-10-16 20:46:47,744:make_dataset.py:loadData:INFO:Loaded 24465837 rows from File1.txt:
+2023-10-16 20:46:47,744:make_dataset.py:applyDateTimeTransform:INFO:Applying datetime transform:
+2023-10-16 20:46:47,744:make_dataset.py:applyDateTimeTransform:ERROR:Failed to apply datetime transform: 'codeDateTime':
+2023-10-16 20:46:47,744:make_dataset.py:loadTransform:ERROR:Failed to load and transform files: 'codeDateTime':
+2023-10-16 20:46:48,010:make_dataset.py:loadTransform:INFO:Loading and transforming 6 files:
+2023-10-16 20:46:48,010:make_dataset.py:loadData:INFO:Loading File1.txt:
+2023-10-16 20:46:50,012:make_dataset.py:loadData:INFO:Loaded 24465837 rows from File1.txt:
+2023-10-16 20:46:50,012:make_dataset.py:applyDateTimeTransform:INFO:Applying datetime transform:
+2023-10-16 20:46:50,012:make_dataset.py:applyDateTimeTransform:ERROR:Failed to apply datetime transform: 'codeDateTime':
+2023-10-16 20:46:50,012:make_dataset.py:loadTransform:ERROR:Failed to load and transform files: 'codeDateTime':
+2023-10-16 20:51:10,515:make_dataset.py:loadTransform:INFO:Loading and transforming 6 files:
+2023-10-16 20:51:10,515:make_dataset.py:loadData:INFO:Loading File1.txt:
+2023-10-16 20:51:12,630:make_dataset.py:loadData:INFO:Loaded 24465837 rows from File1.txt:
+2023-10-16 20:51:12,630:make_dataset.py:applyDateTimeTransform:INFO:Applying datetime transform:
+2023-10-16 20:51:12,630:make_dataset.py:applyDateTimeTransform:ERROR:Failed to apply datetime transform: 'codeDateTime':
+2023-10-16 20:51:12,630:make_dataset.py:loadTransform:ERROR:Failed to load and transform files: 'codeDateTime':
+2023-10-16 20:54:34,593:make_dataset.py:loadTransform:INFO:Loading and transforming 6 files:
+2023-10-16 20:54:34,594:make_dataset.py:loadData:INFO:Loading File1.txt:
+2023-10-16 20:54:36,666:make_dataset.py:loadData:INFO:Loaded 24465837 rows from File1.txt:
+2023-10-16 20:54:36,667:make_dataset.py:applyDateTimeTransform:INFO:Applying datetime transform:
+2023-10-16 20:54:36,667:make_dataset.py:applyDateTimeTransform:ERROR:Failed to apply datetime transform: 'codeDateTime':
+2023-10-16 20:54:36,667:make_dataset.py:loadTransform:ERROR:Failed to load and transform files: 'codeDateTime':
+2023-10-16 20:56:39,384:make_dataset.py:loadTransform:INFO:Loading and transforming 6 files:
+2023-10-16 20:56:39,384:make_dataset.py:loadData:INFO:Loading File1.txt:
+2023-10-16 20:56:41,442:make_dataset.py:loadData:INFO:Loaded 24465837 rows from File1.txt:
+2023-10-16 20:56:41,442:make_dataset.py:applyDateTimeTransform:INFO:Applying datetime transform:
+2023-10-16 20:56:41,442:make_dataset.py:applyDateTimeTransform:ERROR:Failed to apply datetime transform: 'codeDateTime':
+2023-10-16 20:56:41,442:make_dataset.py:loadTransform:ERROR:Failed to load and transform files: 'codeDateTime':
+2023-10-16 21:19:52,801:make_dataset.py:loadTransform:INFO:Loading and transforming 6 files:
+2023-10-16 21:19:52,801:make_dataset.py:loadData:INFO:Loading File1.txt:
+2023-10-16 21:19:55,810:make_dataset.py:loadData:INFO:Loaded 24465838 rows from File1.txt:
+2023-10-16 21:19:55,821:make_dataset.py:applyDateTimeTransform:INFO:Applying datetime transform:
+2023-10-16 21:25:03,165:make_dataset.py:loadTransform:INFO:Loading and transforming 6 files:
+2023-10-16 21:25:03,165:make_dataset.py:loadData:INFO:Loading File1.txt:
+2023-10-16 21:25:05,629:make_dataset.py:loadData:INFO:Loaded 24465838 rows from File1.txt:
+2023-10-16 21:25:05,629:make_dataset.py:applyDateTimeTransform:INFO:Applying datetime transform:
+2023-10-16 21:25:50,420:make_dataset.py:applyDateTimeTransform:INFO:Datetime transformed:
+2023-10-16 21:26:23,009:make_dataset.py:saveInterimData:INFO:Saved transformed_File1.txt to ./data/interim:
+2023-10-16 21:26:23,009:make_dataset.py:loadData:INFO:Loading File2.txt:
+2023-10-16 21:26:25,513:make_dataset.py:loadData:INFO:Loaded 24507300 rows from File2.txt:
+2023-10-16 21:26:25,513:make_dataset.py:applyDateTimeTransform:INFO:Applying datetime transform:
+2023-10-16 21:27:10,072:make_dataset.py:applyDateTimeTransform:INFO:Datetime transformed:
+2023-10-16 21:27:42,334:make_dataset.py:saveInterimData:INFO:Saved transformed_File2.txt to ./data/interim:
+2023-10-16 21:27:42,334:make_dataset.py:loadData:INFO:Loading File3.txt:
+2023-10-16 21:27:44,697:make_dataset.py:loadData:INFO:Loaded 24394348 rows from File3.txt:
+2023-10-16 21:27:44,697:make_dataset.py:applyDateTimeTransform:INFO:Applying datetime transform:
+2023-10-16 21:28:29,305:make_dataset.py:applyDateTimeTransform:INFO:Datetime transformed:
+2023-10-16 21:29:01,076:make_dataset.py:saveInterimData:INFO:Saved transformed_File3.txt to ./data/interim:
+2023-10-16 21:29:01,076:make_dataset.py:loadData:INFO:Loading File4.txt:
+2023-10-16 21:29:03,401:make_dataset.py:loadData:INFO:Loaded 24617968 rows from File4.txt:
+2023-10-16 21:29:03,401:make_dataset.py:applyDateTimeTransform:INFO:Applying datetime transform:
+2023-10-16 21:29:47,665:make_dataset.py:applyDateTimeTransform:INFO:Datetime transformed:
+2023-10-16 21:30:20,147:make_dataset.py:saveInterimData:INFO:Saved transformed_File4.txt to ./data/interim:
+2023-10-16 21:30:20,147:make_dataset.py:loadData:INFO:Loading File5.txt:
+2023-10-16 21:30:22,491:make_dataset.py:loadData:INFO:Loaded 24571530 rows from File5.txt:
+2023-10-16 21:30:22,491:make_dataset.py:applyDateTimeTransform:INFO:Applying datetime transform:
+2023-10-16 21:31:06,499:make_dataset.py:applyDateTimeTransform:INFO:Datetime transformed:
+2023-10-16 21:31:37,935:make_dataset.py:saveInterimData:INFO:Saved transformed_File5.txt to ./data/interim:
+2023-10-16 21:31:37,935:make_dataset.py:loadData:INFO:Loading File6.txt:
+2023-10-16 21:31:41,515:make_dataset.py:loadData:INFO:Loaded 35436012 rows from File6.txt:
+2023-10-16 21:31:41,515:make_dataset.py:applyDateTimeTransform:INFO:Applying datetime transform:
+2023-10-16 21:32:44,649:make_dataset.py:applyDateTimeTransform:INFO:Datetime transformed:
+2023-10-16 21:33:31,196:make_dataset.py:saveInterimData:INFO:Saved transformed_File6.txt to ./data/interim:
+2023-10-16 21:33:31,196:make_dataset.py:loadTransform:INFO:Loaded and transformed 6 files:
+2023-10-16 22:33:49,196:make_dataset.py:loadTransform:INFO:Loading and transforming 6 files:
+2023-10-16 22:33:49,196:make_dataset.py:loadTransform:INFO:Skipping File1.txt, already transformed:
+2023-10-16 22:33:49,196:make_dataset.py:loadTransform:INFO:Skipping File2.txt, already transformed:
+2023-10-16 22:33:49,196:make_dataset.py:loadTransform:INFO:Skipping File3.txt, already transformed:
+2023-10-16 22:33:49,196:make_dataset.py:loadTransform:INFO:Skipping File4.txt, already transformed:
+2023-10-16 22:33:49,196:make_dataset.py:loadTransform:INFO:Skipping File5.txt, already transformed:
+2023-10-16 22:33:49,196:make_dataset.py:loadTransform:INFO:Skipping File6.txt, already transformed:
+2023-10-16 22:33:49,196:make_dataset.py:loadTransform:INFO:Loaded and transformed 6 files:
+2023-10-16 22:34:23,543:make_dataset.py:loadTransform:INFO:Loading and transforming 6 files:
+2023-10-16 22:34:23,543:make_dataset.py:loadTransform:INFO:Skipping File1.txt, already transformed:
+2023-10-16 22:34:23,543:make_dataset.py:loadTransform:INFO:Skipping File2.txt, already transformed:
+2023-10-16 22:34:23,543:make_dataset.py:loadTransform:INFO:Skipping File3.txt, already transformed:
+2023-10-16 22:34:23,543:make_dataset.py:loadTransform:INFO:Skipping File4.txt, already transformed:
+2023-10-16 22:34:23,543:make_dataset.py:loadTransform:INFO:Skipping File5.txt, already transformed:
+2023-10-16 22:34:23,543:make_dataset.py:loadTransform:INFO:Skipping File6.txt, already transformed:
+2023-10-16 22:34:23,543:make_dataset.py:loadTransform:INFO:Loaded and transformed 6 files:
+2023-10-16 22:34:23,543:make_dataset.py:loadGroup:INFO:Loading and grouping 6 files:
+2023-10-16 22:34:23,543:make_dataset.py:loadData:INFO:Loading transformed_File1.txt:
+2023-10-16 22:34:28,125:make_dataset.py:loadData:INFO:Loaded 24465838 rows from transformed_File1.txt:
+2023-10-16 22:34:28,125:make_dataset.py:group_by_meter_id:INFO:Grouping data by MeterID:
+2023-10-16 22:38:18,953:make_dataset.py:loadTransform:INFO:Loading and transforming 6 files:
+2023-10-16 22:38:18,953:make_dataset.py:loadTransform:INFO:Skipping File1.txt, already transformed:
+2023-10-16 22:38:18,953:make_dataset.py:loadTransform:INFO:Skipping File2.txt, already transformed:
+2023-10-16 22:38:18,953:make_dataset.py:loadTransform:INFO:Skipping File3.txt, already transformed:
+2023-10-16 22:38:18,953:make_dataset.py:loadTransform:INFO:Skipping File4.txt, already transformed:
+2023-10-16 22:38:18,953:make_dataset.py:loadTransform:INFO:Skipping File5.txt, already transformed:
+2023-10-16 22:38:18,953:make_dataset.py:loadTransform:INFO:Skipping File6.txt, already transformed:
+2023-10-16 22:38:18,953:make_dataset.py:loadTransform:INFO:Loaded and transformed 6 files:
+2023-10-16 22:38:18,953:make_dataset.py:loadGroup:INFO:Loading and grouping 6 files:
+2023-10-16 22:38:18,953:make_dataset.py:loadData:INFO:Loading transformed_File1.txt:
+2023-10-16 22:38:22,851:make_dataset.py:loadData:INFO:Loaded 24465838 rows from transformed_File1.txt:
+2023-10-16 22:38:22,851:make_dataset.py:group_by_meter_id:INFO:Grouping data by MeterID:
+2023-10-16 23:00:25,331:make_dataset.py:loadTransform:INFO:Loading and transforming 6 files:
+2023-10-16 23:00:25,331:make_dataset.py:loadData:INFO:Loading File1.txt:
+2023-10-16 23:00:27,751:make_dataset.py:loadData:INFO:Loaded 24465838 rows from File1.txt:
+2023-10-16 23:00:27,751:make_dataset.py:applyDateTimeTransform:INFO:Applying datetime transform:
+2023-10-16 23:01:09,021:make_dataset.py:applyDateTimeTransform:INFO:Datetime transformed:
+2023-10-16 23:01:34,982:make_dataset.py:saveInterimData:INFO:Saved transformed_File1.txt to ./data/interim:
+2023-10-16 23:01:34,982:make_dataset.py:loadData:INFO:Loading File2.txt:
+2023-10-16 23:01:37,206:make_dataset.py:loadData:INFO:Loaded 24507300 rows from File2.txt:
+2023-10-16 23:01:37,206:make_dataset.py:applyDateTimeTransform:INFO:Applying datetime transform:
+2023-10-17 00:50:06,269:make_dataset.py:loadTransform:INFO:Loading and transforming 6 files:
+2023-10-17 00:50:06,269:make_dataset.py:loadData:INFO:Loading File1.txt:
+2023-10-17 00:50:08,877:make_dataset.py:loadData:INFO:Loaded 24465838 rows from File1.txt:
+2023-10-17 00:50:08,877:make_dataset.py:applyDateTimeTransform:INFO:Applying datetime transform:
+2023-10-17 00:50:29,965:make_dataset.py:loadTransform:INFO:Loading and transforming 6 files:
+2023-10-17 00:50:29,965:make_dataset.py:loadTransform:INFO:Skipping File1.txt, already transformed:
+2023-10-17 00:50:29,965:make_dataset.py:loadTransform:INFO:Skipping File2.txt, already transformed:
+2023-10-17 00:50:29,965:make_dataset.py:loadTransform:INFO:Skipping File3.txt, already transformed:
+2023-10-17 00:50:29,965:make_dataset.py:loadTransform:INFO:Skipping File4.txt, already transformed:
+2023-10-17 00:50:29,965:make_dataset.py:loadTransform:INFO:Skipping File5.txt, already transformed:
+2023-10-17 00:50:29,965:make_dataset.py:loadTransform:INFO:Skipping File6.txt, already transformed:
+2023-10-17 00:50:29,965:make_dataset.py:loadTransform:INFO:Loaded and transformed 6 files:
+2023-10-17 00:50:29,965:make_dataset.py:loadGroup:INFO:Loading and grouping 6 files:
+2023-10-17 00:50:29,965:make_dataset.py:loadData:INFO:Loading transformed_File1.txt:
+2023-10-17 00:50:35,272:make_dataset.py:loadData:INFO:Loaded 24465838 rows from transformed_File1.txt:
+2023-10-17 00:50:35,282:make_dataset.py:group_by_meter_id:INFO:Grouping data by MeterID:
+2023-10-17 02:56:59,531:make_dataset.py:group_by_meter_id:INFO:Data grouped by MeterID:
+2023-10-17 02:57:07,344:make_dataset.py:saveInterimData:INFO:Saved grouped_data_File1.csv to ./data/interim:
+2023-10-17 02:57:07,345:make_dataset.py:loadData:INFO:Loading transformed_File2.txt:
+2023-10-17 02:57:13,749:make_dataset.py:loadData:INFO:Loaded 24507300 rows from transformed_File2.txt:
+2023-10-17 02:57:13,750:make_dataset.py:group_by_meter_id:INFO:Grouping data by MeterID:
+2023-10-17 05:03:27,654:make_dataset.py:group_by_meter_id:INFO:Data grouped by MeterID:
+2023-10-17 05:03:35,373:make_dataset.py:saveInterimData:INFO:Saved grouped_data_File2.csv to ./data/interim:
+2023-10-17 05:03:35,373:make_dataset.py:loadData:INFO:Loading transformed_File3.txt:
+2023-10-17 05:03:41,874:make_dataset.py:loadData:INFO:Loaded 24394348 rows from transformed_File3.txt:
+2023-10-17 05:03:41,876:make_dataset.py:group_by_meter_id:INFO:Grouping data by MeterID:
+2023-10-17 07:09:15,125:make_dataset.py:group_by_meter_id:INFO:Data grouped by MeterID:
+2023-10-17 07:09:22,882:make_dataset.py:saveInterimData:INFO:Saved grouped_data_File3.csv to ./data/interim:
+2023-10-17 07:09:22,882:make_dataset.py:loadData:INFO:Loading transformed_File4.txt:
+2023-10-17 07:09:29,421:make_dataset.py:loadData:INFO:Loaded 24617968 rows from transformed_File4.txt:
+2023-10-17 07:09:29,422:make_dataset.py:group_by_meter_id:INFO:Grouping data by MeterID:
+2023-10-17 09:15:54,959:make_dataset.py:group_by_meter_id:INFO:Data grouped by MeterID:
+2023-10-17 09:16:02,757:make_dataset.py:saveInterimData:INFO:Saved grouped_data_File4.csv to ./data/interim:
+2023-10-17 09:16:02,757:make_dataset.py:loadData:INFO:Loading transformed_File5.txt:
+2023-10-17 09:16:09,226:make_dataset.py:loadData:INFO:Loaded 24571530 rows from transformed_File5.txt:
+2023-10-17 09:16:09,227:make_dataset.py:group_by_meter_id:INFO:Grouping data by MeterID:
+2023-10-17 11:22:21,157:make_dataset.py:group_by_meter_id:INFO:Data grouped by MeterID:
+2023-10-17 11:22:29,000:make_dataset.py:saveInterimData:INFO:Saved grouped_data_File5.csv to ./data/interim:
+2023-10-17 11:22:29,000:make_dataset.py:loadData:INFO:Loading transformed_File6.txt:
+2023-10-17 11:22:38,514:make_dataset.py:loadData:INFO:Loaded 35436012 rows from transformed_File6.txt:
+2023-10-17 11:22:38,515:make_dataset.py:group_by_meter_id:INFO:Grouping data by MeterID:
+2023-10-17 14:24:43,737:make_dataset.py:group_by_meter_id:INFO:Data grouped by MeterID:
+2023-10-17 14:24:56,115:make_dataset.py:saveInterimData:INFO:Saved grouped_data_File6.csv to ./data/interim:
+2023-10-17 14:24:56,115:make_dataset.py:loadGroup:INFO:Loaded and grouped 6 files:
+2023-10-17 14:24:56,124:make_dataset.py:loadConcatenate:INFO:Loading and concatenating 6 files:
+2023-10-17 14:24:56,124:make_dataset.py:loadData:INFO:Loading grouped_data_File1.csv:
+2023-10-17 14:24:57,174:make_dataset.py:loadData:INFO:Loaded 25726 rows from grouped_data_File1.csv:
+2023-10-17 14:24:57,174:make_dataset.py:loadData:INFO:Loading grouped_data_File2.csv:
+2023-10-17 14:24:58,162:make_dataset.py:loadData:INFO:Loaded 25726 rows from grouped_data_File2.csv:
+2023-10-17 14:24:58,163:make_dataset.py:loadData:INFO:Loading grouped_data_File3.csv:
+2023-10-17 14:24:59,129:make_dataset.py:loadData:INFO:Loaded 25726 rows from grouped_data_File3.csv:
+2023-10-17 14:24:59,129:make_dataset.py:loadData:INFO:Loading grouped_data_File4.csv:
+2023-10-17 14:25:00,125:make_dataset.py:loadData:INFO:Loaded 25726 rows from grouped_data_File4.csv:
+2023-10-17 14:25:00,125:make_dataset.py:loadData:INFO:Loading grouped_data_File5.csv:
+2023-10-17 14:25:01,056:make_dataset.py:loadData:INFO:Loaded 25726 rows from grouped_data_File5.csv:
+2023-10-17 14:25:01,056:make_dataset.py:loadData:INFO:Loading grouped_data_File6.csv:
+2023-10-17 14:25:02,299:make_dataset.py:loadData:INFO:Loaded 25726 rows from grouped_data_File6.csv:
+2023-10-17 14:25:46,089:make_dataset.py:saveInterimData:INFO:Saved concatenated_data.csv to ./data/interim:

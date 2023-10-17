@@ -31,16 +31,26 @@ class makeDataset:
     
 
     @staticmethod
-    def loadData(directory: str, filename: str | list[str], sep=' ', names: list[str] | None=['MeterID', 'codeDateTime', 'kWh']) -> DataFrame:
+    def loadData(directory: str,
+                 filename: str | list[str],
+                 parse_dates: list[str] | bool = False,
+                 index_col: str | None = None,
+                 sep=' ',
+                 names: list[str] | None=['MeterID', 'codeDateTime', 'kWh']) -> DataFrame:
         if type(filename) == str:
             logger.info(f"Loading {filename}")
             try:
-                if type(names)==list[str]:
+                if type(names)==list:
                     dataframe = pd.read_csv(directory+"/"+filename, 
                                             header=None, sep=sep, 
-                                            names=names)
+                                            names=names,
+                                            parse_dates=parse_dates,
+                                            index_col=index_col)
                 else:
-                    dataframe = pd.read_csv(directory+"/"+filename, sep=sep)
+                    dataframe = pd.read_csv(directory+"/"+filename,
+                                            sep=sep,
+                                            parse_dates=parse_dates,
+                                            index_col=index_col)
                 logger.info(f"Loaded {len(dataframe)} rows from {filename}")
             except Exception as e:
                 logger.error(f"Failed to load {filename}: {e}")
@@ -52,30 +62,40 @@ class makeDataset:
             try:
                 dataframe = pd.DataFrame(columns=names)
                 total_rows = 0
-                if type(names)==list[str]:
+                if type(names)==list:
                     for file in filename:
                         if len(dataframe)==0:
                             dataframe = pd.read_csv(directory+"/"+file,
                                                     header=None, sep=sep,
-                                                    names=names)
+                                                    names=names,
+                                                    parse_dates=parse_dates,
+                                                    index_col=index_col)
                             total_rows += len(dataframe)
                             logger.info(f"Loaded {len(dataframe)} rows from {file}")
                         else:    
                             dataframe = pd.concat([dataframe, pd.read_csv(directory+"/"+file,
                                                                     header=None, sep=sep,
-                                                                    names=names)],
+                                                                    names=names,
+                                                                    parse_dates=parse_dates,
+                                                                    index_col=index_col)],
                                                                     ignore_index=True)
                             total_rows += len(dataframe)
                             logger.info(f"Loaded {len(dataframe)} rows from {file}")
                 else:
                     for file in filename:
                         if len(dataframe)==0:
-                            dataframe = pd.read_csv(directory+"/"+file, sep=sep)
+                            dataframe = pd.read_csv(directory+"/"+file,
+                                                    sep=sep,
+                                                    parse_dates=parse_dates,
+                                                    index_col=index_col)
                             total_rows += len(dataframe)
                             logger.info(f"Loaded {len(dataframe)} rows from {file}")
                         else:    
-                            dataframe = pd.concat([dataframe, pd.read_csv(directory+"/"+file, sep=sep)],
-                                                 ignore_index=True)
+                            dataframe = pd.concat([dataframe, pd.read_csv(directory+"/"+file,
+                                                                          sep=sep,
+                                                                          parse_dates=parse_dates,
+                                                                          index_col=index_col)],
+                                                                          ignore_index=True)
                             total_rows += len(dataframe)
                 logger.info(f"Loaded {total_rows} rows from files{filename}")
             except Exception as e:
@@ -84,8 +104,8 @@ class makeDataset:
 
         return dataframe
     
-    def saveInterimData(self, filename: str, dataframe: DataFrame, sep = ','):
-        dataframe.to_csv(self.interim_path+"/"+filename, index=True, header=True, sep=sep)
+    def saveInterimData(self, filename: str, dataframe: DataFrame, sep = ',', index = True):
+        dataframe.to_csv(self.interim_path+"/"+filename, index=index, header=True, sep=sep)
         logger.info(f"Saved {filename} to {self.interim_path}")
     
 
@@ -133,7 +153,7 @@ class makeDataset:
             # Reset the index of the new DataFrame
             new_df.reset_index(inplace=True)
             new_df.set_index('index', inplace=True)
-            new_df.sort_index()
+            new_df.sort_index(inplace=True)
             logger.info("Data grouped by MeterID")
         except Exception as e:
             logger.error(f"Failed to group data by MeterID: {e}")
@@ -150,6 +170,7 @@ class makeDataset:
         try:
             # Apply the conversion function to the 'code' column
             dataframe['DateTime'] = dataframe['codeDateTime'].progress_apply(self.code_to_datetime)
+            dataframe.drop(columns=['codeDateTime'], inplace=True)
             logger.info("Datetime transformed")
         except Exception as e:
             logger.error(f"Failed to apply datetime transform: {e}")
@@ -169,7 +190,8 @@ class makeDataset:
                 else:
                     data = self.loadData(self.raw_path, file)
                     transformed_data = self.applyDateTimeTransform(data)
-                    self.saveInterimData(f"transformed_{raw_files[i][:-4]}.txt", transformed_data)
+                    self.saveInterimData(f"transformed_{raw_files[i][:-4]}.txt",
+                                         transformed_data, index=False)
             logger.info(f"Loaded and transformed {len(raw_files)} files")
         except Exception as e:
             logger.error(f"Failed to load and transform files: {e}")
@@ -189,7 +211,9 @@ class makeDataset:
                 else:
                     transformed_data = self.loadData(self.interim_path,
                                                         file, 
-                                                        names=None, sep=',')
+                                                        names=None,
+                                                        sep=',',
+                                                        parse_dates=['DateTime'])
                     grouped_data = self.group_by_meter_id(transformed_data)
                     self.saveInterimData(f"grouped_data_{raw_files[i][:-4]}.csv", grouped_data)
             logger.info(f"Loaded and grouped {len(raw_files)} files")
@@ -211,9 +235,11 @@ class makeDataset:
                 for i, file in enumerate(grouped_files):
                     grouped_dataframes.append(self.loadData(self.interim_path,
                                                             file,
-                                                            names=None, sep=','))
+                                                            names=None, sep=',',
+                                                            parse_dates=['index'],
+                                                            index_col='index'))
                 concatenated_data = pd.concat(grouped_dataframes, axis=1)
-                concatenated_data.sort_index()
+                concatenated_data.sort_index(inplace=True)
                 self.saveInterimData(f"concatenated_data.csv", concatenated_data)
         except Exception as e:
             logger.error(f"Failed to load and concatenate files: {e}")
