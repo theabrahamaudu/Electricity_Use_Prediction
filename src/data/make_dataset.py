@@ -1,10 +1,19 @@
 import os
+import warnings
 import pandas as pd
 from datetime import datetime, timedelta
 from pandas import DataFrame
 import numpy as np
 from tqdm import tqdm
+from multiprocessing import cpu_count
 from src.utils.pipeline_log_config import pipeline as logger
+# Dask
+import dask.dataframe as dd
+from dask.distributed import Client
+
+# Set the warning filter to 'ignore' to suppress all warnings
+warnings.filterwarnings('ignore')
+
 
 class makeDataset:
     def __init__(self, raw_path: str, interim_path: str):
@@ -138,22 +147,40 @@ class makeDataset:
 
         logger.info("Grouping data by MeterID")
         try:
-            # Initialize an empty DataFrame with 'DateTime' as the index
-            unique_datetimes = df['DateTime'].unique()
-            new_df = pd.DataFrame(index=unique_datetimes)
+            # Create a Dask DataFrame from the Pandas DataFrame
+            dask_df = dd.from_pandas(df, npartitions=cpu_count()-4)  # You can adjust the number of partitions as needed
 
-            # Iterate through MeterIDs and populate the new DataFrame
-            meter_ids = df['MeterID'].unique()
-            for meter_id in tqdm(meter_ids, desc="Processing MeterIDs", unit=" MeterID"):
-                meter_data = df[df['MeterID'] == meter_id]
-                new_df[meter_id] = new_df.index.map(
-                    lambda dt: meter_data[meter_data['DateTime'] == dt]['kWh'].values[0] if len(meter_data[meter_data['DateTime'] == dt]['kWh']) > 0 else np.nan
-                )
+            # Get unique datetimes
+            unique_datetimes = dask_df['DateTime'].unique().compute()
+            meter_ids = dask_df['MeterID'].unique().compute()
 
-            # Reset the index of the new DataFrame
-            new_df.reset_index(inplace=True)
-            new_df.set_index('index', inplace=True)
-            new_df.sort_index(inplace=True)
+            # Scatter the Dask DataFrame ahead of time
+            dask_df = dask_df.repartition(npartitions=cpu_count()-4)  # You can adjust the number of partitions as needed
+
+            # Initialize a Dask client
+            client = Client()
+
+            # Create a list of futures for the results
+            results = []
+
+            # Iterate through MeterIDs and compute the results as futures
+            for meter_id in tqdm(meter_ids, desc="Processing MeterIDs"):
+                meter_data = dask_df[dask_df['MeterID'] == meter_id]
+
+                # Perform the required operations and compute the result as a future
+                result = meter_data.groupby('DateTime')['kWh'].first().compute().reindex(unique_datetimes, fill_value=np.nan)
+
+                # Append the result to the list of futures
+                results.append(result)
+
+            # Close the Dask client
+            client.close()
+
+            # Combine the futures into a Pandas DataFrame
+            new_df = pd.concat(results, axis=1)
+            new_df.columns = meter_ids
+            new_df.index = unique_datetimes
+            new_df = new_df.sort_index()
             logger.info("Data grouped by MeterID")
         except Exception as e:
             logger.error(f"Failed to group data by MeterID: {e}")
