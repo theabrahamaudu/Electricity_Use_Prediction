@@ -147,15 +147,17 @@ class makeDataset:
 
         logger.info("Grouping data by MeterID")
         try:
+            # Get the number of cores
+            cores = int(cpu_count() * 0.75)
             # Create a Dask DataFrame from the Pandas DataFrame
-            dask_df = dd.from_pandas(df, npartitions=cpu_count()-4)  # You can adjust the number of partitions as needed
+            dask_df = dd.from_pandas(df, npartitions=cores)  # You can adjust the number of partitions as needed
 
             # Get unique datetimes
             unique_datetimes = dask_df['DateTime'].unique().compute()
             meter_ids = dask_df['MeterID'].unique().compute()
 
             # Scatter the Dask DataFrame ahead of time
-            dask_df = dask_df.repartition(npartitions=cpu_count()-4)  # You can adjust the number of partitions as needed
+            dask_df = dask_df.repartition(npartitions=cores)  # You can adjust the number of partitions as needed
 
             # Initialize a Dask client
             client = Client()
