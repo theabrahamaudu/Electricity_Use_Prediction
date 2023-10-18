@@ -9,7 +9,8 @@ from multiprocessing import cpu_count
 from src.utils.pipeline_log_config import pipeline as logger
 # Dask
 import dask.dataframe as dd
-from dask.distributed import Client
+from dask import delayed, compute
+from dask.diagnostics import ProgressBar
 
 # Set the warning filter to 'ignore' to suppress all warnings
 warnings.filterwarnings('ignore')
@@ -159,26 +160,25 @@ class makeDataset:
             # Scatter the Dask DataFrame ahead of time
             dask_df = dask_df.repartition(npartitions=cores)  # You can adjust the number of partitions as needed
 
-            # Initialize a Dask client
-            client = Client()
-
             # Create a list of futures for the results
             results = []
 
-            # Iterate through MeterIDs and compute the results as futures
-            for meter_id in tqdm(meter_ids, desc="Processing MeterIDs"):
+            # Define a function to process a single meter ID
+            @delayed
+            def process_meter(meter_id):
                 meter_data = dask_df[dask_df['MeterID'] == meter_id]
 
-                # Perform the required operations and compute the result as a future
-                result = meter_data.groupby('DateTime')['kWh'].first().compute().reindex(unique_datetimes, fill_value=np.nan)
+                # Perform the required operations and return the result
+                result = meter_data.groupby('DateTime')['kWh'].first().compute()
+                result = result.reindex(unique_datetimes, fill_value=np.nan)
+                return result
 
-                # Append the result to the list of futures
-                results.append(result)
-
-            # Close the Dask client
-            client.close()
-
-            # Combine the futures into a Pandas DataFrame
+            # Use Dask's delayed function for parallel processing
+            with ProgressBar():
+                futures = [process_meter(meter_id) for meter_id in meter_ids]
+                results = compute(*futures, num_workers=cores)
+            
+            # Combine the results into a Pandas DataFrame
             new_df = pd.concat(results, axis=1)
             new_df.columns = meter_ids
             new_df.index = unique_datetimes
@@ -252,8 +252,9 @@ class makeDataset:
 
     def loadConcatenate(self, skip_concatenated = True):
         # Load Data and Concatenate
-        grouped_files = self.scanDir(self.interim_path, ".csv")
-        concatenated_file = self.scanDir(self.interim_path, ".csv")
+        files = self.scanDir(self.interim_path, ".csv")
+        grouped_files = [x for x in files if "grouped_data_" in x]
+        concatenated_file = [x for x in files if "concatenated_data.csv" in x]
 
         logger.info(f"Loading and concatenating {len(grouped_files)} files")
         try:
@@ -272,14 +273,14 @@ class makeDataset:
                 self.saveInterimData(f"concatenated_data.csv", concatenated_data)
         except Exception as e:
             logger.error(f"Failed to load and concatenate files: {e}")
-            raise e
+            raise e  
 
     
 
 if __name__ == "__main__":
     make_data = makeDataset("./data/raw", "./data/interim")
     make_data.loadTransform()
-    make_data.loadGroup()
+    make_data.loadGroup(skip_grouped=False)
     make_data.loadConcatenate()
 
 

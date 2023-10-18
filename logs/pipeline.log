@@ -278,3 +278,84 @@
 2023-10-17 18:59:00,872:make_dataset.py:loadData:INFO:Loading transformed_File1.txt:
 2023-10-17 18:59:05,868:make_dataset.py:loadData:INFO:Loaded 24465838 rows from transformed_File1.txt:
 2023-10-17 18:59:05,868:make_dataset.py:group_by_meter_id:INFO:Grouping data by MeterID:
+2023-10-18 16:16:08,340:make_dataset.py:loadTransform:INFO:Loading and transforming 6 files:
+2023-10-18 16:16:08,340:make_dataset.py:loadTransform:INFO:Skipping File1.txt, already transformed:
+2023-10-18 16:16:08,340:make_dataset.py:loadTransform:INFO:Skipping File2.txt, already transformed:
+2023-10-18 16:16:08,340:make_dataset.py:loadTransform:INFO:Skipping File3.txt, already transformed:
+2023-10-18 16:16:08,340:make_dataset.py:loadTransform:INFO:Skipping File4.txt, already transformed:
+2023-10-18 16:16:08,341:make_dataset.py:loadTransform:INFO:Skipping File5.txt, already transformed:
+2023-10-18 16:16:08,341:make_dataset.py:loadTransform:INFO:Skipping File6.txt, already transformed:
+2023-10-18 16:16:08,341:make_dataset.py:loadTransform:INFO:Loaded and transformed 6 files:
+2023-10-18 16:16:08,341:make_dataset.py:loadGroup:INFO:Loading and grouping 6 files:
+2023-10-18 16:16:08,341:make_dataset.py:loadData:INFO:Loading transformed_File1.txt:
+2023-10-18 16:16:13,731:make_dataset.py:loadData:INFO:Loaded 24465838 rows from transformed_File1.txt:
+2023-10-18 16:16:13,741:make_dataset.py:group_by_meter_id:INFO:Grouping data by MeterID:
+2023-10-18 16:30:51,256:make_dataset.py:loadTransform:INFO:Loading and transforming 6 files:
+2023-10-18 16:30:51,256:make_dataset.py:loadTransform:INFO:Skipping File1.txt, already transformed:
+2023-10-18 16:30:51,256:make_dataset.py:loadTransform:INFO:Skipping File2.txt, already transformed:
+2023-10-18 16:30:51,256:make_dataset.py:loadTransform:INFO:Skipping File3.txt, already transformed:
+2023-10-18 16:30:51,256:make_dataset.py:loadTransform:INFO:Skipping File4.txt, already transformed:
+2023-10-18 16:30:51,256:make_dataset.py:loadTransform:INFO:Skipping File5.txt, already transformed:
+2023-10-18 16:30:51,256:make_dataset.py:loadTransform:INFO:Skipping File6.txt, already transformed:
+2023-10-18 16:30:51,256:make_dataset.py:loadTransform:INFO:Loaded and transformed 6 files:
+2023-10-18 16:30:51,256:make_dataset.py:loadGroup:INFO:Loading and grouping 6 files:
+2023-10-18 16:30:51,256:make_dataset.py:loadData:INFO:Loading transformed_File1.txt:
+2023-10-18 16:30:55,859:make_dataset.py:loadData:INFO:Loaded 24465838 rows from transformed_File1.txt:
+2023-10-18 16:30:55,859:make_dataset.py:group_by_meter_id:INFO:Grouping data by MeterID:
+2023-10-18 16:31:34,362:make_dataset.py:group_by_meter_id:INFO:Data grouped by MeterID:
+2023-10-18 16:31:40,694:make_dataset.py:saveInterimData:INFO:Saved grouped_data_File1.csv to ./data/interim:
+2023-10-18 16:31:40,694:make_dataset.py:loadData:INFO:Loading transformed_File2.txt:
+2023-10-18 16:31:47,140:make_dataset.py:loadData:INFO:Loaded 24507300 rows from transformed_File2.txt:
+2023-10-18 16:31:47,145:make_dataset.py:group_by_meter_id:INFO:Grouping data by MeterID:
+2023-10-18 16:32:27,224:make_dataset.py:group_by_meter_id:INFO:Data grouped by MeterID:
+2023-10-18 16:32:33,727:make_dataset.py:saveInterimData:INFO:Saved grouped_data_File2.csv to ./data/interim:
+2023-10-18 16:32:33,727:make_dataset.py:loadData:INFO:Loading transformed_File3.txt:
+2023-10-18 16:32:40,258:make_dataset.py:loadData:INFO:Loaded 24394348 rows from transformed_File3.txt:
+2023-10-18 16:32:40,269:make_dataset.py:group_by_meter_id:INFO:Grouping data by MeterID:
+2023-10-18 16:33:18,618:make_dataset.py:group_by_meter_id:INFO:Data grouped by MeterID:
+2023-10-18 16:33:25,071:make_dataset.py:saveInterimData:INFO:Saved grouped_data_File3.csv to ./data/interim:
+2023-10-18 16:33:25,072:make_dataset.py:loadData:INFO:Loading transformed_File4.txt:
+2023-10-18 16:33:33,811:make_dataset.py:loadData:INFO:Loaded 24617968 rows from transformed_File4.txt:
+2023-10-18 16:33:33,822:make_dataset.py:group_by_meter_id:INFO:Grouping data by MeterID:
+2023-10-18 16:40:50,235:make_dataset.py:loadTransform:INFO:Loading and transforming 6 files:
+2023-10-18 16:40:50,235:make_dataset.py:loadTransform:INFO:Skipping File1.txt, already transformed:
+2023-10-18 16:40:50,235:make_dataset.py:loadTransform:INFO:Skipping File2.txt, already transformed:
+2023-10-18 16:40:50,235:make_dataset.py:loadTransform:INFO:Skipping File3.txt, already transformed:
+2023-10-18 16:40:50,235:make_dataset.py:loadTransform:INFO:Skipping File4.txt, already transformed:
+2023-10-18 16:40:50,235:make_dataset.py:loadTransform:INFO:Skipping File5.txt, already transformed:
+2023-10-18 16:40:50,235:make_dataset.py:loadTransform:INFO:Skipping File6.txt, already transformed:
+2023-10-18 16:40:50,235:make_dataset.py:loadTransform:INFO:Loaded and transformed 6 files:
+2023-10-18 16:40:50,235:make_dataset.py:loadGroup:INFO:Loading and grouping 6 files:
+2023-10-18 16:40:50,235:make_dataset.py:loadData:INFO:Loading transformed_File1.txt:
+2023-10-18 16:40:55,153:make_dataset.py:loadData:INFO:Loaded 24465838 rows from transformed_File1.txt:
+2023-10-18 16:40:55,153:make_dataset.py:group_by_meter_id:INFO:Grouping data by MeterID:
+2023-10-18 16:41:32,605:make_dataset.py:group_by_meter_id:INFO:Data grouped by MeterID:
+2023-10-18 16:41:39,027:make_dataset.py:saveInterimData:INFO:Saved grouped_data_File1.csv to ./data/interim:
+2023-10-18 16:41:39,028:make_dataset.py:loadData:INFO:Loading transformed_File2.txt:
+2023-10-18 16:41:45,092:make_dataset.py:loadData:INFO:Loaded 24507300 rows from transformed_File2.txt:
+2023-10-18 16:41:45,093:make_dataset.py:group_by_meter_id:INFO:Grouping data by MeterID:
+2023-10-18 16:42:25,332:make_dataset.py:group_by_meter_id:INFO:Data grouped by MeterID:
+2023-10-18 16:42:31,811:make_dataset.py:saveInterimData:INFO:Saved grouped_data_File2.csv to ./data/interim:
+2023-10-18 16:42:31,811:make_dataset.py:loadData:INFO:Loading transformed_File3.txt:
+2023-10-18 16:42:37,905:make_dataset.py:loadData:INFO:Loaded 24394348 rows from transformed_File3.txt:
+2023-10-18 16:42:37,910:make_dataset.py:group_by_meter_id:INFO:Grouping data by MeterID:
+2023-10-18 16:43:16,997:make_dataset.py:group_by_meter_id:INFO:Data grouped by MeterID:
+2023-10-18 16:43:23,572:make_dataset.py:saveInterimData:INFO:Saved grouped_data_File3.csv to ./data/interim:
+2023-10-18 16:43:23,572:make_dataset.py:loadData:INFO:Loading transformed_File4.txt:
+2023-10-18 16:43:29,726:make_dataset.py:loadData:INFO:Loaded 24617968 rows from transformed_File4.txt:
+2023-10-18 16:43:29,729:make_dataset.py:group_by_meter_id:INFO:Grouping data by MeterID:
+2023-10-18 16:44:09,599:make_dataset.py:group_by_meter_id:INFO:Data grouped by MeterID:
+2023-10-18 16:44:16,078:make_dataset.py:saveInterimData:INFO:Saved grouped_data_File4.csv to ./data/interim:
+2023-10-18 16:44:16,078:make_dataset.py:loadData:INFO:Loading transformed_File5.txt:
+2023-10-18 16:44:22,198:make_dataset.py:loadData:INFO:Loaded 24571530 rows from transformed_File5.txt:
+2023-10-18 16:44:22,204:make_dataset.py:group_by_meter_id:INFO:Grouping data by MeterID:
+2023-10-18 16:45:02,661:make_dataset.py:group_by_meter_id:INFO:Data grouped by MeterID:
+2023-10-18 16:45:09,090:make_dataset.py:saveInterimData:INFO:Saved grouped_data_File5.csv to ./data/interim:
+2023-10-18 16:45:09,090:make_dataset.py:loadData:INFO:Loading transformed_File6.txt:
+2023-10-18 16:45:17,756:make_dataset.py:loadData:INFO:Loaded 35436012 rows from transformed_File6.txt:
+2023-10-18 16:45:17,763:make_dataset.py:group_by_meter_id:INFO:Grouping data by MeterID:
+2023-10-18 16:46:06,966:make_dataset.py:group_by_meter_id:INFO:Data grouped by MeterID:
+2023-10-18 16:46:16,463:make_dataset.py:saveInterimData:INFO:Saved grouped_data_File6.csv to ./data/interim:
+2023-10-18 16:46:16,463:make_dataset.py:loadGroup:INFO:Loaded and grouped 6 files:
+2023-10-18 16:46:16,482:make_dataset.py:loadConcatenate:INFO:Loading and concatenating 6 files:
+2023-10-18 16:46:16,482:make_dataset.py:loadConcatenate:INFO:Skipping concatenation, `concatenated_data.csv` already exists:
