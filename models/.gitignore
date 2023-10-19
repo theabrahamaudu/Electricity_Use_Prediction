@@ -1,2 +1,4 @@
 # Model files
 *.keras
+/backups
+/partials
