@@ -15,5 +15,6 @@ tqdm
 tensorflow[and-cuda]==2.14.0
 matplotlib
 scikit-learn
+attention
 openpyxl
 pydot
