@@ -61,5 +61,23 @@
             "rmse": 0.031619256835907196,
             "rmse_less_10": 1
         }
+    },
+    {
+        "version": "0.2.4-fulldata-46",
+        "metrics": {
+            "train_time": 87900.0,
+            "infer_time": 0.03174113401132101,
+            "rmse": 0.02694112223257489,
+            "rmse_less_10": 1
+        }
+    },
+    {
+        "version": "0.2.4-fulldata",
+        "metrics": {
+            "train_time": 35984.442774282,
+            "infer_time": 0.031685552785507935,
+            "rmse": 0.019671282279575344,
+            "rmse_less_10": 1
+        }
     }
 ]
