@@ -44,7 +44,7 @@ class makeDataset:
     def loadData(directory: str,
                  filename: str | list[str],
                  parse_dates: list[str] | bool = False,
-                 index_col: str | None = None,
+                 index_col: str | int | None = None,
                  sep=' ',
                  names: list[str] | None=['MeterID', 'codeDateTime', 'kWh']) -> DataFrame:
         if type(filename) == str:
@@ -266,8 +266,8 @@ class makeDataset:
                     grouped_dataframes.append(self.loadData(self.interim_path,
                                                             file,
                                                             names=None, sep=',',
-                                                            parse_dates=['index'],
-                                                            index_col='index'))
+                                                            parse_dates=['DateTime'],
+                                                            index_col=0))
                 concatenated_data = pd.concat(grouped_dataframes, axis=1)
                 concatenated_data.sort_index(inplace=True)
                 self.saveInterimData(f"concatenated_data.csv", concatenated_data)
@@ -277,11 +277,11 @@ class makeDataset:
 
     
 
-if __name__ == "__main__":
-    make_data = makeDataset("./data/raw", "./data/interim")
-    make_data.loadTransform()
-    make_data.loadGroup(skip_grouped=False)
-    make_data.loadConcatenate()
+# if __name__ == "__main__":
+#     make_data = makeDataset("./data/raw", "./data/interim")
+#     make_data.loadTransform()
+#     make_data.loadGroup(skip_grouped=False)
+#     make_data.loadConcatenate()
 
 
     

@@ -74,7 +74,7 @@
     {
         "version": "0.2.4-fulldata",
         "metrics": {
-            "train_time": 35984.442774282,
+            "train_time": 123884.442774282,
             "infer_time": 0.031685552785507935,
             "rmse": 0.019671282279575344,
             "rmse_less_10": 1
