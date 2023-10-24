@@ -79,5 +79,27 @@
             "rmse": 0.019671282279575344,
             "rmse_less_10": 1
         }
+    },
+    {
+        "version": "pipeline-example",
+        "metrics": {
+            "train_time": 0.0,
+            "infer_time": 0.03073219466920585,
+            "rmse": 531.4191432661336,
+            "rmse_less_10": 0,
+            "nrmse_mean": 0.15595086596681088,
+            "nrmse_max_min": 0.09526889605292514
+        }
+    },
+    {
+        "version": "pipeline-example",
+        "metrics": {
+            "train_time": 0.0,
+            "infer_time": 0.030726453015232188,
+            "rmse": 531.4191432661336,
+            "rmse_less_10": 0,
+            "nrmse_mean": 0.15595086596681088,
+            "nrmse_max_min": 0.09526889605292514
+        }
     }
 ]

@@ -1,5 +1,6 @@
 # Regular imports
 import os
+import glob
 import random
 import numpy as np
 import json
@@ -46,10 +47,10 @@ class modelPipeline:
         # Load processed data
         logger.info("Loading processed data")
         try:
-            self.X_train = np.load(f'{self.processed_path}/X_train.npy')
-            self.y_train = np.load(f'{self.processed_path}/y_train.npy')
-            self.X_test = np.load(f'{self.processed_path}/X_test.npy')
-            self.y_test = np.load(f'{self.processed_path}/y_test.npy')
+            self.X_train = self.load_array('X_train.npy')
+            self.y_train = self.load_array('y_train.npy')
+            self.X_test = self.load_array('X_test.npy')
+            self.y_test = self.load_array('y_test.npy')
         except Exception as e:
             logger.error(f"Failed to load processed data: {e}")
             raise e
@@ -209,21 +210,35 @@ class modelPipeline:
             logger.info(f"Model history saved to {self.models_path}/model_history_{self.version}.pkl")
         else:
             # Save the partial model
-            model.save(f"{self.models_path}/model_{self.version}_partial-{len(model.history.history['loss'])}-epochs.keras")
-            logger.info(f"Model saved to {self.models_path}/model_{self.version}_partial-{len(model.history.history['loss'])}-epochs.keras")
+            model.save(f"{self.models_path}/partials/model_{self.version}_partial-{len(model.history.history['loss'])}-epochs.keras")
+            logger.info(f"Model saved to {self.models_path}/partials/model_{self.version}_partial-{len(model.history.history['loss'])}-epochs.keras")
 
     
     def load_model(self, history: bool = False) -> Model | tuple[Model, dict]:
         if history:
-            with open(f"{self.models_path}/model_history_{self.version}.pkl", "rb") as f:
-                history = pickle.load(f)
-            model = tf.keras.models.load_model(f"{self.models_path}/model_{self.version}.keras")
-            logger.info(f"Model loaded from {self.models_path}/model_{self.version}.keras")
-            return model, history
+            try:
+                with open(f"{self.models_path}/model_history_{self.version}.pkl", "rb") as f:
+                    history = pickle.load(f)
+                model = tf.keras.models.load_model(f"{self.models_path}/model_{self.version}.keras")
+                logger.info(f"Model loaded from {self.models_path}/model_{self.version}.keras")
+                return model, history
+            except Exception as e:
+                logger.error(f"Failed to load model with history: {e}")
+                raise e
         else:
-            model = tf.keras.models.load_model(f"{self.models_path}/model_{self.version}.keras")
-            logger.info(f"Model loaded from {self.models_path}/model_{self.version}.keras")
-            return model
+            try:
+                try:
+                    model = tf.keras.models.load_model(f"{self.models_path}/model_{self.version}.keras")
+                    logger.info(f"Model loaded from {self.models_path}/model_{self.version}.keras")
+                    return model
+                except:
+                    model_name = glob.glob(f"{self.models_path}/partials/model_{self.version}*.keras")[0]
+                    model = tf.keras.models.load_model(model_name)
+                    logger.info(f"Model loaded from {model_name}")
+                    return model
+            except Exception as e:
+                logger.error(f"Failed to load model: {e}")
+                raise e
         
     def plot_history(self, history: dict):
         plt.figure(figsize=(10, 10))
@@ -339,12 +354,14 @@ class modelPipeline:
 
             rmse, rmse_less_10, nrmse_mean, nrmse_max_min = self.stat_eval(self.y_test, yhat)
 
-            if self.train_time is not None:
+            try:
                 train_time = self.train_time
-            else:
+            except AttributeError:
+                logger.warning("`train_time` not detected. Attempting to use `alt_train_time`")
                 try:
                     train_time = self.alt_train_time
                 except AttributeError:
+                    logger.warning("`alt_train_time` not detected. Training time set to 0.0")
                     train_time = 0.0
 
             self.save_metrics(train_time=train_time,
@@ -353,20 +370,21 @@ class modelPipeline:
                             rmse_less_10=rmse_less_10,
                             nrmse_mean=nrmse_mean,
                             nrmse_max_min=nrmse_max_min)
-            logger.info("Model evaluation complete")
             return yhat
         except Exception as e:
             logger.error(f"Failed to evaluate model: {e}")
             raise e
     
 
-    def save_testplot(self, yhat: ndarray, datapoints: int = 712):
+    def save_testplot(self, yhat: ndarray, datapoints: int = 712, display: bool = False):
+        y_test, yhat = self.unscale_data(self.y_test, yhat)
         plt.figure(figsize=(20,8))
-        plt.plot(self.y_test[:datapoints])
+        plt.plot(y_test[:datapoints])
         plt.plot(yhat[:datapoints])
         plt.legend(['Actual', 'Predicted'])
         plt.xlabel('Time')
         plt.ylabel('kWh')
         plt.savefig(f'{self.reports_path}/figures/testplot_{self.version}.png')
         logger.info(f"Test plot saved to {self.reports_path}/figures/testplot_{self.version}.png")
-        plt.show()
+        if display:
+            plt.show()

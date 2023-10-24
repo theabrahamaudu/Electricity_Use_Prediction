@@ -500,3 +500,168 @@
 2023-10-24 03:28:24,520:preprocess.py:saveArray:INFO:Saved y_train.npy to ./data/processed:
 2023-10-24 03:28:24,520:preprocess.py:saveArray:INFO:Saved y_test.npy to ./data/processed:
 2023-10-24 03:28:24,520:main.py:<module>:INFO:>>>>>>>>>>>>> Finished Stage: Preprocess <<<<<<<<<<<<<<:
+2023-10-24 04:56:43,777:main.py:<module>:INFO:>>>>>>>>>>>>> Starting Stage: Preprocess Data <<<<<<<<<<<<<<:
+2023-10-24 04:56:43,778:make_dataset.py:loadTransform:INFO:Loading and transforming 6 files:
+2023-10-24 04:56:43,778:make_dataset.py:loadTransform:INFO:Skipping File1.txt, already transformed:
+2023-10-24 04:56:43,778:make_dataset.py:loadTransform:INFO:Skipping File2.txt, already transformed:
+2023-10-24 04:56:43,778:make_dataset.py:loadTransform:INFO:Skipping File3.txt, already transformed:
+2023-10-24 04:56:43,778:make_dataset.py:loadTransform:INFO:Skipping File4.txt, already transformed:
+2023-10-24 04:56:43,778:make_dataset.py:loadTransform:INFO:Skipping File5.txt, already transformed:
+2023-10-24 04:56:43,778:make_dataset.py:loadTransform:INFO:Skipping File6.txt, already transformed:
+2023-10-24 04:56:43,778:make_dataset.py:loadTransform:INFO:Loaded and transformed 6 files:
+2023-10-24 04:56:43,778:make_dataset.py:loadGroup:INFO:Loading and grouping 6 files:
+2023-10-24 04:56:43,778:make_dataset.py:loadGroup:INFO:Skipping transformed_File1.txt, already grouped:
+2023-10-24 04:56:43,778:make_dataset.py:loadGroup:INFO:Skipping transformed_File2.txt, already grouped:
+2023-10-24 04:56:43,778:make_dataset.py:loadGroup:INFO:Skipping transformed_File3.txt, already grouped:
+2023-10-24 04:56:43,778:make_dataset.py:loadGroup:INFO:Skipping transformed_File4.txt, already grouped:
+2023-10-24 04:56:43,778:make_dataset.py:loadGroup:INFO:Skipping transformed_File5.txt, already grouped:
+2023-10-24 04:56:43,778:make_dataset.py:loadGroup:INFO:Skipping transformed_File6.txt, already grouped:
+2023-10-24 04:56:43,778:make_dataset.py:loadGroup:INFO:Loaded and grouped 6 files:
+2023-10-24 04:56:43,778:make_dataset.py:loadConcatenate:INFO:Loading and concatenating 6 files:
+2023-10-24 04:56:43,778:make_dataset.py:loadConcatenate:INFO:Skipping concatenation, `concatenated_data.csv` already exists:
+2023-10-24 04:56:43,778:make_dataset.py:loadData:INFO:Loading concatenated_data.csv:
+2023-10-24 04:56:53,735:make_dataset.py:loadData:INFO:Loaded 25726 rows from concatenated_data.csv:
+2023-10-24 04:56:53,735:preprocess.py:filterData:INFO:Loading filter codes data:
+2023-10-24 04:56:53,894:preprocess.py:filterData:INFO:Filtering out control meters:
+2023-10-24 04:56:54,497:preprocess.py:removeMissingValues:INFO:Removing meter records with missing values count greater than 20.0%:
+2023-10-24 04:56:55,473:preprocess.py:sumAllRows:INFO:Summing meter records by timestamp:
+2023-10-24 04:56:56,616:preprocess.py:scaleData:INFO:Scaling train data:
+2023-10-24 04:56:56,623:preprocess.py:structure_data:INFO:Structuring training data:
+2023-10-24 04:56:56,663:preprocess.py:splitData:INFO:Splitting data into train and test sets:
+2023-10-24 04:56:56,799:preprocess.py:saveArray:INFO:Saved X_train.npy to ./data/processed:
+2023-10-24 04:56:56,818:preprocess.py:saveArray:INFO:Saved X_test.npy to ./data/processed:
+2023-10-24 04:56:56,818:preprocess.py:saveArray:INFO:Saved y_train.npy to ./data/processed:
+2023-10-24 04:56:56,818:preprocess.py:saveArray:INFO:Saved y_test.npy to ./data/processed:
+2023-10-24 04:56:56,819:main.py:<module>:INFO:>>>>>>>>>>>>> Finished Stage: Preprocess Data <<<<<<<<<<<<<<:
+2023-10-24 04:56:56,819:main.py:<module>:INFO:>>>>>>>>>>>>> Starting Stage: Train Model <<<<<<<<<<<<<<:
+2023-10-24 04:56:56,819:train_model.py:__init__:INFO:Setting seed for reproducibility:
+2023-10-24 04:56:56,820:train_model.py:__init__:INFO:Attempting to configure GPU:
+2023-10-24 04:56:56,866:train_model.py:configure_gpu:INFO:Found 1 GPU(s): [PhysicalDevice(name='/physical_device:GPU:0', device_type='GPU')]:
+2023-10-24 04:56:56,866:train_model.py:configure_gpu:INFO:Memory growth enabled for all Physical GPUs:
+2023-10-24 04:56:56,866:train_model.py:__init__:INFO:Loading processed data:
+2023-10-24 04:56:56,901:train_model.py:load_array:INFO:Loaded X_train.npy from ./data/processed:
+2023-10-24 04:56:56,902:train_model.py:load_array:INFO:Loaded y_train.npy from ./data/processed:
+2023-10-24 04:56:56,909:train_model.py:load_array:INFO:Loaded X_test.npy from ./data/processed:
+2023-10-24 04:56:56,909:train_model.py:load_array:INFO:Loaded y_test.npy from ./data/processed:
+2023-10-24 04:56:56,910:train_model.py:build_model:INFO:Building model:: version: pipeline-example:
+2023-10-24 04:57:01,203:train_model.py:build_model:INFO:Built model:: version: pipeline-example:
+2023-10-24 04:57:01,457:train_model.py:save_model_diagram:INFO:Saved model diagram to ./reports as architecture_pipeline-example.png:
+2023-10-24 04:57:01,458:train_model.py:train_model:INFO:Training model:: version: pipeline-example:
+2023-10-24 05:28:38,047:train_model.py:save_partial_history:INFO:
+1 epoch metrics saved to partial_history_pipeline-example.json:
+2023-10-24 05:28:38,047:train_model.py:train_model:WARNING:Model training interrupted: :
+2023-10-24 05:28:38,826:train_model.py:save_model:INFO:Model saved to ./models/model_pipeline-example_partial-1-epochs.keras:
+2023-10-24 05:28:38,826:main.py:<module>:INFO:>>>>>>>>>>>>> Finished Stage: Train Model <<<<<<<<<<<<<<:
+2023-10-24 05:28:38,826:main.py:<module>:INFO:>>>>>>>>>>>>> Starting Stage: Evaluate Model <<<<<<<<<<<<<<:
+2023-10-24 05:28:38,826:train_model.py:load_model:ERROR:Failed to load model: No file or directory found at ./models/model_pipeline-example.keras:
+2023-10-24 05:28:38,826:main.py:<module>:ERROR:Failed to complete Stage: Evaluate Model: No file or directory found at ./models/model_pipeline-example.keras:
+2023-10-24 06:19:09,174:main.py:<module>:INFO:Running pipeline in stages: ['Preprocess Data', False], ['Train Model', False], ['Evaluate Model', True]:
+2023-10-24 06:19:09,174:main.py:<module>:INFO:Skipping Stage: Preprocess Data:
+2023-10-24 06:19:09,174:main.py:<module>:INFO:Skipping Stage: Train Model:
+2023-10-24 06:19:09,174:main.py:<module>:INFO:>>>>>>>>>>>>> Starting Stage: Evaluate Model <<<<<<<<<<<<<<:
+2023-10-24 06:19:09,174:train_model.py:__init__:INFO:Setting seed for reproducibility:
+2023-10-24 06:19:09,174:train_model.py:__init__:INFO:Attempting to configure GPU:
+2023-10-24 06:19:09,181:train_model.py:configure_gpu:INFO:Found 1 GPU(s): [PhysicalDevice(name='/physical_device:GPU:0', device_type='GPU')]:
+2023-10-24 06:19:09,181:train_model.py:configure_gpu:INFO:Memory growth enabled for all Physical GPUs:
+2023-10-24 06:19:09,181:train_model.py:__init__:INFO:Loading processed data:
+2023-10-24 06:19:09,239:train_model.py:load_array:INFO:Loaded X_train.npy from ./data/processed:
+2023-10-24 06:19:09,240:train_model.py:load_array:INFO:Loaded y_train.npy from ./data/processed:
+2023-10-24 06:19:09,288:train_model.py:load_array:INFO:Loaded X_test.npy from ./data/processed:
+2023-10-24 06:19:09,288:train_model.py:load_array:INFO:Loaded y_test.npy from ./data/processed:
+2023-10-24 06:19:18,841:train_model.py:load_model:INFO:Model loaded from ./models/partials/model_pipeline-example_partial-1-epochs.keras:
+2023-10-24 06:19:18,841:train_model.py:evaluate_model:INFO:Evaluating model:
+2023-10-24 06:19:20,135:train_model.py:evaluate_model:ERROR:Failed to evaluate model: Graph execution error:
+
+Detected at node CudnnRNN defined at (most recent call last):
+<stack traces unavailable>
+Failed to call ThenRnnForward with model config: [rnn_mode, rnn_input_mode, rnn_direction_mode]: 2, 0, 0 , [num_layers, input_size, num_units, dir_count, max_seq_length, batch_size, cell_num_units]: [1, 1, 1440, 1, 1440, 32, 1440] 
+	 [[{{node CudnnRNN}}]]
+	 [[sequential/bidirectional/backward_lstm/PartitionedCall]] [Op:__inference_predict_function_10700]:
+2023-10-24 06:19:20,135:main.py:<module>:ERROR:Failed to complete Stage: Evaluate Model: Graph execution error:
+
+Detected at node CudnnRNN defined at (most recent call last):
+<stack traces unavailable>
+Failed to call ThenRnnForward with model config: [rnn_mode, rnn_input_mode, rnn_direction_mode]: 2, 0, 0 , [num_layers, input_size, num_units, dir_count, max_seq_length, batch_size, cell_num_units]: [1, 1, 1440, 1, 1440, 32, 1440] 
+	 [[{{node CudnnRNN}}]]
+	 [[sequential/bidirectional/backward_lstm/PartitionedCall]] [Op:__inference_predict_function_10700]:
+2023-10-24 06:21:36,953:main.py:<module>:INFO:Running pipeline in stages: ['Preprocess Data', False], ['Train Model', False], ['Evaluate Model', True]:
+2023-10-24 06:21:36,953:main.py:<module>:INFO:Skipping Stage: Preprocess Data:
+2023-10-24 06:21:36,953:main.py:<module>:INFO:Skipping Stage: Train Model:
+2023-10-24 06:21:36,953:main.py:<module>:INFO:>>>>>>>>>>>>> Starting Stage: Evaluate Model <<<<<<<<<<<<<<:
+2023-10-24 06:21:36,953:train_model.py:__init__:INFO:Setting seed for reproducibility:
+2023-10-24 06:21:36,953:train_model.py:__init__:INFO:Attempting to configure GPU:
+2023-10-24 06:21:36,967:train_model.py:configure_gpu:INFO:Found 1 GPU(s): [PhysicalDevice(name='/physical_device:GPU:0', device_type='GPU')]:
+2023-10-24 06:21:36,967:train_model.py:configure_gpu:INFO:Memory growth enabled for all Physical GPUs:
+2023-10-24 06:21:36,967:train_model.py:__init__:INFO:Loading processed data:
+2023-10-24 06:21:37,025:train_model.py:load_array:INFO:Loaded X_train.npy from ./data/processed:
+2023-10-24 06:21:37,025:train_model.py:load_array:INFO:Loaded y_train.npy from ./data/processed:
+2023-10-24 06:21:37,038:train_model.py:load_array:INFO:Loaded X_test.npy from ./data/processed:
+2023-10-24 06:21:37,038:train_model.py:load_array:INFO:Loaded y_test.npy from ./data/processed:
+2023-10-24 06:21:46,733:train_model.py:load_model:INFO:Model loaded from ./models/partials/model_pipeline-example_partial-1-epochs.keras:
+2023-10-24 06:21:46,733:train_model.py:evaluate_model:INFO:Evaluating model:
+2023-10-24 06:24:16,603:train_model.py:unscale_data:INFO:Unscaling test and prediction targets:
+2023-10-24 06:24:16,604:train_model.py:evaluate_model:ERROR:Failed to evaluate model: 'modelPipeline' object has no attribute 'train_time':
+2023-10-24 06:24:16,604:main.py:<module>:ERROR:Failed to complete Stage: Evaluate Model: 'modelPipeline' object has no attribute 'train_time':
+2023-10-24 06:28:00,752:main.py:<module>:INFO:Running pipeline in stages: ['Preprocess Data', False], ['Train Model', False], ['Evaluate Model', True]:
+2023-10-24 06:28:00,752:main.py:<module>:INFO:Skipping Stage: Preprocess Data:
+2023-10-24 06:28:00,752:main.py:<module>:INFO:Skipping Stage: Train Model:
+2023-10-24 06:28:00,752:main.py:<module>:INFO:>>>>>>>>>>>>> Starting Stage: Evaluate Model <<<<<<<<<<<<<<:
+2023-10-24 06:28:00,752:train_model.py:__init__:INFO:Setting seed for reproducibility:
+2023-10-24 06:28:00,752:train_model.py:__init__:INFO:Attempting to configure GPU:
+2023-10-24 06:28:00,766:train_model.py:configure_gpu:INFO:Found 1 GPU(s): [PhysicalDevice(name='/physical_device:GPU:0', device_type='GPU')]:
+2023-10-24 06:28:00,766:train_model.py:configure_gpu:INFO:Memory growth enabled for all Physical GPUs:
+2023-10-24 06:28:00,766:train_model.py:__init__:INFO:Loading processed data:
+2023-10-24 06:28:00,820:train_model.py:load_array:INFO:Loaded X_train.npy from ./data/processed:
+2023-10-24 06:28:00,820:train_model.py:load_array:INFO:Loaded y_train.npy from ./data/processed:
+2023-10-24 06:28:00,833:train_model.py:load_array:INFO:Loaded X_test.npy from ./data/processed:
+2023-10-24 06:28:00,833:train_model.py:load_array:INFO:Loaded y_test.npy from ./data/processed:
+2023-10-24 06:28:10,216:train_model.py:load_model:INFO:Model loaded from ./models/partials/model_pipeline-example_partial-1-epochs.keras:
+2023-10-24 06:28:10,216:train_model.py:evaluate_model:INFO:Evaluating model:
+2023-10-24 06:30:39,574:train_model.py:unscale_data:INFO:Unscaling test and prediction targets:
+2023-10-24 06:30:39,575:train_model.py:evaluate_model:ERROR:Failed to evaluate model: 'modelPipeline' object has no attribute 'train_time':
+2023-10-24 06:30:39,616:main.py:<module>:ERROR:Failed to complete Stage: Evaluate Model: 'modelPipeline' object has no attribute 'train_time':
+2023-10-24 06:36:53,552:main.py:<module>:INFO:Running pipeline in stages: ['Preprocess Data', False], ['Train Model', False], ['Evaluate Model', True]:
+2023-10-24 06:36:53,552:main.py:<module>:INFO:Skipping Stage: Preprocess Data:
+2023-10-24 06:36:53,552:main.py:<module>:INFO:Skipping Stage: Train Model:
+2023-10-24 06:36:53,552:main.py:<module>:INFO:>>>>>>>>>>>>> Starting Stage: Evaluate Model <<<<<<<<<<<<<<:
+2023-10-24 06:36:53,552:train_model.py:__init__:INFO:Setting seed for reproducibility:
+2023-10-24 06:36:53,552:train_model.py:__init__:INFO:Attempting to configure GPU:
+2023-10-24 06:36:53,566:train_model.py:configure_gpu:INFO:Found 1 GPU(s): [PhysicalDevice(name='/physical_device:GPU:0', device_type='GPU')]:
+2023-10-24 06:36:53,566:train_model.py:configure_gpu:INFO:Memory growth enabled for all Physical GPUs:
+2023-10-24 06:36:53,566:train_model.py:__init__:INFO:Loading processed data:
+2023-10-24 06:36:53,622:train_model.py:load_array:INFO:Loaded X_train.npy from ./data/processed:
+2023-10-24 06:36:53,623:train_model.py:load_array:INFO:Loaded y_train.npy from ./data/processed:
+2023-10-24 06:36:53,634:train_model.py:load_array:INFO:Loaded X_test.npy from ./data/processed:
+2023-10-24 06:36:53,635:train_model.py:load_array:INFO:Loaded y_test.npy from ./data/processed:
+2023-10-24 06:37:02,945:train_model.py:load_model:INFO:Model loaded from ./models/partials/model_pipeline-example_partial-1-epochs.keras:
+2023-10-24 06:37:02,945:train_model.py:evaluate_model:INFO:Evaluating model:
+2023-10-24 06:39:32,242:train_model.py:unscale_data:INFO:Unscaling test and prediction targets:
+2023-10-24 06:39:32,243:train_model.py:evaluate_model:WARNING:`train_time` not detected. Attempting to use `alt_train_time`:
+2023-10-24 06:39:32,243:train_model.py:evaluate_model:WARNING:`alt_train_time` not detected. Training time set to 0.0:
+2023-10-24 06:39:32,254:train_model.py:save_metrics:INFO:Model version pipeline-example metrics saved to file: ./reports/metrics.json:
+2023-10-24 06:39:32,254:train_model.py:evaluate_model:INFO:Model evaluation complete:
+2023-10-24 06:39:32,254:train_model.py:unscale_data:INFO:Unscaling test and prediction targets:
+2023-10-24 06:39:32,536:train_model.py:save_testplot:INFO:Test plot saved to ./reports/figures/testplot_pipeline-example.png:
+2023-10-24 06:40:26,826:main.py:<module>:INFO:>>>>>>>>>>>>> Finished Stage: Evaluate Model <<<<<<<<<<<<<<:
+2023-10-24 06:44:55,105:main.py:<module>:INFO:Running pipeline in stages: ['Preprocess Data', False], ['Train Model', False], ['Evaluate Model', True]:
+2023-10-24 06:44:55,105:main.py:<module>:INFO:Skipping Stage: Preprocess Data:
+2023-10-24 06:44:55,105:main.py:<module>:INFO:Skipping Stage: Train Model:
+2023-10-24 06:44:55,105:main.py:<module>:INFO:>>>>>>>>>>>>> Starting Stage: Evaluate Model <<<<<<<<<<<<<<:
+2023-10-24 06:44:55,105:train_model.py:__init__:INFO:Setting seed for reproducibility:
+2023-10-24 06:44:55,105:train_model.py:__init__:INFO:Attempting to configure GPU:
+2023-10-24 06:44:55,120:train_model.py:configure_gpu:INFO:Found 1 GPU(s): [PhysicalDevice(name='/physical_device:GPU:0', device_type='GPU')]:
+2023-10-24 06:44:55,120:train_model.py:configure_gpu:INFO:Memory growth enabled for all Physical GPUs:
+2023-10-24 06:44:55,120:train_model.py:__init__:INFO:Loading processed data:
+2023-10-24 06:44:55,175:train_model.py:load_array:INFO:Loaded X_train.npy from ./data/processed:
+2023-10-24 06:44:55,175:train_model.py:load_array:INFO:Loaded y_train.npy from ./data/processed:
+2023-10-24 06:44:55,187:train_model.py:load_array:INFO:Loaded X_test.npy from ./data/processed:
+2023-10-24 06:44:55,188:train_model.py:load_array:INFO:Loaded y_test.npy from ./data/processed:
+2023-10-24 06:45:04,586:train_model.py:load_model:INFO:Model loaded from ./models/partials/model_pipeline-example_partial-1-epochs.keras:
+2023-10-24 06:45:04,586:train_model.py:evaluate_model:INFO:Evaluating model:
+2023-10-24 06:47:33,855:train_model.py:unscale_data:INFO:Unscaling test and prediction targets:
+2023-10-24 06:47:33,856:train_model.py:evaluate_model:WARNING:`train_time` not detected. Attempting to use `alt_train_time`:
+2023-10-24 06:47:33,856:train_model.py:evaluate_model:WARNING:`alt_train_time` not detected. Training time set to 0.0:
+2023-10-24 06:47:33,856:train_model.py:save_metrics:INFO:Model version pipeline-example metrics saved to file: ./reports/metrics.json:
+2023-10-24 06:47:33,857:train_model.py:unscale_data:INFO:Unscaling test and prediction targets:
+2023-10-24 06:47:34,096:train_model.py:save_testplot:INFO:Test plot saved to ./reports/figures/testplot_pipeline-example.png:
+2023-10-24 06:47:34,096:main.py:<module>:INFO:>>>>>>>>>>>>> Finished Stage: Evaluate Model <<<<<<<<<<<<<<:
