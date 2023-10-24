@@ -21,8 +21,14 @@ def logger_pipeline() -> Logger:
     pipeline_file_handler = logging.FileHandler('./logs/pipeline.log')
     pipeline_file_handler.setLevel(logging.DEBUG)
     pipeline_file_handler.setFormatter(formatter)
-
     pipeline_logger.addHandler(pipeline_file_handler)
+
+    pipeline_stream_handler = logging.StreamHandler()
+    pipeline_stream_handler.setLevel(logging.DEBUG)
+    pipeline_stream_handler.setFormatter(formatter)
+    pipeline_logger.addHandler(pipeline_stream_handler)
+
+    
 
     return pipeline_logger
 

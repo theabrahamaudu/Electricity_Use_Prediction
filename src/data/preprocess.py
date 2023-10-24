@@ -34,62 +34,91 @@ class preprocessPipeline(makeDataset):
 
     def filterData(self, dataframe: DataFrame) -> DataFrame:
         # Load filter codes data
-        label_data = pd.read_excel(f'{self.raw_path}/CER_Electricity_Documentation/SME and Residential allocations.xlsx',
-                           sheet_name='Sheet1',
-                           usecols=['ID', 'Code', 'Residential - Tariff allocation', 'Residential - stimulus allocation', 'SME allocation']
-                        )
+        logger.info("Loading filter codes data")
+        try:
+            label_data = pd.read_excel(f'{self.raw_path}/CER_Electricity_Documentation/SME and Residential allocations.xlsx',
+                            sheet_name='Sheet1',
+                            usecols=['ID', 'Code', 'Residential - Tariff allocation', 'Residential - stimulus allocation', 'SME allocation']
+                            )
+        except Exception as e:
+            logger.error(f"Failed to load filter codes data: {e}")
+            raise e
         
-        # Get control meters
-        control_meters = []
-        for i in range(len(label_data)):
-            if label_data['Residential - Tariff allocation'][i] == 'E' or\
-            label_data['Residential - stimulus allocation'][i] == 'E' or\
-            label_data['SME allocation'][i] == 'C':
-                control_meters.append(str(label_data['ID'][i]))
+        logger.info("Filtering out control meters")
+        try:
+            # Get control meters
+            control_meters = []
+            for i in range(len(label_data)):
+                if label_data['Residential - Tariff allocation'][i] == 'E' or\
+                label_data['Residential - stimulus allocation'][i] == 'E' or\
+                label_data['SME allocation'][i] == 'C':
+                    control_meters.append(str(label_data['ID'][i]))
 
-        # Filter out control Meters from concatenated data
-        filtered_data = dataframe.drop(columns=control_meters)
-        return filtered_data
+            # Filter out control Meters from concatenated data
+            filtered_data = dataframe.drop(columns=control_meters)
+            return filtered_data
+        except Exception as e:
+            logger.error(f"Failed to filter data: {e}")
+            raise e
 
     @staticmethod
     def removeMissingValues(dataframe: DataFrame, threshold = 0.20) -> DataFrame:
-        cols = []
-        for i in dataframe.columns:
-            if dataframe[i].isna().sum() > len(dataframe)*threshold:
-                cols.append(i)
-        dataframe = dataframe.drop(columns=cols)
-        return dataframe
+        logger.info(f"Removing meter records with missing values count greater than {threshold*100}%")
+        try:
+            cols = []
+            for i in dataframe.columns:
+                if dataframe[i].isna().sum() > len(dataframe)*threshold:
+                    cols.append(i)
+            dataframe = dataframe.drop(columns=cols)
+            return dataframe
+        except Exception as e:
+            logger.error(f"Failed to remove missing values: {e}")
+            raise e
     
     @staticmethod
     def sumAllRows(dataframe: pd.DataFrame) -> DataFrame:
+        logger.info("Summing meter records by timestamp")
+        try:
+            # Sum all rows along axis 1
+            row_sums = dataframe.sum(axis=1)
 
-        # Sum all rows along axis 1
-        row_sums = dataframe.sum(axis=1)
-
-        # Create a new DataFrame with only the row sums
-        result_df = pd.DataFrame({'kWh': row_sums})
-    
-        return result_df
+            # Create a new DataFrame with only the row sums
+            result_df = pd.DataFrame({'kWh': row_sums})
+        
+            return result_df
+        except Exception as e:
+            logger.error(f"Failed to sum all meter records: {e}")
+            raise e
     
     def scaleData(self, dataframe: DataFrame, train=True) -> DataFrame:
-
+        scaler_path = f'{self.processed_path}/scaler.pkl'
         if train:
-            # Fit scaler
-            scaler = MinMaxScaler()
-            scaler = scaler.fit(dataframe)
+            logger.info("Scaling train data")
+            try:
+                # Fit scaler
+                scaler = MinMaxScaler()
+                scaler = scaler.fit(dataframe)
 
-            # Save scaler
-            joblib.dump(scaler, f'scaler.pkl')
+                # Save scaler
+                joblib.dump(scaler, scaler_path)
 
-            # Load scaler and transform data
-            scaler = joblib.load(f'scaler.pkl')
-            scaled_data = scaler.transform(dataframe)
-            return scaled_data
+                # Load scaler and transform data
+                scaler = joblib.load(scaler_path)
+                scaled_data = scaler.transform(dataframe)
+                return scaled_data
+            except Exception as e:
+                logger.error(f"Failed to scale data: {e}")
+                raise e
         else:
-            # Load scaler and transform data
-            scaler = joblib.load(f'scaler.pkl')
-            scaled_data = scaler.transform(dataframe)
-            return scaled_data
+            logger.info("Scaling inference data")
+            try:
+                # Load scaler and transform data
+                scaler = joblib.load(f'scaler.pkl')
+                scaled_data = scaler.transform(dataframe)
+                return scaled_data
+            except Exception as e:
+                logger.error(f"Failed to scale data: {e}")
+                raise e
         
 
     def structure_data(self, dataset: DataFrame, train=True) -> tuple[ndarray, ndarray] | ndarray:
@@ -105,6 +134,7 @@ class preprocessPipeline(makeDataset):
 
 
         if train:
+            logger.info("Structuring training data")
             dataX, dataY = [], []
             for i in range(self.n_past, len(dataset) - self.n_future +1):
                 dataX.append(dataset[i - self.n_past:i, 0:dataset.shape[1]])
@@ -114,6 +144,7 @@ class preprocessPipeline(makeDataset):
             
             return dataX, dataY
         else:
+            logger.info("Structuring inference data")
             dataX = []
             for i in range(self.n_past, len(dataset) - self.n_future +1):
                 dataX.append(dataset[i - self.n_past:i, 0:dataset.shape[1]])
@@ -127,6 +158,7 @@ class preprocessPipeline(makeDataset):
     def splitData(X: ndarray, y: ndarray,
                   test_size: float = 0.2, 
                   ) -> tuple[ndarray, ndarray, ndarray, ndarray]:
+        logger.info("Splitting data into train and test sets")
         # Time series train test split
         X_train, X_test, y_train, y_test = train_test_split(X,
                                                             y,
@@ -140,10 +172,10 @@ class preprocessPipeline(makeDataset):
             logger.info(f"Saved {filename} to {self.processed_path}")
 
 
-    def trainPreprocess(self, filename: str = "concatenated_data.csv", train=True):
-        self.loadTransform()
-        self.loadGroup()
-        self.loadConcatenate()
+    def trainPreprocess(self, filename: str = "concatenated_data.csv", train=True, skip_transformed=True, skip_grouped=True, skip_concatenated=True):
+        self.loadTransform(skip_transformed=skip_transformed)
+        self.loadGroup(skip_grouped=skip_grouped)
+        self.loadConcatenate(skip_concatenated=skip_concatenated)
         data = self.loadData(self.interim_path,
                             filename,
                             names=None, sep=',',

@@ -2,16 +2,15 @@
 import os
 import random
 import numpy as np
-import pandas as pd
 import json
 import time
 import pickle
+import joblib
 from numpy import ndarray
-from pandas import DataFrame
 import matplotlib.pyplot as plt
 from src.utils.pipeline_log_config import pipeline as logger
 
-# Metrics and 
+# Metrics
 import math
 from sklearn.metrics import mean_squared_error
 
@@ -36,20 +35,26 @@ class modelPipeline:
         self.models_path = models_path
 
         # Seed for reproducibility
+        logger.info("Setting seed for reproducibility")
         self.seed = 0
         self.seed_everything(self.seed)
 
         # Configure GPU
+        logger.info("Attempting to configure GPU")
         self.configure_gpu()
 
         # Load processed data
-        self.X_train = np.load(f'{self.processed_path}/X_train.npy')
-        self.y_train = np.load(f'{self.processed_path}/y_train.npy')
-        self.X_test = np.load(f'{self.processed_path}/X_test.npy')
-        self.y_test = np.load(f'{self.processed_path}/y_test.npy')
+        logger.info("Loading processed data")
+        try:
+            self.X_train = np.load(f'{self.processed_path}/X_train.npy')
+            self.y_train = np.load(f'{self.processed_path}/y_train.npy')
+            self.X_test = np.load(f'{self.processed_path}/X_test.npy')
+            self.y_test = np.load(f'{self.processed_path}/y_test.npy')
+        except Exception as e:
+            logger.error(f"Failed to load processed data: {e}")
+            raise e
 
-        # Define Hyperparameters
-        
+        # Define Hyperparameters 
         self.serie_size =  self.X_train.shape[1]
         self.n_features =  self.X_train.shape[2]
 
@@ -57,6 +62,9 @@ class modelPipeline:
         self.patience = int(np.sqrt(self.epochs))
         self.batch = 20
         self.lr = 0.00001
+
+        # Load scaler
+        self.scaler = joblib.load(f"{self.processed_path}/scaler.pkl")
     
     def seed_everything(self, seed):
         # Set seeds to make the experiment more reproducible.
@@ -125,33 +133,38 @@ class modelPipeline:
 
 
     def build_model(self):
+        logger.info(f"Building model:: version: {self.version}")
+        try:
+            # Define the model
+            encoder_decoder = Sequential()
+            encoder_decoder.add(L.Bidirectional(L.LSTM(self.serie_size, activation='tanh', input_shape=(self.serie_size, self.n_features), return_sequences=True)))
+            encoder_decoder.add(L.LSTM(256, activation='tanh', return_sequences=True))
+            encoder_decoder.add(L.LSTM(128, activation='tanh', return_sequences=True))
+            encoder_decoder.add(L.LSTM(64, activation='tanh', return_sequences=False))
+            encoder_decoder.add(L.BatchNormalization())
+            encoder_decoder.add(L.RepeatVector(self.serie_size))
+            encoder_decoder.add(L.LSTM(self.serie_size, activation='tanh', return_sequences=True))
+            encoder_decoder.add(L.BatchNormalization())
+            encoder_decoder.add(L.LSTM(64, activation='tanh', return_sequences=True))
+            encoder_decoder.add(L.LSTM(128, activation='tanh', return_sequences=True))
+            encoder_decoder.add(L.LSTM(256, activation='tanh', return_sequences=True))
+            encoder_decoder.add(L.Bidirectional(L.LSTM(128, activation='tanh', return_sequences=False)))
+            encoder_decoder.add(L.Dropout(0.2))
+            encoder_decoder.add(L.Dense(self.y_train.shape[1]))
 
-        # Define the model
-        encoder_decoder = Sequential()
-        encoder_decoder.add(L.Bidirectional(L.LSTM(self.serie_size, activation='tanh', input_shape=(self.serie_size, self.n_features), return_sequences=True)))
-        encoder_decoder.add(L.LSTM(256, activation='tanh', return_sequences=True))
-        encoder_decoder.add(L.LSTM(128, activation='tanh', return_sequences=True))
-        encoder_decoder.add(L.LSTM(64, activation='tanh', return_sequences=False))
-        encoder_decoder.add(L.BatchNormalization())
-        encoder_decoder.add(L.RepeatVector(self.serie_size))
-        encoder_decoder.add(L.LSTM(self.serie_size, activation='tanh', return_sequences=True))
-        encoder_decoder.add(L.BatchNormalization())
-        encoder_decoder.add(L.LSTM(64, activation='tanh', return_sequences=True))
-        encoder_decoder.add(L.LSTM(128, activation='tanh', return_sequences=True))
-        encoder_decoder.add(L.LSTM(256, activation='tanh', return_sequences=True))
-        encoder_decoder.add(L.Bidirectional(L.LSTM(128, activation='tanh', return_sequences=False)))
-        encoder_decoder.add(L.Dropout(0.2))
-        encoder_decoder.add(L.Dense(1))
+            # Compile the model
+            adam = optimizers.Adam(self.lr)
+            encoder_decoder.compile(loss='mse', optimizer=adam)
 
-        # Compile the model
-        adam = optimizers.Adam(self.lr)
-        encoder_decoder.compile(loss='mse', optimizer=adam)
+            # Build the model
+            encoder_decoder.build(input_shape=(None, self.serie_size, self.n_features))
+            encoder_decoder.summary()
+            logger.info(f"Built model:: version: {self.version}")
 
-        # Build the model
-        encoder_decoder.build(input_shape=(None, self.serie_size, self.n_features))
-        encoder_decoder.summary()
-
-        return encoder_decoder
+            return encoder_decoder
+        except Exception as e:
+            logger.error(f"Failed to build model: {e}")
+            raise e
     
 
     def train_model(self, model: Model):
@@ -163,7 +176,7 @@ class modelPipeline:
         # Setup backup and restore callback
         resume = tf.keras.callbacks.BackupAndRestore(backup_dir=f"{self.models_path}/backups")
 
-        logger.info(f"Training model")
+        logger.info(f"Training model:: version: {self.version}")
         alt_start = time.perf_counter()
         try:
             start = time.perf_counter()
@@ -219,26 +232,41 @@ class modelPipeline:
         plt.legend()
         plt.show()
 
-    @staticmethod
-    def stat_eval(y_test: np.ndarray, yhat: np.ndarray) -> tuple[float, int]:
+    
+    def unscale_data(self, y_test: np.ndarray, yhat: np.ndarray) -> tuple[np.ndarray, np.ndarray]:
+        logger.info("Unscaling test and prediction targets")
+        try:
+            return self.scaler.inverse_transform(y_test), self.scaler.inverse_transform(yhat)
+        except Exception as e:
+            logger.error(f"Failed to unscale data: {e}")
+            raise e
+
+
+    def stat_eval(self, y_test: np.ndarray, yhat: np.ndarray) -> tuple[float, int, float, float]:
         """
         Carries out statistical evaluation of model based on test data and 
         prediction. 
         
         Prints and returns a summary dictionary
         """
+        # unscaling test and prediction targets
+        y_test, yhat = self.unscale_data(y_test, yhat)
+
         # statistical evaluations
-        
         print("="*5,"Statistical Eval","="*5,"\n")
 
-        rmse = math.sqrt(mean_squared_error(yhat, y_test))
+        rmse = math.sqrt(mean_squared_error(y_pred=yhat, y_true=y_test))
+        nrmse_mean = float(rmse/np.mean(y_test))
+        nrmse_max_min = float(rmse/(np.max(y_test)-np.min(y_test)))
 
-        print(f"Mean kWh: {round(np.mean(y_test), 4)} -- RMSE: {round(rmse, 4)}",
-            f"-- RMSE < 10% Mean: ", round(rmse, 4)< round(np.mean(y_test), 4)/10)
+        print(f"Mean kWh: {round(np.mean(y_test), 4)} \nRMSE: {round(rmse, 4)}",
+            f"-- RMSE < 10% Mean: ", round(rmse, 4)< round(np.mean(y_test), 4)/10,
+            f"\nNRMSE Mean: ", nrmse_mean, "-- NRMSE Mean * 100: ", nrmse_mean*100,
+            f"\nNRMSE Max Min: ", nrmse_max_min, "-- NRMSE Max Min * 100: ", nrmse_max_min*100)
         
         rmse_less_10 = 1 if round(rmse, 4)< round(np.mean(y_test), 4)/10 else 0
                         
-        return rmse, rmse_less_10
+        return rmse, rmse_less_10, nrmse_mean, nrmse_max_min
     
 
     def save_metrics(self, 
@@ -246,6 +274,8 @@ class modelPipeline:
                  infer_time: float, 
                  rmse: float,
                  rmse_less_10: int,
+                 nrmse_mean: float,
+                 nrmse_max_min: float,
                  overwrite: bool = False
                  ):
         """
@@ -269,7 +299,9 @@ class modelPipeline:
                 "train_time": train_time,
                 "infer_time": infer_time,
                 "rmse": rmse,
-                "rmse_less_10": rmse_less_10
+                "rmse_less_10": rmse_less_10,
+                "nrmse_mean": nrmse_mean,
+                "nrmse_max_min": nrmse_max_min
             }
         }
 
@@ -293,39 +325,48 @@ class modelPipeline:
             with open(file_path, "w") as file:
                 json.dump(existing_data, file, indent=4)
 
-            logger.info(f"Metrics saved to file: {self.reports_path}/metrics.json")
+            logger.info(f"Model version {self.version} metrics saved to file: {self.reports_path}/metrics.json")
         else:
-            print(f"Metrics already exist in file: {self.reports_path}/metrics.json")
+            print(f"Model version {self.version} metrics already exist in file: {self.reports_path}/metrics.json")
 
 
-    def evaluate_model(self, model: Model, X_test: ndarray, y_test: ndarray):
-        start = time.perf_counter()
-        yhat = model.predict(X_test)
-        infer_time = (time.perf_counter() - start)/len(yhat)
+    def evaluate_model(self, model: Model):
+        logger.info("Evaluating model")
+        try:
+            start = time.perf_counter()
+            yhat = model.predict(self.X_test)
+            infer_time = (time.perf_counter() - start)/len(yhat)
 
-        rmse, rmse_less_10 = self.stat_eval(y_test, yhat)
+            rmse, rmse_less_10, nrmse_mean, nrmse_max_min = self.stat_eval(self.y_test, yhat)
 
-        if self.train_time is not None:
-            train_time = self.train_time
-        else:
-            try:
-                train_time = self.alt_train_time
-            except AttributeError:
-                train_time = 0.0
+            if self.train_time is not None:
+                train_time = self.train_time
+            else:
+                try:
+                    train_time = self.alt_train_time
+                except AttributeError:
+                    train_time = 0.0
 
-        self.save_metrics(train_time=train_time,
-                          infer_time=infer_time,
-                          rmse=rmse,
-                          rmse_less_10=rmse_less_10)
-        return y_test, yhat
+            self.save_metrics(train_time=train_time,
+                            infer_time=infer_time,
+                            rmse=rmse,
+                            rmse_less_10=rmse_less_10,
+                            nrmse_mean=nrmse_mean,
+                            nrmse_max_min=nrmse_max_min)
+            logger.info("Model evaluation complete")
+            return yhat
+        except Exception as e:
+            logger.error(f"Failed to evaluate model: {e}")
+            raise e
     
 
-    def save_testplot(self, y_test: ndarray, yhat: ndarray):
+    def save_testplot(self, yhat: ndarray, datapoints: int = 712):
         plt.figure(figsize=(20,8))
-        plt.plot(y_test[:712])
-        plt.plot(yhat[:712])
+        plt.plot(self.y_test[:datapoints])
+        plt.plot(yhat[:datapoints])
         plt.legend(['Actual', 'Predicted'])
         plt.xlabel('Time')
         plt.ylabel('kWh')
         plt.savefig(f'{self.reports_path}/figures/testplot_{self.version}.png')
+        logger.info(f"Test plot saved to {self.reports_path}/figures/testplot_{self.version}.png")
         plt.show()
