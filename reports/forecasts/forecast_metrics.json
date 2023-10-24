@@ -1,0 +1,32 @@
+[
+    {
+        "version": "0.2.4_2days",
+        "metrics": {
+            "pred_time": 967.133566903,
+            "rmse": 0.16962232935988933,
+            "rmse_less_10": 0,
+            "nrmse_mean": 0.3755714756512715,
+            "nrmse_maxmin": 0.22119841532614917
+        }
+    },
+    {
+        "version": "0.2.4-future48_2days",
+        "metrics": {
+            "pred_time": 1.36296176599717,
+            "rmse": 0.050977663731121954,
+            "rmse_less_10": 0,
+            "nrmse_mean": 0.16577213292222293,
+            "nrmse_maxmin": 0.08567549737129274
+        }
+    },
+    {
+        "version": "0.2.4-fulldata_2days",
+        "metrics": {
+            "pred_time": 970.1141236680014,
+            "rmse": 0.07651755577446741,
+            "rmse_less_10": 0,
+            "nrmse_mean": 0.2465511867448593,
+            "nrmse_maxmin": 0.11704522653830052
+        }
+    }
+]
