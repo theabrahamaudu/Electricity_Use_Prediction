@@ -113,7 +113,7 @@ class preprocessPipeline(makeDataset):
             logger.info("Scaling inference data")
             try:
                 # Load scaler and transform data
-                scaler = joblib.load(f'scaler.pkl')
+                scaler = joblib.load(scaler_path)
                 scaled_data = scaler.transform(dataframe)
                 return scaled_data
             except Exception as e:

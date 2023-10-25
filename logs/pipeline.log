@@ -665,3 +665,107 @@ Failed to call ThenRnnForward with model config: [rnn_mode, rnn_input_mode, rnn_
 2023-10-24 06:47:33,857:train_model.py:unscale_data:INFO:Unscaling test and prediction targets:
 2023-10-24 06:47:34,096:train_model.py:save_testplot:INFO:Test plot saved to ./reports/figures/testplot_pipeline-example.png:
 2023-10-24 06:47:34,096:main.py:<module>:INFO:>>>>>>>>>>>>> Finished Stage: Evaluate Model <<<<<<<<<<<<<<:
+2023-10-25 14:55:17,089:make_dataset.py:loadData:INFO:Loading concatenated_data.csv:
+2023-10-25 14:55:29,488:make_dataset.py:loadData:INFO:Loaded 25726 rows from concatenated_data.csv:
+2023-10-25 14:55:29,489:preprocess.py:filterData:INFO:Loading filter codes data:
+2023-10-25 14:55:29,838:preprocess.py:filterData:INFO:Filtering out control meters:
+2023-10-25 14:55:31,191:preprocess.py:removeMissingValues:INFO:Removing meter records with missing values count greater than 20.0%:
+2023-10-25 14:55:32,608:preprocess.py:sumAllRows:INFO:Summing meter records by timestamp:
+2023-10-25 14:55:33,903:preprocess.py:scaleData:INFO:Scaling inference data:
+2023-10-25 14:55:33,904:preprocess.py:scaleData:ERROR:Failed to scale data: [Errno 2] No such file or directory: 'scaler.pkl':
+2023-10-25 14:58:58,583:make_dataset.py:loadData:INFO:Loading concatenated_data.csv:
+2023-10-25 14:59:11,235:make_dataset.py:loadData:INFO:Loaded 25726 rows from concatenated_data.csv:
+2023-10-25 14:59:11,236:preprocess.py:filterData:INFO:Loading filter codes data:
+2023-10-25 14:59:11,578:preprocess.py:filterData:INFO:Filtering out control meters:
+2023-10-25 14:59:16,620:preprocess.py:removeMissingValues:INFO:Removing meter records with missing values count greater than 20.0%:
+2023-10-25 14:59:18,066:preprocess.py:sumAllRows:INFO:Summing meter records by timestamp:
+2023-10-25 14:59:19,747:preprocess.py:scaleData:INFO:Scaling inference data:
+2023-10-25 14:59:19,758:preprocess.py:structure_data:INFO:Structuring training data:
+2023-10-25 15:02:23,301:make_dataset.py:loadData:INFO:Loading concatenated_data.csv:
+2023-10-25 15:02:35,947:make_dataset.py:loadData:INFO:Loaded 25726 rows from concatenated_data.csv:
+2023-10-25 15:02:35,948:preprocess.py:filterData:INFO:Loading filter codes data:
+2023-10-25 15:02:36,307:preprocess.py:filterData:INFO:Filtering out control meters:
+2023-10-25 15:02:44,704:preprocess.py:removeMissingValues:INFO:Removing meter records with missing values count greater than 20.0%:
+2023-10-25 15:02:46,082:preprocess.py:sumAllRows:INFO:Summing meter records by timestamp:
+2023-10-25 15:02:47,335:preprocess.py:scaleData:INFO:Scaling inference data:
+2023-10-25 15:02:47,340:preprocess.py:structure_data:INFO:Structuring training data:
+2023-10-25 15:05:14,698:make_dataset.py:loadData:INFO:Loading concatenated_data.csv:
+2023-10-25 15:05:26,478:make_dataset.py:loadData:INFO:Loaded 25726 rows from concatenated_data.csv:
+2023-10-25 15:05:26,479:preprocess.py:filterData:INFO:Loading filter codes data:
+2023-10-25 15:05:26,841:preprocess.py:filterData:INFO:Filtering out control meters:
+2023-10-25 15:05:28,769:preprocess.py:removeMissingValues:INFO:Removing meter records with missing values count greater than 20.0%:
+2023-10-25 15:05:29,982:preprocess.py:sumAllRows:INFO:Summing meter records by timestamp:
+2023-10-25 15:05:31,123:preprocess.py:scaleData:INFO:Scaling inference data:
+2023-10-25 15:05:31,129:preprocess.py:structure_data:INFO:Structuring training data:
+2023-10-25 15:34:43,315:make_dataset.py:loadData:INFO:Loading concatenated_data.csv:
+2023-10-25 15:34:55,411:make_dataset.py:loadData:INFO:Loaded 25726 rows from concatenated_data.csv:
+2023-10-25 15:34:55,411:preprocess.py:filterData:INFO:Loading filter codes data:
+2023-10-25 15:34:55,807:preprocess.py:filterData:INFO:Filtering out control meters:
+2023-10-25 15:35:01,041:preprocess.py:removeMissingValues:INFO:Removing meter records with missing values count greater than 20.0%:
+2023-10-25 15:35:02,362:preprocess.py:sumAllRows:INFO:Summing meter records by timestamp:
+2023-10-25 15:35:03,207:preprocess.py:scaleData:INFO:Scaling inference data:
+2023-10-25 15:35:03,212:preprocess.py:structure_data:INFO:Structuring training data:
+2023-10-25 15:37:54,476:make_dataset.py:loadData:INFO:Loading concatenated_data.csv:
+2023-10-25 15:38:06,716:make_dataset.py:loadData:INFO:Loaded 25726 rows from concatenated_data.csv:
+2023-10-25 15:38:06,717:preprocess.py:filterData:INFO:Loading filter codes data:
+2023-10-25 15:38:07,084:preprocess.py:filterData:INFO:Filtering out control meters:
+2023-10-25 15:38:11,876:preprocess.py:removeMissingValues:INFO:Removing meter records with missing values count greater than 20.0%:
+2023-10-25 15:38:13,399:preprocess.py:sumAllRows:INFO:Summing meter records by timestamp:
+2023-10-25 15:38:14,777:preprocess.py:scaleData:INFO:Scaling inference data:
+2023-10-25 15:38:14,783:preprocess.py:structure_data:INFO:Structuring training data:
+2023-10-25 15:51:05,433:make_dataset.py:loadData:INFO:Loading concatenated_data.csv:
+2023-10-25 15:51:17,087:make_dataset.py:loadData:INFO:Loaded 25726 rows from concatenated_data.csv:
+2023-10-25 15:51:17,088:preprocess.py:filterData:INFO:Loading filter codes data:
+2023-10-25 15:51:17,446:preprocess.py:filterData:INFO:Filtering out control meters:
+2023-10-25 15:51:19,058:preprocess.py:removeMissingValues:INFO:Removing meter records with missing values count greater than 20.0%:
+2023-10-25 15:51:20,183:preprocess.py:sumAllRows:INFO:Summing meter records by timestamp:
+2023-10-25 15:51:21,006:preprocess.py:scaleData:INFO:Scaling inference data:
+2023-10-25 15:51:21,012:preprocess.py:structure_data:INFO:Structuring training data:
+2023-10-25 15:54:48,744:make_dataset.py:loadData:INFO:Loading concatenated_data.csv:
+2023-10-25 15:55:01,790:make_dataset.py:loadData:INFO:Loaded 25726 rows from concatenated_data.csv:
+2023-10-25 15:55:01,790:preprocess.py:filterData:INFO:Loading filter codes data:
+2023-10-25 15:55:02,124:preprocess.py:filterData:INFO:Filtering out control meters:
+2023-10-25 15:55:03,830:preprocess.py:removeMissingValues:INFO:Removing meter records with missing values count greater than 20.0%:
+2023-10-25 15:55:05,036:preprocess.py:sumAllRows:INFO:Summing meter records by timestamp:
+2023-10-25 15:55:05,925:preprocess.py:scaleData:INFO:Scaling inference data:
+2023-10-25 15:55:05,931:preprocess.py:structure_data:INFO:Structuring training data:
+2023-10-25 15:59:51,761:make_dataset.py:loadData:INFO:Loading concatenated_data.csv:
+2023-10-25 16:00:04,194:make_dataset.py:loadData:INFO:Loaded 25726 rows from concatenated_data.csv:
+2023-10-25 16:00:04,194:preprocess.py:filterData:INFO:Loading filter codes data:
+2023-10-25 16:00:04,525:preprocess.py:filterData:INFO:Filtering out control meters:
+2023-10-25 16:00:05,770:preprocess.py:removeMissingValues:INFO:Removing meter records with missing values count greater than 20.0%:
+2023-10-25 16:00:07,130:preprocess.py:sumAllRows:INFO:Summing meter records by timestamp:
+2023-10-25 16:00:08,134:preprocess.py:scaleData:INFO:Scaling inference data:
+2023-10-25 16:00:08,150:preprocess.py:structure_data:INFO:Structuring training data:
+2023-10-25 16:08:05,185:make_dataset.py:loadData:INFO:Loading concatenated_data.csv:
+2023-10-25 16:08:16,914:make_dataset.py:loadData:INFO:Loaded 25726 rows from concatenated_data.csv:
+2023-10-25 16:08:16,915:preprocess.py:filterData:INFO:Loading filter codes data:
+2023-10-25 16:08:17,268:preprocess.py:filterData:INFO:Filtering out control meters:
+2023-10-25 16:08:18,253:preprocess.py:removeMissingValues:INFO:Removing meter records with missing values count greater than 20.0%:
+2023-10-25 16:08:19,446:preprocess.py:sumAllRows:INFO:Summing meter records by timestamp:
+2023-10-25 16:08:20,438:preprocess.py:scaleData:INFO:Scaling inference data:
+2023-10-25 16:08:20,447:preprocess.py:structure_data:INFO:Structuring training data:
+2023-10-25 17:22:44,430:make_dataset.py:loadData:INFO:Loading test_data.csv:
+2023-10-25 17:22:45,722:make_dataset.py:loadData:INFO:Loaded 3000 rows from test_data.csv:
+2023-10-25 17:22:45,722:preprocess.py:filterData:INFO:Loading filter codes data:
+2023-10-25 17:22:46,037:preprocess.py:filterData:INFO:Filtering out control meters:
+2023-10-25 17:22:46,105:preprocess.py:removeMissingValues:INFO:Removing meter records with missing values count greater than 20.0%:
+2023-10-25 17:22:46,782:preprocess.py:sumAllRows:INFO:Summing meter records by timestamp:
+2023-10-25 17:22:46,880:preprocess.py:scaleData:INFO:Scaling inference data:
+2023-10-25 17:22:46,883:preprocess.py:structure_data:INFO:Structuring training data:
+2023-10-25 18:50:41,423:make_dataset.py:loadData:INFO:Loading test_data.csv:
+2023-10-25 18:50:42,737:make_dataset.py:loadData:INFO:Loaded 3000 rows from test_data.csv:
+2023-10-25 18:50:42,737:preprocess.py:filterData:INFO:Loading filter codes data:
+2023-10-25 18:50:42,995:preprocess.py:filterData:INFO:Filtering out control meters:
+2023-10-25 18:50:43,069:preprocess.py:removeMissingValues:INFO:Removing meter records with missing values count greater than 20.0%:
+2023-10-25 18:50:43,637:preprocess.py:sumAllRows:INFO:Summing meter records by timestamp:
+2023-10-25 18:50:43,717:preprocess.py:scaleData:INFO:Scaling inference data:
+2023-10-25 18:50:43,718:preprocess.py:structure_data:INFO:Structuring training data:
+2023-10-25 19:03:11,998:make_dataset.py:loadData:INFO:Loading test_data.csv:
+2023-10-25 19:03:13,274:make_dataset.py:loadData:INFO:Loaded 3000 rows from test_data.csv:
+2023-10-25 19:03:13,275:preprocess.py:filterData:INFO:Loading filter codes data:
+2023-10-25 19:03:13,528:preprocess.py:filterData:INFO:Filtering out control meters:
+2023-10-25 19:03:13,595:preprocess.py:removeMissingValues:INFO:Removing meter records with missing values count greater than 20.0%:
+2023-10-25 19:03:14,156:preprocess.py:sumAllRows:INFO:Summing meter records by timestamp:
+2023-10-25 19:03:14,229:preprocess.py:scaleData:INFO:Scaling inference data:
+2023-10-25 19:03:14,231:preprocess.py:structure_data:INFO:Structuring training data:

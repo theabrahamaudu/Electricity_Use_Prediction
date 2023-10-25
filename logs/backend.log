@@ -1,0 +1,381 @@
+2023-10-25 14:47:52,844:app.py:test_page:INFO:API service tested:
+2023-10-25 14:50:56,933:app.py:test_page:INFO:API service tested:
+2023-10-25 14:55:11,331:app.py:upload_file:INFO:Deleted file: /home/abraham-pc/Documents/paid_gigs/Electricity_Use_Prediction/temp/interim/.gitkeep:
+2023-10-25 14:55:12,063:app.py:upload_file:INFO:File 'concatenated_data.csv' uploaded and saved to: /home/abraham-pc/Documents/paid_gigs/Electricity_Use_Prediction/temp/interim/concatenated_data.csv:
+2023-10-25 14:55:17,088:app.py:process_file:INFO:Processing file: concatenated_data.csv:
+2023-10-25 14:55:33,904:app.py:process_file:ERROR:File processing failed: [Errno 2] No such file or directory: 'scaler.pkl':
+2023-10-25 14:58:58,583:app.py:process_file:INFO:Processing file: concatenated_data.csv:
+2023-10-25 14:59:19,936:app.py:process_file:INFO:File 'concatenated_data.csv' processed successfully!:
+2023-10-25 15:02:23,301:app.py:process_file:INFO:Processing file: concatenated_data.csv:
+2023-10-25 15:02:47,515:app.py:process_file:INFO:File 'concatenated_data.csv' processed successfully!:
+2023-10-25 15:05:09,895:app.py:upload_file:INFO:Deleted file: /home/abraham-pc/Documents/paid_gigs/Electricity_Use_Prediction/temp/interim/concatenated_data.csv:
+2023-10-25 15:05:10,912:app.py:upload_file:INFO:File 'concatenated_data.csv' uploaded and saved to: /home/abraham-pc/Documents/paid_gigs/Electricity_Use_Prediction/temp/interim/concatenated_data.csv:
+2023-10-25 15:05:14,698:app.py:process_file:INFO:Processing file: concatenated_data.csv:
+2023-10-25 15:05:31,310:app.py:process_file:INFO:File 'concatenated_data.csv' processed successfully!:
+2023-10-25 15:05:35,038:app.py:predict:INFO:Predicting file: concatenated_data.csv:
+2023-10-25 15:05:35,039:app.py:predict:INFO:Loading file: concatenated_data.csv:
+2023-10-25 15:05:35,039:app.py:predict:ERROR:File loading failed: [Errno 2] No such file or directory: 'concatenated_data.csv':
+2023-10-25 15:05:35,039:app.py:predict:INFO:Predicting file: concatenated_data.csv:
+2023-10-25 15:05:35,044:app.py:predict:ERROR:File prediction failed: Failed to find data adapter that can handle input: (<class 'dict'> containing {"<class 'str'>"} keys and {"<class 'str'>"} values), <class 'NoneType'>:
+2023-10-25 15:05:35,046:app.py:retrieve:INFO:Retrieving file: concatenated_data.csv and corresponding actual targets:
+2023-10-25 15:08:37,136:app.py:predict:INFO:Predicting file: concatenated_data.csv:
+2023-10-25 15:08:37,136:app.py:predict:INFO:Loading file: concatenated_data.csv:
+2023-10-25 15:08:37,136:app.py:predict:ERROR:File loading failed: [Errno 2] No such file or directory: 'concatenated_data.csv':
+2023-10-25 15:08:37,136:app.py:predict:INFO:Predicting file: concatenated_data.csv:
+2023-10-25 15:08:37,136:app.py:predict:ERROR:File prediction failed: Failed to find data adapter that can handle input: (<class 'dict'> containing {"<class 'str'>"} keys and {"<class 'str'>"} values), <class 'NoneType'>:
+2023-10-25 15:08:37,189:app.py:retrieve:INFO:Retrieving file: concatenated_data.csv and corresponding actual targets:
+2023-10-25 15:34:39,717:app.py:upload_file:INFO:Deleted file: /home/abraham-pc/Documents/paid_gigs/Electricity_Use_Prediction/temp/interim/concatenated_data.csv:
+2023-10-25 15:34:39,720:app.py:upload_file:INFO:Deleted file: /home/abraham-pc/Documents/paid_gigs/Electricity_Use_Prediction/temp/interim/files.zip:
+2023-10-25 15:34:41,074:app.py:upload_file:INFO:File 'concatenated_data.csv' uploaded and saved to: /home/abraham-pc/Documents/paid_gigs/Electricity_Use_Prediction/temp/interim/concatenated_data.csv:
+2023-10-25 15:34:43,315:app.py:process_file:INFO:Processing file: concatenated_data.csv:
+2023-10-25 15:35:03,393:app.py:process_file:INFO:File 'concatenated_data.csv' processed successfully!:
+2023-10-25 15:37:49,809:app.py:upload_file:INFO:Deleted file: /home/abraham-pc/Documents/paid_gigs/Electricity_Use_Prediction/temp/interim/concatenated_data.csv:
+2023-10-25 15:37:50,497:app.py:upload_file:INFO:File 'concatenated_data.csv' uploaded and saved to: /home/abraham-pc/Documents/paid_gigs/Electricity_Use_Prediction/temp/interim/concatenated_data.csv:
+2023-10-25 15:37:54,476:app.py:process_file:INFO:Processing file: concatenated_data.csv:
+2023-10-25 15:38:14,959:app.py:process_file:INFO:File 'concatenated_data.csv' processed successfully!:
+2023-10-25 15:50:55,459:app.py:upload_file:INFO:Deleted file: /home/abraham-pc/Documents/paid_gigs/Electricity_Use_Prediction/temp/interim/concatenated_data.csv:
+2023-10-25 15:50:56,218:app.py:upload_file:INFO:File 'concatenated_data.csv' uploaded and saved to: /home/abraham-pc/Documents/paid_gigs/Electricity_Use_Prediction/temp/interim/concatenated_data.csv:
+2023-10-25 15:51:05,433:app.py:process_file:INFO:Processing file: concatenated_data.csv:
+2023-10-25 15:51:21,197:app.py:process_file:INFO:File 'concatenated_data.csv' processed successfully!:
+2023-10-25 15:51:25,474:app.py:predict:INFO:Predicting file: concatenated_data.csv:
+2023-10-25 15:51:25,474:app.py:predict:INFO:Loading file: concatenated_data.csv:
+2023-10-25 15:51:25,474:app.py:predict:ERROR:File loading failed: [Errno 2] No such file or directory: 'concatenated_data.csv':
+2023-10-25 15:51:25,474:app.py:predict:INFO:Predicting file: concatenated_data.csv:
+2023-10-25 15:51:25,478:app.py:predict:ERROR:File prediction failed: Failed to find data adapter that can handle input: (<class 'dict'> containing {"<class 'str'>"} keys and {"<class 'str'>"} values), <class 'NoneType'>:
+2023-10-25 15:54:48,743:app.py:process_file:INFO:Processing file: concatenated_data.csv:
+2023-10-25 15:55:06,112:app.py:process_file:INFO:File 'concatenated_data.csv' processed successfully!:
+2023-10-25 15:56:02,191:app.py:predict:INFO:Predicting file: concatenated_data.csv:
+2023-10-25 15:56:02,191:app.py:predict:INFO:Loading file: concatenated_data.csv:
+2023-10-25 15:56:02,191:app.py:predict:ERROR:File loading failed: [Errno 2] No such file or directory: 'concatenated_data.csv':
+2023-10-25 15:56:02,191:app.py:predict:INFO:Predicting file: concatenated_data.csv:
+2023-10-25 15:56:02,198:app.py:predict:ERROR:File prediction failed: Failed to find data adapter that can handle input: (<class 'dict'> containing {"<class 'str'>"} keys and {"<class 'str'>"} values), <class 'NoneType'>:
+2023-10-25 15:59:51,761:app.py:process_file:INFO:Processing file: concatenated_data.csv:
+2023-10-25 16:00:08,322:app.py:process_file:INFO:File 'concatenated_data.csv' processed successfully!:
+2023-10-25 16:07:50,525:app.py:upload_file:INFO:Deleted file: /home/abraham-pc/Documents/paid_gigs/Electricity_Use_Prediction/temp/interim/concatenated_data.csv:
+2023-10-25 16:07:51,604:app.py:upload_file:INFO:File 'concatenated_data.csv' uploaded and saved to: /home/abraham-pc/Documents/paid_gigs/Electricity_Use_Prediction/temp/interim/concatenated_data.csv:
+2023-10-25 16:08:05,185:app.py:process_file:INFO:Processing file: concatenated_data.csv:
+2023-10-25 16:08:20,626:app.py:process_file:INFO:File 'concatenated_data.csv' processed successfully!:
+2023-10-25 16:08:29,606:app.py:predict:INFO:Predicting file: concatenated_data.csv:
+2023-10-25 16:08:29,606:app.py:predict:INFO:Loading file: concatenated_data.csv:
+2023-10-25 16:08:29,606:app.py:predict:ERROR:File loading failed: [Errno 2] No such file or directory: 'concatenated_data.csv':
+2023-10-25 16:08:29,606:app.py:predict:INFO:Predicting file: concatenated_data.csv:
+2023-10-25 16:08:29,607:app.py:predict:ERROR:File prediction failed: Failed to find data adapter that can handle input: (<class 'dict'> containing {"<class 'str'>"} keys and {"<class 'str'>"} values), <class 'NoneType'>:
+2023-10-25 16:12:14,170:app.py:predict:INFO:Predicting file: ./temp/processed/dataX.npy:
+2023-10-25 16:12:14,170:app.py:predict:INFO:Loading file: ./temp/processed/dataX.npy:
+2023-10-25 16:12:14,230:app.py:predict:ERROR:File prediction failed: only integers, slices (`:`), ellipsis (`...`), numpy.newaxis (`None`) and integer or boolean arrays are valid indices:
+2023-10-25 16:15:04,629:app.py:predict:INFO:Predicting file: ./temp/processed/dataX.npy:
+2023-10-25 16:15:04,629:app.py:predict:INFO:Loading file: ./temp/processed/dataX.npy:
+2023-10-25 16:15:04,694:app.py:predict:ERROR:File prediction failed: only integers, slices (`:`), ellipsis (`...`), numpy.newaxis (`None`) and integer or boolean arrays are valid indices:
+2023-10-25 16:18:48,419:app.py:predict:INFO:Predicting file: ./temp/processed/dataX.npy:
+2023-10-25 16:18:48,419:app.py:predict:INFO:Loading file: ./temp/processed/dataX.npy:
+2023-10-25 16:18:48,480:app.py:predict:ERROR:File prediction failed: only integers, slices (`:`), ellipsis (`...`), numpy.newaxis (`None`) and integer or boolean arrays are valid indices:
+2023-10-25 16:20:13,610:app.py:predict:INFO:Predicting file: ./temp/processed/dataX.npy:
+2023-10-25 16:20:13,610:app.py:predict:INFO:Loading file: ./temp/processed/dataX.npy:
+2023-10-25 16:20:13,669:app.py:predict:ERROR:File prediction failed: only integers, slices (`:`), ellipsis (`...`), numpy.newaxis (`None`) and integer or boolean arrays are valid indices:
+2023-10-25 16:21:48,966:app.py:predict:INFO:Predicting file: ./temp/processed/dataX.npy:
+2023-10-25 16:21:48,966:app.py:predict:INFO:Loading file: ./temp/processed/dataX.npy:
+2023-10-25 16:21:49,025:app.py:predict:ERROR:File prediction failed: only integers, slices (`:`), ellipsis (`...`), numpy.newaxis (`None`) and integer or boolean arrays are valid indices:
+2023-10-25 16:22:36,324:app.py:predict:INFO:Predicting file: ./temp/processed/dataX.npy:
+2023-10-25 16:22:36,324:app.py:predict:INFO:Loading file: ./temp/processed/dataX.npy:
+2023-10-25 16:22:36,386:app.py:predict:ERROR:File prediction failed: only integers, slices (`:`), ellipsis (`...`), numpy.newaxis (`None`) and integer or boolean arrays are valid indices:
+2023-10-25 16:23:27,332:app.py:predict:INFO:Predicting file: ./temp/processed/dataX.npy:
+2023-10-25 16:23:27,332:app.py:predict:INFO:Loading file: ./temp/processed/dataX.npy:
+2023-10-25 16:23:27,392:app.py:predict:ERROR:File prediction failed: only integers, slices (`:`), ellipsis (`...`), numpy.newaxis (`None`) and integer or boolean arrays are valid indices:
+2023-10-25 17:12:38,758:app.py:predict:INFO:Predicting file: ./temp/processed/dataX.npy:
+2023-10-25 17:12:38,759:app.py:predict:INFO:Loading file: ./temp/processed/dataX.npy:
+2023-10-25 17:12:38,828:app.py:predict:INFO:Predicting file: ./temp/processed/dataX.npy:
+2023-10-25 17:12:50,534:app.py:predict:ERROR:File prediction failed: Graph execution error:
+
+Detected at node CudnnRNN defined at (most recent call last):
+<stack traces unavailable>
+OOM when allocating tensor with shape[1440,32,1440] and type float on /job:localhost/replica:0/task:0/device:GPU:0 by allocator GPU_0_bfc
+	 [[{{node CudnnRNN}}]]
+Hint: If you want to see a list of allocated tensors when OOM happens, add report_tensor_allocations_upon_oom to RunOptions for current allocation info. This isn't available when running in Eager mode.
+
+	 [[sequential/bidirectional/backward_lstm/PartitionedCall]]
+Hint: If you want to see a list of allocated tensors when OOM happens, add report_tensor_allocations_upon_oom to RunOptions for current allocation info. This isn't available when running in Eager mode.
+ [Op:__inference_predict_function_16598]:
+2023-10-25 17:22:38,977:app.py:upload_file:INFO:Deleted file: /home/abraham-pc/Documents/paid_gigs/Electricity_Use_Prediction/temp/interim/concatenated_data.csv:
+2023-10-25 17:22:39,053:app.py:upload_file:INFO:File 'test_data.csv' uploaded and saved to: /home/abraham-pc/Documents/paid_gigs/Electricity_Use_Prediction/temp/interim/test_data.csv:
+2023-10-25 17:22:44,429:app.py:process_file:INFO:Processing file: test_data.csv:
+2023-10-25 17:22:46,912:app.py:process_file:INFO:File 'test_data.csv' processed successfully!:
+2023-10-25 17:22:51,913:app.py:predict:INFO:Predicting file: ./temp/processed/dataX.npy:
+2023-10-25 17:22:51,913:app.py:predict:INFO:Loading file: ./temp/processed/dataX.npy:
+2023-10-25 17:22:51,916:app.py:predict:INFO:Predicting file: ./temp/processed/dataX.npy:
+2023-10-25 17:23:03,454:app.py:predict:ERROR:File prediction failed: Graph execution error:
+
+Detected at node concat_1 defined at (most recent call last):
+<stack traces unavailable>
+OOM when allocating tensor with shape[8311680] and type float on /job:localhost/replica:0/task:0/device:GPU:0 by allocator GPU_0_bfc
+	 [[{{node concat_1}}]]
+Hint: If you want to see a list of allocated tensors when OOM happens, add report_tensor_allocations_upon_oom to RunOptions for current allocation info. This isn't available when running in Eager mode.
+
+	 [[sequential/bidirectional/forward_lstm/PartitionedCall]]
+Hint: If you want to see a list of allocated tensors when OOM happens, add report_tensor_allocations_upon_oom to RunOptions for current allocation info. This isn't available when running in Eager mode.
+ [Op:__inference_predict_function_16598]:
+2023-10-25 17:30:16,760:app.py:predict:INFO:Predicting file: ./temp/processed/dataX.npy:
+2023-10-25 17:30:16,760:app.py:predict:INFO:Loading file: ./temp/processed/dataX.npy:
+2023-10-25 17:30:16,765:app.py:predict:INFO:Predicting file: ./temp/processed/dataX.npy:
+2023-10-25 17:30:28,375:app.py:predict:ERROR:File prediction failed: Graph execution error:
+
+Detected at node concat_1 defined at (most recent call last):
+<stack traces unavailable>
+OOM when allocating tensor with shape[8311680] and type float on /job:localhost/replica:0/task:0/device:GPU:0 by allocator GPU_0_bfc
+	 [[{{node concat_1}}]]
+Hint: If you want to see a list of allocated tensors when OOM happens, add report_tensor_allocations_upon_oom to RunOptions for current allocation info. This isn't available when running in Eager mode.
+
+	 [[sequential/bidirectional/forward_lstm/PartitionedCall]]
+Hint: If you want to see a list of allocated tensors when OOM happens, add report_tensor_allocations_upon_oom to RunOptions for current allocation info. This isn't available when running in Eager mode.
+ [Op:__inference_predict_function_16598]:
+2023-10-25 17:32:56,684:app.py:predict:INFO:Predicting file: ./temp/processed/dataX.npy:
+2023-10-25 17:32:56,684:app.py:predict:INFO:Loading file: ./temp/processed/dataX.npy:
+2023-10-25 17:32:56,688:app.py:predict:INFO:Predicting file: ./temp/processed/dataX.npy:
+2023-10-25 17:33:32,551:app.py:predict:ERROR:File prediction failed: Graph execution error:
+
+Detected at node CudnnRNN defined at (most recent call last):
+<stack traces unavailable>
+Failed to call ThenRnnForward with model config: [rnn_mode, rnn_input_mode, rnn_direction_mode]: 2, 0, 0 , [num_layers, input_size, num_units, dir_count, max_seq_length, batch_size, cell_num_units]: [1, 1, 1440, 1, 1440, 32, 1440] 
+	 [[{{node CudnnRNN}}]]
+	 [[sequential/bidirectional/backward_lstm/PartitionedCall]] [Op:__inference_predict_function_10700]:
+2023-10-25 17:35:02,931:app.py:predict:INFO:Predicting file: ./temp/processed/dataX.npy:
+2023-10-25 17:35:02,931:app.py:predict:INFO:Loading file: ./temp/processed/dataX.npy:
+2023-10-25 17:35:02,936:app.py:predict:INFO:Predicting file: ./temp/processed/dataX.npy:
+2023-10-25 17:36:04,575:app.py:predict:INFO:File ./temp/processed/dataX.npy predicted successfully!:
+2023-10-25 17:36:04,579:app.py:retrieve:INFO:Retrieving file: ./temp/processed/dataX.npy and corresponding actual targets:
+2023-10-25 17:38:54,270:app.py:predict:INFO:Predicting file: ./temp/processed/dataX.npy:
+2023-10-25 17:38:54,270:app.py:predict:INFO:Loading file: ./temp/processed/dataX.npy:
+2023-10-25 17:38:54,275:app.py:predict:INFO:Predicting file: ./temp/processed/dataX.npy:
+2023-10-25 17:39:58,020:app.py:predict:INFO:File ./temp/processed/dataX.npy predicted successfully!:
+2023-10-25 17:39:58,024:app.py:retrieve:INFO:Retrieving file: ./temp/processed/dataX.npy and corresponding actual targets:
+2023-10-25 18:50:38,971:app.py:upload_file:INFO:Deleted file: /home/abraham-pc/Documents/paid_gigs/Electricity_Use_Prediction/temp/interim/test_data.csv:
+2023-10-25 18:50:38,971:app.py:upload_file:INFO:Deleted file: /home/abraham-pc/Documents/paid_gigs/Electricity_Use_Prediction/temp/interim/files.zip:
+2023-10-25 18:50:39,043:app.py:upload_file:INFO:File 'test_data.csv' uploaded and saved to: /home/abraham-pc/Documents/paid_gigs/Electricity_Use_Prediction/temp/interim/test_data.csv:
+2023-10-25 18:50:41,423:app.py:process_file:INFO:Processing file: test_data.csv:
+2023-10-25 18:50:43,731:app.py:process_file:INFO:File 'test_data.csv' processed successfully!:
+2023-10-25 18:50:47,145:app.py:predict:INFO:Predicting file: ./temp/processed/dataX.npy:
+2023-10-25 18:50:47,145:app.py:predict:INFO:Loading file: ./temp/processed/dataX.npy:
+2023-10-25 18:50:47,151:app.py:predict:INFO:Predicting file: ./temp/processed/dataX.npy:
+2023-10-25 18:52:00,741:app.py:predict:INFO:File ./temp/processed/dataX.npy predicted successfully!:
+2023-10-25 18:52:08,392:app.py:retrieve:INFO:Retrieving file: ./temp/processed/dataX.npy and corresponding actual targets:
+2023-10-25 18:52:08,393:backend_utils.py:unscale_data:INFO:Unscaling test and prediction targets:
+2023-10-25 18:52:08,394:backend_utils.py:unscale_data:INFO:Unscaled data saved to ./temp/processed/dataY_unscaled.npy and ./temp/processed/prediction_unscaled.npy:
+2023-10-25 18:52:08,395:backend_utils.py:save_metrics:INFO:Forecast metrics saved to file: ./temp/processed/metrics.json:
+2023-10-25 18:53:08,789:app.py:retrieve:INFO:Retrieving file: ./temp/processed/dataX.npy and corresponding actual targets:
+2023-10-25 18:53:08,789:backend_utils.py:unscale_data:INFO:Unscaling test and prediction targets:
+2023-10-25 18:53:08,790:backend_utils.py:unscale_data:INFO:Unscaled data saved to ./temp/processed/dataY_unscaled.npy and ./temp/processed/prediction_unscaled.npy:
+2023-10-25 18:53:08,791:backend_utils.py:save_metrics:INFO:Forecast metrics saved to file: ./temp/processed/metrics.json:
+2023-10-25 18:54:15,300:app.py:retrieve:INFO:Retrieving file: ./temp/processed/dataX.npy and corresponding actual targets:
+2023-10-25 18:54:15,301:backend_utils.py:unscale_data:INFO:Unscaling test and prediction targets:
+2023-10-25 18:54:15,302:backend_utils.py:unscale_data:INFO:Unscaled data saved to ./temp/processed/dataY_unscaled.npy and ./temp/processed/prediction_unscaled.npy:
+2023-10-25 18:54:15,303:backend_utils.py:save_metrics:INFO:Forecast metrics saved to file: ./temp/processed/metrics.json:
+2023-10-25 18:55:23,601:app.py:retrieve:INFO:Retrieving file: ./temp/processed/dataX.npy and corresponding actual targets:
+2023-10-25 18:55:23,602:backend_utils.py:unscale_data:INFO:Unscaling test and prediction targets:
+2023-10-25 18:55:23,603:backend_utils.py:unscale_data:INFO:Unscaled data saved to ./temp/processed/dataY_unscaled.npy and ./temp/processed/prediction_unscaled.npy:
+2023-10-25 18:55:23,603:backend_utils.py:save_metrics:INFO:Forecast metrics saved to file: ./temp/processed/metrics.json:
+2023-10-25 18:55:32,081:app.py:retrieve:INFO:Retrieving file: ./temp/processed/dataX.npy and corresponding actual targets:
+2023-10-25 18:55:32,082:backend_utils.py:unscale_data:INFO:Unscaling test and prediction targets:
+2023-10-25 18:55:32,082:backend_utils.py:unscale_data:INFO:Unscaled data saved to ./temp/processed/dataY_unscaled.npy and ./temp/processed/prediction_unscaled.npy:
+2023-10-25 18:55:32,083:backend_utils.py:save_metrics:INFO:Forecast metrics saved to file: ./temp/processed/metrics.json:
+2023-10-25 18:55:51,286:app.py:retrieve:INFO:Retrieving file: ./temp/processed/dataX.npy and corresponding actual targets:
+2023-10-25 18:55:51,287:backend_utils.py:unscale_data:INFO:Unscaling test and prediction targets:
+2023-10-25 18:55:51,287:backend_utils.py:unscale_data:INFO:Unscaled data saved to ./temp/processed/dataY_unscaled.npy and ./temp/processed/prediction_unscaled.npy:
+2023-10-25 18:55:51,288:backend_utils.py:save_metrics:INFO:Forecast metrics saved to file: ./temp/processed/metrics.json:
+2023-10-25 18:55:53,115:app.py:retrieve:INFO:Retrieving file: ./temp/processed/dataX.npy and corresponding actual targets:
+2023-10-25 18:55:53,116:backend_utils.py:unscale_data:INFO:Unscaling test and prediction targets:
+2023-10-25 18:55:53,116:backend_utils.py:unscale_data:INFO:Unscaled data saved to ./temp/processed/dataY_unscaled.npy and ./temp/processed/prediction_unscaled.npy:
+2023-10-25 18:55:53,117:backend_utils.py:save_metrics:INFO:Forecast metrics saved to file: ./temp/processed/metrics.json:
+2023-10-25 18:55:53,294:app.py:retrieve:INFO:Retrieving file: ./temp/processed/dataX.npy and corresponding actual targets:
+2023-10-25 18:55:53,295:backend_utils.py:unscale_data:INFO:Unscaling test and prediction targets:
+2023-10-25 18:55:53,296:backend_utils.py:unscale_data:INFO:Unscaled data saved to ./temp/processed/dataY_unscaled.npy and ./temp/processed/prediction_unscaled.npy:
+2023-10-25 18:55:53,297:backend_utils.py:save_metrics:INFO:Forecast metrics saved to file: ./temp/processed/metrics.json:
+2023-10-25 18:55:53,435:app.py:retrieve:INFO:Retrieving file: ./temp/processed/dataX.npy and corresponding actual targets:
+2023-10-25 18:55:53,436:backend_utils.py:unscale_data:INFO:Unscaling test and prediction targets:
+2023-10-25 18:55:53,437:backend_utils.py:unscale_data:INFO:Unscaled data saved to ./temp/processed/dataY_unscaled.npy and ./temp/processed/prediction_unscaled.npy:
+2023-10-25 18:55:53,438:backend_utils.py:save_metrics:INFO:Forecast metrics saved to file: ./temp/processed/metrics.json:
+2023-10-25 18:55:53,598:app.py:retrieve:INFO:Retrieving file: ./temp/processed/dataX.npy and corresponding actual targets:
+2023-10-25 18:55:53,599:backend_utils.py:unscale_data:INFO:Unscaling test and prediction targets:
+2023-10-25 18:55:53,600:backend_utils.py:unscale_data:INFO:Unscaled data saved to ./temp/processed/dataY_unscaled.npy and ./temp/processed/prediction_unscaled.npy:
+2023-10-25 18:55:53,600:backend_utils.py:save_metrics:INFO:Forecast metrics saved to file: ./temp/processed/metrics.json:
+2023-10-25 18:55:53,775:app.py:retrieve:INFO:Retrieving file: ./temp/processed/dataX.npy and corresponding actual targets:
+2023-10-25 18:55:53,776:backend_utils.py:unscale_data:INFO:Unscaling test and prediction targets:
+2023-10-25 18:55:53,777:backend_utils.py:unscale_data:INFO:Unscaled data saved to ./temp/processed/dataY_unscaled.npy and ./temp/processed/prediction_unscaled.npy:
+2023-10-25 18:55:53,777:backend_utils.py:save_metrics:INFO:Forecast metrics saved to file: ./temp/processed/metrics.json:
+2023-10-25 18:56:32,459:app.py:retrieve:INFO:Retrieving file: ./temp/processed/dataX.npy and corresponding actual targets:
+2023-10-25 18:56:32,460:backend_utils.py:unscale_data:INFO:Unscaling test and prediction targets:
+2023-10-25 18:56:32,461:backend_utils.py:unscale_data:INFO:Unscaled data saved to ./temp/processed/dataY_unscaled.npy and ./temp/processed/prediction_unscaled.npy:
+2023-10-25 18:56:32,461:backend_utils.py:save_metrics:INFO:Forecast metrics saved to file: ./temp/processed/metrics.json:
+2023-10-25 18:56:34,484:app.py:retrieve:INFO:Retrieving file: ./temp/processed/dataX.npy and corresponding actual targets:
+2023-10-25 18:56:34,485:backend_utils.py:unscale_data:INFO:Unscaling test and prediction targets:
+2023-10-25 18:56:34,486:backend_utils.py:unscale_data:INFO:Unscaled data saved to ./temp/processed/dataY_unscaled.npy and ./temp/processed/prediction_unscaled.npy:
+2023-10-25 18:56:34,486:backend_utils.py:save_metrics:INFO:Forecast metrics saved to file: ./temp/processed/metrics.json:
+2023-10-25 18:56:34,680:app.py:retrieve:INFO:Retrieving file: ./temp/processed/dataX.npy and corresponding actual targets:
+2023-10-25 18:56:34,681:backend_utils.py:unscale_data:INFO:Unscaling test and prediction targets:
+2023-10-25 18:56:34,682:backend_utils.py:unscale_data:INFO:Unscaled data saved to ./temp/processed/dataY_unscaled.npy and ./temp/processed/prediction_unscaled.npy:
+2023-10-25 18:56:34,683:backend_utils.py:save_metrics:INFO:Forecast metrics saved to file: ./temp/processed/metrics.json:
+2023-10-25 18:56:34,894:app.py:retrieve:INFO:Retrieving file: ./temp/processed/dataX.npy and corresponding actual targets:
+2023-10-25 18:56:34,895:backend_utils.py:unscale_data:INFO:Unscaling test and prediction targets:
+2023-10-25 18:56:34,895:backend_utils.py:unscale_data:INFO:Unscaled data saved to ./temp/processed/dataY_unscaled.npy and ./temp/processed/prediction_unscaled.npy:
+2023-10-25 18:56:34,896:backend_utils.py:save_metrics:INFO:Forecast metrics saved to file: ./temp/processed/metrics.json:
+2023-10-25 18:56:35,146:app.py:retrieve:INFO:Retrieving file: ./temp/processed/dataX.npy and corresponding actual targets:
+2023-10-25 18:56:35,147:backend_utils.py:unscale_data:INFO:Unscaling test and prediction targets:
+2023-10-25 18:56:35,147:backend_utils.py:unscale_data:INFO:Unscaled data saved to ./temp/processed/dataY_unscaled.npy and ./temp/processed/prediction_unscaled.npy:
+2023-10-25 18:56:35,148:backend_utils.py:save_metrics:INFO:Forecast metrics saved to file: ./temp/processed/metrics.json:
+2023-10-25 18:56:35,238:app.py:retrieve:INFO:Retrieving file: ./temp/processed/dataX.npy and corresponding actual targets:
+2023-10-25 18:56:35,239:backend_utils.py:unscale_data:INFO:Unscaling test and prediction targets:
+2023-10-25 18:56:35,239:backend_utils.py:unscale_data:INFO:Unscaled data saved to ./temp/processed/dataY_unscaled.npy and ./temp/processed/prediction_unscaled.npy:
+2023-10-25 18:56:35,240:backend_utils.py:save_metrics:INFO:Forecast metrics saved to file: ./temp/processed/metrics.json:
+2023-10-25 18:56:35,426:app.py:retrieve:INFO:Retrieving file: ./temp/processed/dataX.npy and corresponding actual targets:
+2023-10-25 18:56:35,428:backend_utils.py:unscale_data:INFO:Unscaling test and prediction targets:
+2023-10-25 18:56:35,428:backend_utils.py:unscale_data:INFO:Unscaled data saved to ./temp/processed/dataY_unscaled.npy and ./temp/processed/prediction_unscaled.npy:
+2023-10-25 18:56:35,429:backend_utils.py:save_metrics:INFO:Forecast metrics saved to file: ./temp/processed/metrics.json:
+2023-10-25 18:56:35,606:app.py:retrieve:INFO:Retrieving file: ./temp/processed/dataX.npy and corresponding actual targets:
+2023-10-25 18:56:35,607:backend_utils.py:unscale_data:INFO:Unscaling test and prediction targets:
+2023-10-25 18:56:35,608:backend_utils.py:unscale_data:INFO:Unscaled data saved to ./temp/processed/dataY_unscaled.npy and ./temp/processed/prediction_unscaled.npy:
+2023-10-25 18:56:35,609:backend_utils.py:save_metrics:INFO:Forecast metrics saved to file: ./temp/processed/metrics.json:
+2023-10-25 18:57:52,570:app.py:retrieve:INFO:Retrieving file: ./temp/processed/dataX.npy and corresponding actual targets:
+2023-10-25 18:57:52,571:backend_utils.py:unscale_data:INFO:Unscaling test and prediction targets:
+2023-10-25 18:57:52,571:backend_utils.py:unscale_data:INFO:Unscaled data saved to ./temp/processed/dataY_unscaled.npy and ./temp/processed/prediction_unscaled.npy:
+2023-10-25 18:57:52,572:backend_utils.py:save_metrics:INFO:Forecast metrics saved to file: ./temp/processed/metrics.json:
+2023-10-25 18:59:01,843:app.py:retrieve:INFO:Retrieving file: ./temp/processed/dataX.npy and corresponding actual targets:
+2023-10-25 18:59:01,844:backend_utils.py:unscale_data:INFO:Unscaling test and prediction targets:
+2023-10-25 18:59:01,844:backend_utils.py:unscale_data:INFO:Unscaled data saved to ./temp/processed/dataY_unscaled.npy and ./temp/processed/prediction_unscaled.npy:
+2023-10-25 18:59:01,845:backend_utils.py:save_metrics:INFO:Forecast metrics saved to file: ./temp/processed/metrics.json:
+2023-10-25 19:02:34,777:app.py:upload_file:INFO:Deleted file: /home/abraham-pc/Documents/paid_gigs/Electricity_Use_Prediction/temp/interim/test_data.csv:
+2023-10-25 19:02:34,777:app.py:upload_file:INFO:Deleted file: /home/abraham-pc/Documents/paid_gigs/Electricity_Use_Prediction/temp/interim/files.zip:
+2023-10-25 19:02:34,851:app.py:upload_file:INFO:File 'test_data.csv' uploaded and saved to: /home/abraham-pc/Documents/paid_gigs/Electricity_Use_Prediction/temp/interim/test_data.csv:
+2023-10-25 19:03:11,998:app.py:process_file:INFO:Processing file: test_data.csv:
+2023-10-25 19:03:14,243:app.py:process_file:INFO:File 'test_data.csv' processed successfully!:
+2023-10-25 19:03:20,639:app.py:predict:INFO:Predicting file: ./temp/processed/dataX.npy:
+2023-10-25 19:03:20,639:app.py:predict:INFO:Loading file: ./temp/processed/dataX.npy:
+2023-10-25 19:03:20,645:app.py:predict:INFO:Predicting file: ./temp/processed/dataX.npy:
+2023-10-25 19:04:24,894:app.py:predict:INFO:File ./temp/processed/dataX.npy predicted successfully!:
+2023-10-25 19:04:32,474:app.py:retrieve:INFO:Retrieving file: ./temp/processed/dataX.npy and corresponding actual targets:
+2023-10-25 19:04:32,475:backend_utils.py:unscale_data:INFO:Unscaling test and prediction targets:
+2023-10-25 19:04:32,475:backend_utils.py:unscale_data:INFO:Unscaled data saved to ./temp/processed/dataY_unscaled.npy and ./temp/processed/prediction_unscaled.npy:
+2023-10-25 19:04:32,476:backend_utils.py:save_metrics:INFO:Forecast metrics saved to file: ./temp/processed/metrics.json:
+2023-10-25 19:07:51,073:app.py:retrieve:INFO:Retrieving file: ./temp/processed/dataX.npy and corresponding actual targets:
+2023-10-25 19:07:51,074:backend_utils.py:unscale_data:INFO:Unscaling test and prediction targets:
+2023-10-25 19:07:51,075:backend_utils.py:unscale_data:INFO:Unscaled data saved to ./temp/processed/dataY_unscaled.npy and ./temp/processed/prediction_unscaled.npy:
+2023-10-25 19:07:51,075:backend_utils.py:save_metrics:INFO:Forecast metrics saved to file: ./temp/processed/metrics.json:
+2023-10-25 19:09:33,146:app.py:retrieve:INFO:Retrieving file: ./temp/processed/dataX.npy and corresponding actual targets:
+2023-10-25 19:09:33,147:backend_utils.py:unscale_data:INFO:Unscaling test and prediction targets:
+2023-10-25 19:09:33,148:backend_utils.py:unscale_data:INFO:Unscaled data saved to ./temp/processed/dataY_unscaled.npy and ./temp/processed/prediction_unscaled.npy:
+2023-10-25 19:09:33,148:backend_utils.py:save_metrics:INFO:Forecast metrics saved to file: ./temp/processed/metrics.json:
+2023-10-25 19:10:16,008:app.py:retrieve:INFO:Retrieving file: ./temp/processed/dataX.npy and corresponding actual targets:
+2023-10-25 19:10:16,009:backend_utils.py:unscale_data:INFO:Unscaling test and prediction targets:
+2023-10-25 19:10:16,009:backend_utils.py:unscale_data:INFO:Unscaled data saved to ./temp/processed/dataY_unscaled.npy and ./temp/processed/prediction_unscaled.npy:
+2023-10-25 19:10:16,010:backend_utils.py:save_metrics:INFO:Forecast metrics saved to file: ./temp/processed/metrics.json:
+2023-10-25 19:10:21,425:app.py:retrieve:INFO:Retrieving file: ./temp/processed/dataX.npy and corresponding actual targets:
+2023-10-25 19:10:21,425:backend_utils.py:unscale_data:INFO:Unscaling test and prediction targets:
+2023-10-25 19:10:21,426:backend_utils.py:unscale_data:INFO:Unscaled data saved to ./temp/processed/dataY_unscaled.npy and ./temp/processed/prediction_unscaled.npy:
+2023-10-25 19:10:21,426:backend_utils.py:save_metrics:INFO:Forecast metrics saved to file: ./temp/processed/metrics.json:
+2023-10-25 19:10:22,310:app.py:retrieve:INFO:Retrieving file: ./temp/processed/dataX.npy and corresponding actual targets:
+2023-10-25 19:10:22,310:backend_utils.py:unscale_data:INFO:Unscaling test and prediction targets:
+2023-10-25 19:10:22,311:backend_utils.py:unscale_data:INFO:Unscaled data saved to ./temp/processed/dataY_unscaled.npy and ./temp/processed/prediction_unscaled.npy:
+2023-10-25 19:10:22,311:backend_utils.py:save_metrics:INFO:Forecast metrics saved to file: ./temp/processed/metrics.json:
+2023-10-25 19:10:22,495:app.py:retrieve:INFO:Retrieving file: ./temp/processed/dataX.npy and corresponding actual targets:
+2023-10-25 19:10:22,496:backend_utils.py:unscale_data:INFO:Unscaling test and prediction targets:
+2023-10-25 19:10:22,496:backend_utils.py:unscale_data:INFO:Unscaled data saved to ./temp/processed/dataY_unscaled.npy and ./temp/processed/prediction_unscaled.npy:
+2023-10-25 19:10:22,497:backend_utils.py:save_metrics:INFO:Forecast metrics saved to file: ./temp/processed/metrics.json:
+2023-10-25 19:10:22,675:app.py:retrieve:INFO:Retrieving file: ./temp/processed/dataX.npy and corresponding actual targets:
+2023-10-25 19:10:22,676:backend_utils.py:unscale_data:INFO:Unscaling test and prediction targets:
+2023-10-25 19:10:22,676:backend_utils.py:unscale_data:INFO:Unscaled data saved to ./temp/processed/dataY_unscaled.npy and ./temp/processed/prediction_unscaled.npy:
+2023-10-25 19:10:22,677:backend_utils.py:save_metrics:INFO:Forecast metrics saved to file: ./temp/processed/metrics.json:
+2023-10-25 19:10:22,911:app.py:retrieve:INFO:Retrieving file: ./temp/processed/dataX.npy and corresponding actual targets:
+2023-10-25 19:10:22,911:backend_utils.py:unscale_data:INFO:Unscaling test and prediction targets:
+2023-10-25 19:10:22,912:backend_utils.py:unscale_data:INFO:Unscaled data saved to ./temp/processed/dataY_unscaled.npy and ./temp/processed/prediction_unscaled.npy:
+2023-10-25 19:10:22,912:backend_utils.py:save_metrics:INFO:Forecast metrics saved to file: ./temp/processed/metrics.json:
+2023-10-25 19:10:23,087:app.py:retrieve:INFO:Retrieving file: ./temp/processed/dataX.npy and corresponding actual targets:
+2023-10-25 19:10:23,087:backend_utils.py:unscale_data:INFO:Unscaling test and prediction targets:
+2023-10-25 19:10:23,088:backend_utils.py:unscale_data:INFO:Unscaled data saved to ./temp/processed/dataY_unscaled.npy and ./temp/processed/prediction_unscaled.npy:
+2023-10-25 19:10:23,088:backend_utils.py:save_metrics:INFO:Forecast metrics saved to file: ./temp/processed/metrics.json:
+2023-10-25 19:10:23,192:app.py:retrieve:INFO:Retrieving file: ./temp/processed/dataX.npy and corresponding actual targets:
+2023-10-25 19:10:23,193:backend_utils.py:unscale_data:INFO:Unscaling test and prediction targets:
+2023-10-25 19:10:23,193:backend_utils.py:unscale_data:INFO:Unscaled data saved to ./temp/processed/dataY_unscaled.npy and ./temp/processed/prediction_unscaled.npy:
+2023-10-25 19:10:23,194:backend_utils.py:save_metrics:INFO:Forecast metrics saved to file: ./temp/processed/metrics.json:
+2023-10-25 19:10:55,074:app.py:retrieve:INFO:Retrieving file: ./temp/processed/dataX.npy and corresponding actual targets:
+2023-10-25 19:10:55,075:backend_utils.py:unscale_data:INFO:Unscaling test and prediction targets:
+2023-10-25 19:10:55,076:backend_utils.py:unscale_data:INFO:Unscaled data saved to ./temp/processed/dataY_unscaled.npy and ./temp/processed/prediction_unscaled.npy:
+2023-10-25 19:10:55,076:backend_utils.py:save_metrics:INFO:Forecast metrics saved to file: ./temp/processed/metrics.json:
+2023-10-25 19:12:03,899:app.py:retrieve:INFO:Retrieving file: ./temp/processed/dataX.npy and corresponding actual targets:
+2023-10-25 19:12:03,900:backend_utils.py:unscale_data:INFO:Unscaling test and prediction targets:
+2023-10-25 19:12:03,901:backend_utils.py:unscale_data:INFO:Unscaled data saved to ./temp/processed/dataY_unscaled.npy and ./temp/processed/prediction_unscaled.npy:
+2023-10-25 19:12:03,901:backend_utils.py:save_metrics:INFO:Forecast metrics saved to file: ./temp/processed/metrics.json:
+2023-10-25 19:12:53,363:app.py:retrieve:INFO:Retrieving file: ./temp/processed/dataX.npy and corresponding actual targets:
+2023-10-25 19:12:53,363:backend_utils.py:unscale_data:INFO:Unscaling test and prediction targets:
+2023-10-25 19:12:53,364:backend_utils.py:unscale_data:INFO:Unscaled data saved to ./temp/processed/dataY_unscaled.npy and ./temp/processed/prediction_unscaled.npy:
+2023-10-25 19:12:53,364:backend_utils.py:save_metrics:INFO:Forecast metrics saved to file: ./temp/processed/metrics.json:
+2023-10-25 19:14:01,866:app.py:retrieve:INFO:Retrieving file: ./temp/processed/dataX.npy and corresponding actual targets:
+2023-10-25 19:14:01,867:backend_utils.py:unscale_data:INFO:Unscaling test and prediction targets:
+2023-10-25 19:14:01,868:backend_utils.py:unscale_data:INFO:Unscaled data saved to ./temp/processed/dataY_unscaled.npy and ./temp/processed/prediction_unscaled.npy:
+2023-10-25 19:14:01,868:backend_utils.py:save_metrics:INFO:Forecast metrics saved to file: ./temp/processed/metrics.json:
+2023-10-25 19:14:30,561:app.py:retrieve:INFO:Retrieving file: ./temp/processed/dataX.npy and corresponding actual targets:
+2023-10-25 19:14:30,562:backend_utils.py:unscale_data:INFO:Unscaling test and prediction targets:
+2023-10-25 19:14:30,563:backend_utils.py:unscale_data:INFO:Unscaled data saved to ./temp/processed/dataY_unscaled.npy and ./temp/processed/prediction_unscaled.npy:
+2023-10-25 19:14:30,563:backend_utils.py:save_metrics:INFO:Forecast metrics saved to file: ./temp/processed/metrics.json:
+2023-10-25 19:14:55,788:app.py:retrieve:INFO:Retrieving file: ./temp/processed/dataX.npy and corresponding actual targets:
+2023-10-25 19:14:55,789:backend_utils.py:unscale_data:INFO:Unscaling test and prediction targets:
+2023-10-25 19:14:55,789:backend_utils.py:unscale_data:INFO:Unscaled data saved to ./temp/processed/dataY_unscaled.npy and ./temp/processed/prediction_unscaled.npy:
+2023-10-25 19:14:55,790:backend_utils.py:save_metrics:INFO:Forecast metrics saved to file: ./temp/processed/metrics.json:
+2023-10-25 19:14:58,138:app.py:retrieve:INFO:Retrieving file: ./temp/processed/dataX.npy and corresponding actual targets:
+2023-10-25 19:14:58,138:backend_utils.py:unscale_data:INFO:Unscaling test and prediction targets:
+2023-10-25 19:14:58,139:backend_utils.py:unscale_data:INFO:Unscaled data saved to ./temp/processed/dataY_unscaled.npy and ./temp/processed/prediction_unscaled.npy:
+2023-10-25 19:14:58,139:backend_utils.py:save_metrics:INFO:Forecast metrics saved to file: ./temp/processed/metrics.json:
+2023-10-25 19:14:59,341:app.py:retrieve:INFO:Retrieving file: ./temp/processed/dataX.npy and corresponding actual targets:
+2023-10-25 19:14:59,342:backend_utils.py:unscale_data:INFO:Unscaling test and prediction targets:
+2023-10-25 19:14:59,343:backend_utils.py:unscale_data:INFO:Unscaled data saved to ./temp/processed/dataY_unscaled.npy and ./temp/processed/prediction_unscaled.npy:
+2023-10-25 19:14:59,343:backend_utils.py:save_metrics:INFO:Forecast metrics saved to file: ./temp/processed/metrics.json:
+2023-10-25 19:15:22,444:app.py:retrieve:INFO:Retrieving file: ./temp/processed/dataX.npy and corresponding actual targets:
+2023-10-25 19:15:22,445:backend_utils.py:unscale_data:INFO:Unscaling test and prediction targets:
+2023-10-25 19:15:22,445:backend_utils.py:unscale_data:INFO:Unscaled data saved to ./temp/processed/dataY_unscaled.npy and ./temp/processed/prediction_unscaled.npy:
+2023-10-25 19:15:22,446:backend_utils.py:save_metrics:INFO:Forecast metrics saved to file: ./temp/processed/metrics.json:
+2023-10-25 19:15:50,991:app.py:retrieve:INFO:Retrieving file: ./temp/processed/dataX.npy and corresponding actual targets:
+2023-10-25 19:15:50,992:backend_utils.py:unscale_data:INFO:Unscaling test and prediction targets:
+2023-10-25 19:15:50,993:backend_utils.py:unscale_data:INFO:Unscaled data saved to ./temp/processed/dataY_unscaled.npy and ./temp/processed/prediction_unscaled.npy:
+2023-10-25 19:15:50,993:backend_utils.py:save_metrics:INFO:Forecast metrics saved to file: ./temp/processed/metrics.json:
+2023-10-25 19:16:19,718:app.py:retrieve:INFO:Retrieving file: ./temp/processed/dataX.npy and corresponding actual targets:
+2023-10-25 19:16:19,719:backend_utils.py:unscale_data:INFO:Unscaling test and prediction targets:
+2023-10-25 19:16:19,720:backend_utils.py:unscale_data:INFO:Unscaled data saved to ./temp/processed/dataY_unscaled.npy and ./temp/processed/prediction_unscaled.npy:
+2023-10-25 19:16:19,720:backend_utils.py:save_metrics:INFO:Forecast metrics saved to file: ./temp/processed/metrics.json:
+2023-10-25 19:16:21,402:app.py:retrieve:INFO:Retrieving file: ./temp/processed/dataX.npy and corresponding actual targets:
+2023-10-25 19:16:21,403:backend_utils.py:unscale_data:INFO:Unscaling test and prediction targets:
+2023-10-25 19:16:21,403:backend_utils.py:unscale_data:INFO:Unscaled data saved to ./temp/processed/dataY_unscaled.npy and ./temp/processed/prediction_unscaled.npy:
+2023-10-25 19:16:21,404:backend_utils.py:save_metrics:INFO:Forecast metrics saved to file: ./temp/processed/metrics.json:
+2023-10-25 19:16:21,510:app.py:retrieve:INFO:Retrieving file: ./temp/processed/dataX.npy and corresponding actual targets:
+2023-10-25 19:16:21,511:backend_utils.py:unscale_data:INFO:Unscaling test and prediction targets:
+2023-10-25 19:16:21,512:backend_utils.py:unscale_data:INFO:Unscaled data saved to ./temp/processed/dataY_unscaled.npy and ./temp/processed/prediction_unscaled.npy:
+2023-10-25 19:16:21,512:backend_utils.py:save_metrics:INFO:Forecast metrics saved to file: ./temp/processed/metrics.json:
+2023-10-25 19:16:22,209:app.py:retrieve:INFO:Retrieving file: ./temp/processed/dataX.npy and corresponding actual targets:
+2023-10-25 19:16:22,210:backend_utils.py:unscale_data:INFO:Unscaling test and prediction targets:
+2023-10-25 19:16:22,210:backend_utils.py:unscale_data:INFO:Unscaled data saved to ./temp/processed/dataY_unscaled.npy and ./temp/processed/prediction_unscaled.npy:
+2023-10-25 19:16:22,211:backend_utils.py:save_metrics:INFO:Forecast metrics saved to file: ./temp/processed/metrics.json:
+2023-10-25 19:16:22,721:app.py:retrieve:INFO:Retrieving file: ./temp/processed/dataX.npy and corresponding actual targets:
+2023-10-25 19:16:22,721:backend_utils.py:unscale_data:INFO:Unscaling test and prediction targets:
+2023-10-25 19:16:22,722:backend_utils.py:unscale_data:INFO:Unscaled data saved to ./temp/processed/dataY_unscaled.npy and ./temp/processed/prediction_unscaled.npy:
+2023-10-25 19:16:22,722:backend_utils.py:save_metrics:INFO:Forecast metrics saved to file: ./temp/processed/metrics.json:
+2023-10-25 19:16:27,372:app.py:retrieve:INFO:Retrieving file: ./temp/processed/dataX.npy and corresponding actual targets:
+2023-10-25 19:16:27,373:backend_utils.py:unscale_data:INFO:Unscaling test and prediction targets:
+2023-10-25 19:16:27,373:backend_utils.py:unscale_data:INFO:Unscaled data saved to ./temp/processed/dataY_unscaled.npy and ./temp/processed/prediction_unscaled.npy:
+2023-10-25 19:16:27,374:backend_utils.py:save_metrics:INFO:Forecast metrics saved to file: ./temp/processed/metrics.json:
+2023-10-25 19:16:28,171:app.py:retrieve:INFO:Retrieving file: ./temp/processed/dataX.npy and corresponding actual targets:
+2023-10-25 19:16:28,172:backend_utils.py:unscale_data:INFO:Unscaling test and prediction targets:
+2023-10-25 19:16:28,172:backend_utils.py:unscale_data:INFO:Unscaled data saved to ./temp/processed/dataY_unscaled.npy and ./temp/processed/prediction_unscaled.npy:
+2023-10-25 19:16:28,173:backend_utils.py:save_metrics:INFO:Forecast metrics saved to file: ./temp/processed/metrics.json:
+2023-10-25 19:16:36,752:app.py:retrieve:INFO:Retrieving file: ./temp/processed/dataX.npy and corresponding actual targets:
+2023-10-25 19:16:36,752:backend_utils.py:unscale_data:INFO:Unscaling test and prediction targets:
+2023-10-25 19:16:36,753:backend_utils.py:unscale_data:INFO:Unscaled data saved to ./temp/processed/dataY_unscaled.npy and ./temp/processed/prediction_unscaled.npy:
+2023-10-25 19:16:36,753:backend_utils.py:save_metrics:INFO:Forecast metrics saved to file: ./temp/processed/metrics.json:
+2023-10-25 19:16:36,853:app.py:retrieve:INFO:Retrieving file: ./temp/processed/dataX.npy and corresponding actual targets:
+2023-10-25 19:16:36,854:backend_utils.py:unscale_data:INFO:Unscaling test and prediction targets:
+2023-10-25 19:16:36,854:backend_utils.py:unscale_data:INFO:Unscaled data saved to ./temp/processed/dataY_unscaled.npy and ./temp/processed/prediction_unscaled.npy:
+2023-10-25 19:16:36,855:backend_utils.py:save_metrics:INFO:Forecast metrics saved to file: ./temp/processed/metrics.json:
+2023-10-25 19:17:41,529:app.py:retrieve:INFO:Retrieving file: ./temp/processed/dataX.npy and corresponding actual targets:
+2023-10-25 19:17:41,530:backend_utils.py:unscale_data:INFO:Unscaling test and prediction targets:
+2023-10-25 19:17:41,530:backend_utils.py:unscale_data:INFO:Unscaled data saved to ./temp/processed/dataY_unscaled.npy and ./temp/processed/prediction_unscaled.npy:
+2023-10-25 19:17:41,530:backend_utils.py:save_metrics:INFO:Forecast metrics saved to file: ./temp/processed/metrics.json:
+2023-10-25 19:26:29,678:app.py:upload_file:INFO:Deleted file: /home/abraham-pc/Documents/paid_gigs/Electricity_Use_Prediction/temp/interim/files.zip:
+2023-10-25 19:26:29,754:app.py:upload_file:INFO:File 'test_data.csv' uploaded and saved to: /home/abraham-pc/Documents/paid_gigs/Electricity_Use_Prediction/temp/interim/test_data.csv:
+2023-10-25 19:26:29,796:app.py:upload_file:INFO:Deleted file: /home/abraham-pc/Documents/paid_gigs/Electricity_Use_Prediction/temp/interim/test_data.csv:
+2023-10-25 19:26:29,870:app.py:upload_file:INFO:File 'test_data.csv' uploaded and saved to: /home/abraham-pc/Documents/paid_gigs/Electricity_Use_Prediction/temp/interim/test_data.csv:
+2023-10-25 19:30:02,650:app.py:upload_file:INFO:Deleted file: /home/abraham-pc/Documents/paid_gigs/Electricity_Use_Prediction/temp/interim/test_data.csv:
+2023-10-25 19:30:02,721:app.py:upload_file:INFO:File 'test_data.csv' uploaded and saved to: /home/abraham-pc/Documents/paid_gigs/Electricity_Use_Prediction/temp/interim/test_data.csv:

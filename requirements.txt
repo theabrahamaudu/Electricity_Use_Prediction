@@ -22,3 +22,5 @@ fastapi
 uvicorn
 streamlit
 # altair==4.0
+mpld3
+python-multipart

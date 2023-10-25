@@ -2,11 +2,13 @@ import os
 import time
 import zipfile
 import numpy as np
+import uvicorn
 from fastapi import FastAPI, Request, Response, File, UploadFile, status
 from fastapi.responses import JSONResponse
 import tensorflow as tf
 from src.data.preprocess import preprocessPipeline
 from src.utils.backend_log_config import backend as logger
+from src.utils.backend_utils import metricsUtils
 
 
 # Initialize FastAPI
@@ -15,12 +17,9 @@ app = FastAPI(title='Electricity Use Prediction API',
               description="Used to demo the Electricity Use Prediction model's capabilities",
               )
 
-# Load Model
-MODELS_DIR = './models'
-model = tf.keras.models.load_model(MODELS_DIR + '/model_0.2.4-fulldata.keras')
-
 # API test endpoint
 @app.get('/test')
+@app.get('/')
 def test_page() -> JSONResponse:
     """Test endpoint to verify server up.
 
@@ -61,7 +60,7 @@ async def upload_file(file: UploadFile = File(...)) -> JSONResponse:
 
             # Iterate over the files and delete them
             for file_name in file_list:
-                if ".gitignore" not in file_name:
+                if ".git" not in file_name:
                     file_path = os.path.join(directory_path, file_name)
                     if os.path.isfile(file_path):
                         os.remove(file_path)
@@ -110,38 +109,50 @@ def process_file(data: dict) -> JSONResponse:
 
 
 @app.post("/predict")
-def predict(data: dict) -> JSONResponse:
-    logger.info(f"Predicting file: {data['filename']}")
+def predict() -> JSONResponse:
+    logger.info(f"Predicting file: ./temp/processed/dataX.npy")
     try:
-        logger.info(f"Loading file: {data['filename']}")
-        data = np.load(data['filename'])
+        logger.info(f"Loading file: ./temp/processed/dataX.npy")
+        processed_data = np.load("./temp/processed/dataX.npy")
     except Exception as e:
         logger.error(f"File loading failed: {e}")
     
 
     try:
-        logger.info(f"Predicting file: {data['filename']}")
+        logger.info(f"Predicting file: ./temp/processed/dataX.npy")
+        # Load Model
+        MODELS_DIR = './models'
+        model = tf.keras.models.load_model(MODELS_DIR + '/model_0.2.4-fulldata.keras')
         start = time.perf_counter()
-        prediction = model.predict(data)
+        prediction = model.predict(processed_data)
         pred_time = time.perf_counter() - start
         single_pred_time = pred_time/len(prediction)
-        np.save("./temp/processed/prediction.npy", prediction)
-        logger.info(f"File '{data['filename']}' predicted successfully!")
+        filename = "./temp/processed/prediction.npy"
+        np.save(filename, prediction)
+        logger.info(f"File ./temp/processed/dataX.npy predicted successfully!")
     except Exception as e:
         logger.error(f"File prediction failed: {e}")
         pred_time = "Invalid"
         single_pred_time = "Invalid"
+        filename = ""
 
-    return JSONResponse(content={"pred_time": pred_time, "single_pred_time": single_pred_time})
+    return JSONResponse(content={"filename": filename, "pred_time": pred_time, "single_pred_time": single_pred_time})
 
-@app.post("/retrieve")
+@app.post("/retrieve", response_model=None)
 def retrieve(data: dict) -> JSONResponse | Response:
-    logger.info(f"Retrieving file: {data['filename']} and corresponding actual targets")
+    logger.info(f"Retrieving file: ./temp/processed/dataX.npy and corresponding actual targets")
 
-    preds_array_path = "./temp/processed/prediction.npy"
-    targets_array_path = "./temp/processed/dataY.npy"
+    preds = np.load("./temp/processed/prediction.npy")
+    actual = np.load("./temp/processed/dataY.npy")
+    metrics_utils = metricsUtils()
+    rmse, rmse_less_10, nrmse_mean, nrmse_max_min = metrics_utils.stat_eval(actual, preds)
+    metrics_utils.save_metrics(rmse, rmse_less_10, nrmse_mean, nrmse_max_min)
 
-    file_paths = [preds_array_path, targets_array_path]
+
+    preds_array_path = "./temp/processed/prediction_unscaled.npy"
+    targets_array_path = "./temp/processed/dataY_unscaled.npy"
+    metrics = "./temp/processed/metrics.json"
+    file_paths = [preds_array_path, targets_array_path, metrics]
 
     if file_paths:
         try:
@@ -167,6 +178,9 @@ def retrieve(data: dict) -> JSONResponse | Response:
     return JSONResponse(content={"response": "Error: File path not provided."})
 
 
+
+if __name__ == '__main__':
+    uvicorn.run("app:app", host="127.0.0.1", port=8000, reload=True)
 
 
     
