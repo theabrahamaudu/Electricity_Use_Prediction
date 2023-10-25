@@ -18,3 +18,7 @@ scikit-learn
 attention
 openpyxl
 pydot
+fastapi
+uvicorn
+streamlit
+# altair==4.0

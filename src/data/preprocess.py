@@ -195,7 +195,7 @@ class preprocessPipeline(makeDataset):
         self.saveArray("y_test.npy", y_test)
 
     
-    def inferencePreprocess(self, filename: str, train=False):
+    def inferencePreprocess(self, filename: str, train_scale=False, train_structure=True):
         data = self.loadData(self.interim_path,
                             filename,
                             names=None, sep=',',
@@ -204,6 +204,10 @@ class preprocessPipeline(makeDataset):
         data = self.filterData(data)
         data = self.removeMissingValues(data)
         data = self.sumAllRows(data)
-        data = self.scaleData(data, train=train)
-        dataX = self.structure_data(data, train=train)
-        return dataX
+        data = self.scaleData(data, train=train_scale)
+        if train_structure:
+            dataX, dataY = self.structure_data(data, train=train_structure)
+            return dataX, dataY
+        else:
+            dataX = self.structure_data(data, train=train_structure)
+            return dataX
