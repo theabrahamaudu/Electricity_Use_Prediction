@@ -779,3 +779,22 @@ Failed to call ThenRnnForward with model config: [rnn_mode, rnn_input_mode, rnn_
 2023-10-26 11:17:04,424:backend_utils.py:unscale_data:INFO:Unscaling test and prediction targets:
 2023-10-26 11:17:04,424:backend_utils.py:unscale_data:INFO:Unscaled data saved to ./temp/processed/dataY_unscaled.npy and ./temp/processed/prediction_unscaled.npy:
 2023-10-26 11:17:04,425:backend_utils.py:save_metrics:INFO:Forecast metrics saved to file: ./temp/processed/metrics.json:
+2023-10-26 21:48:14,666:app.py:upload_file:INFO:Deleted file: /home/abraham-pc/Documents/paid_gigs/Electricity_Use_Prediction/temp/interim/test_data.csv:
+2023-10-26 21:48:14,667:app.py:upload_file:INFO:Deleted file: /home/abraham-pc/Documents/paid_gigs/Electricity_Use_Prediction/temp/interim/files.zip:
+2023-10-26 21:48:14,673:app.py:upload_file:INFO:Deleted file: /home/abraham-pc/Documents/paid_gigs/Electricity_Use_Prediction/temp/interim/test_data.csv:
+2023-10-26 21:48:14,778:app.py:upload_file:INFO:File 'test_data.csv' uploaded and saved to: /home/abraham-pc/Documents/paid_gigs/Electricity_Use_Prediction/temp/interim/test_data.csv:
+2023-10-26 21:48:14,827:app.py:upload_file:INFO:File 'test_data.csv' uploaded and saved to: /home/abraham-pc/Documents/paid_gigs/Electricity_Use_Prediction/temp/interim/test_data.csv:
+2023-10-26 21:49:07,845:app.py:process_file:INFO:Processing file: test_data.csv:
+2023-10-26 21:49:10,294:app.py:process_file:INFO:File 'test_data.csv' processed successfully!:
+2023-10-26 21:49:19,159:app.py:predict:INFO:Predicting file: ./temp/processed/dataX.npy:
+2023-10-26 21:49:19,159:app.py:predict:INFO:Loading file: ./temp/processed/dataX.npy:
+2023-10-26 21:49:19,165:app.py:predict:INFO:Predicting file: ./temp/processed/dataX.npy:
+2023-10-26 21:50:21,790:app.py:predict:INFO:File ./temp/processed/dataX.npy predicted successfully!:
+2023-10-26 21:50:46,882:app.py:retrieve:INFO:Retrieving file: ./temp/processed/dataX.npy and corresponding actual targets:
+2023-10-26 21:50:46,883:backend_utils.py:unscale_data:INFO:Unscaling test and prediction targets:
+2023-10-26 21:50:46,883:backend_utils.py:unscale_data:INFO:Unscaled data saved to ./temp/processed/dataY_unscaled.npy and ./temp/processed/prediction_unscaled.npy:
+2023-10-26 21:50:46,885:backend_utils.py:save_metrics:INFO:Forecast metrics saved to file: ./temp/processed/metrics.json:
+2023-10-26 21:52:03,100:app.py:retrieve:INFO:Retrieving file: ./temp/processed/dataX.npy and corresponding actual targets:
+2023-10-26 21:52:03,101:backend_utils.py:unscale_data:INFO:Unscaling test and prediction targets:
+2023-10-26 21:52:03,102:backend_utils.py:unscale_data:INFO:Unscaled data saved to ./temp/processed/dataY_unscaled.npy and ./temp/processed/prediction_unscaled.npy:
+2023-10-26 21:52:03,103:backend_utils.py:save_metrics:INFO:Forecast metrics saved to file: ./temp/processed/metrics.json:

@@ -127,7 +127,6 @@ class metricsUtils:
                 "nrmse_max_min": nrmse_max_min
             }
         
-        joblib.dump(new_metrics, "./temp/processed/metrics.pkl")
         file_path = f"./temp/processed/metrics.json"
 
         if not overwrite:

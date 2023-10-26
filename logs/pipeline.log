@@ -777,3 +777,11 @@ Failed to call ThenRnnForward with model config: [rnn_mode, rnn_input_mode, rnn_
 2023-10-25 19:57:06,412:preprocess.py:sumAllRows:INFO:Summing meter records by timestamp:
 2023-10-25 19:57:06,484:preprocess.py:scaleData:INFO:Scaling inference data:
 2023-10-25 19:57:06,496:preprocess.py:structure_data:INFO:Structuring training data:
+2023-10-26 21:49:07,845:make_dataset.py:loadData:INFO:Loading test_data.csv:
+2023-10-26 21:49:09,263:make_dataset.py:loadData:INFO:Loaded 3000 rows from test_data.csv:
+2023-10-26 21:49:09,263:preprocess.py:filterData:INFO:Loading filter codes data:
+2023-10-26 21:49:09,468:preprocess.py:filterData:INFO:Filtering out control meters:
+2023-10-26 21:49:09,547:preprocess.py:removeMissingValues:INFO:Removing meter records with missing values count greater than 20.0%:
+2023-10-26 21:49:10,196:preprocess.py:sumAllRows:INFO:Summing meter records by timestamp:
+2023-10-26 21:49:10,280:preprocess.py:scaleData:INFO:Scaling inference data:
+2023-10-26 21:49:10,282:preprocess.py:structure_data:INFO:Structuring training data:
