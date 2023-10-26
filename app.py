@@ -3,7 +3,7 @@ import time
 import zipfile
 import numpy as np
 import uvicorn
-from fastapi import FastAPI, Request, Response, File, UploadFile, status
+from fastapi import FastAPI, Response, File, UploadFile
 from fastapi.responses import JSONResponse
 import tensorflow as tf
 from src.data.preprocess import preprocessPipeline
@@ -139,7 +139,7 @@ def predict() -> JSONResponse:
     return JSONResponse(content={"filename": filename, "pred_time": pred_time, "single_pred_time": single_pred_time})
 
 @app.post("/retrieve", response_model=None)
-def retrieve(data: dict) -> JSONResponse | Response:
+def retrieve() -> JSONResponse | Response:
     logger.info(f"Retrieving file: ./temp/processed/dataX.npy and corresponding actual targets")
 
     preds = np.load("./temp/processed/prediction.npy")
@@ -158,12 +158,12 @@ def retrieve(data: dict) -> JSONResponse | Response:
         try:
             # Create a zip archive containing the files
             zip_file_path = './temp/interim/files.zip'
-            with zipfile.ZipFile(zip_file_path, 'w') as zip_file:
+            with zipfile.ZipFile(zip_file_path, 'w', zipfile.ZIP_DEFLATED) as zip_file:
                 for file_path in file_paths:
-                    zip_file.write(file_path)
+                    file_name = os.path.basename(file_path)
+                    zip_file.write(file_path, file_name)
 
             # Set the appropriate HTTP response headers
-            
             with open(zip_file_path, 'rb') as zip_file:
                 content = zip_file.read()
 

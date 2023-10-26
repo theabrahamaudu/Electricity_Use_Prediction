@@ -1,15 +1,9 @@
 import os
-import time
-import pandas as pd
-from pandas import DataFrame
 import numpy as np
 import json
 import streamlit as st
-import streamlit.components.v1 as components
 import matplotlib.pyplot as plt
-import mpld3
-from mpld3 import plugins
-from io import StringIO, BytesIO
+from io import BytesIO
 import zipfile
 import requests
 
@@ -95,10 +89,12 @@ def run():
                     st.warning(f"Error making prediction request: code {pred.status_code}")
 
         # Display results
+        plot_range = st.number_input("Number of days to plot", min_value=1, max_value=10000, value=3, step=1)
+        plot_range = plot_range * 48
         if st.button("Plot Forecast"):
             # Retrieve forecast     
             with st.spinner("Retrieving forecast data..."):
-                forecast_data = requests.post(server+"/retrieve", json={"filename":st.session_state['filename']}, verify=False)
+                forecast_data = requests.post(server+"/retrieve", verify=False)
                 # Check if the request was successful (status code 200)
                 if forecast_data.status_code == 200:
                     try:
@@ -109,81 +105,46 @@ def run():
                         # Throw error if file has dictionary
                         response_dict = forecast_data.json()
                         st.warning(response_dict['response'])
-            st.write("working")
-            if len(npy_content) > 0:
-                st.write("working too")
+
+            if npy_content:
                 with st.spinner("Generating plots..."):
-                    st.write("working too bro")
-                    zip_file = zipfile.ZipFile(BytesIO(npy_content))
+                    zip_file = zipfile.ZipFile(BytesIO(npy_content), 'r')
 
                     # Extract the npy files from the zip archive
-                    npy_files = [filename for filename in zip_file.namelist() if filename.endswith('.npy')]
-
-                    if len(npy_files) >= 3:
+                    pred_files = zip_file.namelist() 
+                    
+                    if len(pred_files) >= 3:
                         # Read the first npy file into a NumPy array (predictions data)
-                        npy_data1 = zip_file.read(npy_files[0])
+                        npy_data1 = zip_file.read(pred_files[0])
                         preds_arr = np.load(BytesIO(npy_data1))
 
                         # Read the second npy file into a NumPy array (processed data)
-                        npy_data2 = zip_file.read(npy_files[1])
+                        npy_data2 = zip_file.read(pred_files[1])
                         targets_arr = np.load(BytesIO(npy_data2))
 
                         # Read the third file into a dictionary from JSON
-                        json_data = zip_file.read(npy_files[2])
-                        json_dict = json.loads(json_data)
+                        json_data = zip_file.read(pred_files[2])
+                        json_dict = json.load(BytesIO(json_data))
 
+                        if plot_range > len(targets_arr):
+                            plot_range = len(targets_arr)
+                        
                         # Plot the predictions and targets
-                        fig = plt.figure(figsize=(20, 8))
-                        plt.plot(preds_arr, label='Predictions')
-                        plt.plot(targets_arr, label='Actual')
-                        # plt.title('Power Consumption Forecast')
-                        # plt.xlabel('Timestamp')
-                        # plt.ylabel('kWh')
+                        fig = plt.figure(figsize=(8,5))
+                        plt.plot(targets_arr[:plot_range], label='Actual')
+                        plt.plot(preds_arr[:plot_range], label='Predicted')
+                        plt.title('Power Consumption Forecast')
+                        plt.xlabel('Timestamp')
+                        plt.ylabel('kWh')
                         plt.legend()
-                        fig_html = mpld3.fig_to_html(fig)
-                        components.html(fig_html, height=600)
+                        st.plotly_chart(fig, use_container_width=True)
+
 
                         # Display the metrics
-                        # st.write("RMSE:", json_dict['rmse'])
-                        # st.write("RMSE less than 10%:", json_dict['rmse_less_10'])
-                        # st.write("NRMSE mean:", json_dict['nrmse_mean'])
-                        # st.write("NRMSE max-min:", json_dict['nrmse_max_min'])
-
-                        # Define some CSS to control our custom labels
-                        # css = """
-                        # table
-                        # {
-                        # border-collapse: collapse;
-                        # }
-                        # th
-                        # {
-                        # color: #ffffff;
-                        # background-color: #000000;
-                        # }
-                        # td
-                        # {
-                        # background-color: #cccccc;
-                        # }
-                        # table, th, td
-                        # {
-                        # font-family:Arial, Helvetica, sans-serif;
-                        # border: 1px solid black;
-                        # text-align: right;
-                        # }
-                        # """
-                        # for axes in fig.axes:
-                        #     for line in axes.get_lines():
-                        #         # get the x and y coords
-                        #         xy_data = line.get_xydata()
-                        #         labels = []
-                        #         for x, y in xy_data:
-                        #             # Create a label for each point with the x and y coords
-                        #             html_label = f'<table border="1" class="dataframe"> <thead> <tr style="text-align: right;"> </thead> <tbody> <tr> <th>x</th> <td>{x}</td> </tr> <tr> <th>y</th> <td>{y}</td> </tr> </tbody> </table>'
-                        #             labels.append(html_label)
-                        #         # Create the tooltip with the labels (x and y coords) and attach it to each line with the css specified
-                        #         tooltip = plugins.PointHTMLTooltip(line, labels, css=css)
-                        #         # Since this is a separate plugin, you have to connect it
-                        #         plugins.connect(fig, tooltip)
+                        st.write("RMSE:", str(round(json_dict[0]['rmse'], 4)),"kWh")
+                        st.write("RMSE less than 10% of mean:", "True" if json_dict[0]['rmse_less_10'] == 1 else "False")
+                        st.write("NRMSE mean:", str(round(json_dict[0]['nrmse_mean'], 4)))
+                        st.write("NRMSE max-min:", str(round(json_dict[0]['nrmse_max_min'], 4)))
 
 if __name__ == "__main__":
     run()

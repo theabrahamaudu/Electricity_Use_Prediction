@@ -379,3 +379,403 @@ Failed to call ThenRnnForward with model config: [rnn_mode, rnn_input_mode, rnn_
 2023-10-25 19:26:29,870:app.py:upload_file:INFO:File 'test_data.csv' uploaded and saved to: /home/abraham-pc/Documents/paid_gigs/Electricity_Use_Prediction/temp/interim/test_data.csv:
 2023-10-25 19:30:02,650:app.py:upload_file:INFO:Deleted file: /home/abraham-pc/Documents/paid_gigs/Electricity_Use_Prediction/temp/interim/test_data.csv:
 2023-10-25 19:30:02,721:app.py:upload_file:INFO:File 'test_data.csv' uploaded and saved to: /home/abraham-pc/Documents/paid_gigs/Electricity_Use_Prediction/temp/interim/test_data.csv:
+2023-10-25 19:57:02,062:app.py:upload_file:INFO:Deleted file: /home/abraham-pc/Documents/paid_gigs/Electricity_Use_Prediction/temp/interim/test_data.csv:
+2023-10-25 19:57:02,135:app.py:upload_file:INFO:File 'test_data.csv' uploaded and saved to: /home/abraham-pc/Documents/paid_gigs/Electricity_Use_Prediction/temp/interim/test_data.csv:
+2023-10-25 19:57:04,221:app.py:process_file:INFO:Processing file: test_data.csv:
+2023-10-25 19:57:06,507:app.py:process_file:INFO:File 'test_data.csv' processed successfully!:
+2023-10-25 19:57:08,468:app.py:predict:INFO:Predicting file: ./temp/processed/dataX.npy:
+2023-10-25 19:57:08,468:app.py:predict:INFO:Loading file: ./temp/processed/dataX.npy:
+2023-10-25 19:57:08,474:app.py:predict:INFO:Predicting file: ./temp/processed/dataX.npy:
+2023-10-25 19:58:12,887:app.py:predict:INFO:File ./temp/processed/dataX.npy predicted successfully!:
+2023-10-25 19:58:17,074:app.py:retrieve:INFO:Retrieving file: ./temp/processed/dataX.npy and corresponding actual targets:
+2023-10-25 19:58:17,074:backend_utils.py:unscale_data:INFO:Unscaling test and prediction targets:
+2023-10-25 19:58:17,075:backend_utils.py:unscale_data:INFO:Unscaled data saved to ./temp/processed/dataY_unscaled.npy and ./temp/processed/prediction_unscaled.npy:
+2023-10-25 19:58:17,075:backend_utils.py:save_metrics:INFO:Forecast metrics saved to file: ./temp/processed/metrics.json:
+2023-10-25 20:03:28,097:app.py:retrieve:INFO:Retrieving file: ./temp/processed/dataX.npy and corresponding actual targets:
+2023-10-25 20:03:28,098:backend_utils.py:unscale_data:INFO:Unscaling test and prediction targets:
+2023-10-25 20:03:28,098:backend_utils.py:unscale_data:INFO:Unscaled data saved to ./temp/processed/dataY_unscaled.npy and ./temp/processed/prediction_unscaled.npy:
+2023-10-25 20:03:28,099:backend_utils.py:save_metrics:INFO:Forecast metrics saved to file: ./temp/processed/metrics.json:
+2023-10-25 20:04:10,401:app.py:retrieve:INFO:Retrieving file: ./temp/processed/dataX.npy and corresponding actual targets:
+2023-10-25 20:04:10,402:backend_utils.py:unscale_data:INFO:Unscaling test and prediction targets:
+2023-10-25 20:04:10,402:backend_utils.py:unscale_data:INFO:Unscaled data saved to ./temp/processed/dataY_unscaled.npy and ./temp/processed/prediction_unscaled.npy:
+2023-10-25 20:04:10,403:backend_utils.py:save_metrics:INFO:Forecast metrics saved to file: ./temp/processed/metrics.json:
+2023-10-25 20:04:10,469:app.py:retrieve:INFO:Retrieving file: ./temp/processed/dataX.npy and corresponding actual targets:
+2023-10-25 20:04:10,470:backend_utils.py:unscale_data:INFO:Unscaling test and prediction targets:
+2023-10-25 20:04:10,470:backend_utils.py:unscale_data:INFO:Unscaled data saved to ./temp/processed/dataY_unscaled.npy and ./temp/processed/prediction_unscaled.npy:
+2023-10-25 20:04:10,470:backend_utils.py:save_metrics:INFO:Forecast metrics saved to file: ./temp/processed/metrics.json:
+2023-10-25 20:04:13,440:app.py:retrieve:INFO:Retrieving file: ./temp/processed/dataX.npy and corresponding actual targets:
+2023-10-25 20:04:13,441:backend_utils.py:unscale_data:INFO:Unscaling test and prediction targets:
+2023-10-25 20:04:13,442:backend_utils.py:unscale_data:INFO:Unscaled data saved to ./temp/processed/dataY_unscaled.npy and ./temp/processed/prediction_unscaled.npy:
+2023-10-25 20:04:13,443:backend_utils.py:save_metrics:INFO:Forecast metrics saved to file: ./temp/processed/metrics.json:
+2023-10-25 20:04:14,419:app.py:retrieve:INFO:Retrieving file: ./temp/processed/dataX.npy and corresponding actual targets:
+2023-10-25 20:04:14,419:backend_utils.py:unscale_data:INFO:Unscaling test and prediction targets:
+2023-10-25 20:04:14,420:backend_utils.py:unscale_data:INFO:Unscaled data saved to ./temp/processed/dataY_unscaled.npy and ./temp/processed/prediction_unscaled.npy:
+2023-10-25 20:04:14,420:backend_utils.py:save_metrics:INFO:Forecast metrics saved to file: ./temp/processed/metrics.json:
+2023-10-25 20:04:53,353:app.py:retrieve:INFO:Retrieving file: ./temp/processed/dataX.npy and corresponding actual targets:
+2023-10-25 20:04:53,354:backend_utils.py:unscale_data:INFO:Unscaling test and prediction targets:
+2023-10-25 20:04:53,354:backend_utils.py:unscale_data:INFO:Unscaled data saved to ./temp/processed/dataY_unscaled.npy and ./temp/processed/prediction_unscaled.npy:
+2023-10-25 20:04:53,355:backend_utils.py:save_metrics:INFO:Forecast metrics saved to file: ./temp/processed/metrics.json:
+2023-10-25 20:05:21,545:app.py:retrieve:INFO:Retrieving file: ./temp/processed/dataX.npy and corresponding actual targets:
+2023-10-25 20:05:21,546:backend_utils.py:unscale_data:INFO:Unscaling test and prediction targets:
+2023-10-25 20:05:21,546:backend_utils.py:unscale_data:INFO:Unscaled data saved to ./temp/processed/dataY_unscaled.npy and ./temp/processed/prediction_unscaled.npy:
+2023-10-25 20:05:21,547:backend_utils.py:save_metrics:INFO:Forecast metrics saved to file: ./temp/processed/metrics.json:
+2023-10-25 20:05:21,645:app.py:retrieve:INFO:Retrieving file: ./temp/processed/dataX.npy and corresponding actual targets:
+2023-10-25 20:05:21,646:backend_utils.py:unscale_data:INFO:Unscaling test and prediction targets:
+2023-10-25 20:05:21,646:backend_utils.py:unscale_data:INFO:Unscaled data saved to ./temp/processed/dataY_unscaled.npy and ./temp/processed/prediction_unscaled.npy:
+2023-10-25 20:05:21,646:backend_utils.py:save_metrics:INFO:Forecast metrics saved to file: ./temp/processed/metrics.json:
+2023-10-25 20:05:24,622:app.py:retrieve:INFO:Retrieving file: ./temp/processed/dataX.npy and corresponding actual targets:
+2023-10-25 20:05:24,623:backend_utils.py:unscale_data:INFO:Unscaling test and prediction targets:
+2023-10-25 20:05:24,624:backend_utils.py:unscale_data:INFO:Unscaled data saved to ./temp/processed/dataY_unscaled.npy and ./temp/processed/prediction_unscaled.npy:
+2023-10-25 20:05:24,625:backend_utils.py:save_metrics:INFO:Forecast metrics saved to file: ./temp/processed/metrics.json:
+2023-10-25 20:05:24,725:app.py:retrieve:INFO:Retrieving file: ./temp/processed/dataX.npy and corresponding actual targets:
+2023-10-25 20:05:24,726:backend_utils.py:unscale_data:INFO:Unscaling test and prediction targets:
+2023-10-25 20:05:24,726:backend_utils.py:unscale_data:INFO:Unscaled data saved to ./temp/processed/dataY_unscaled.npy and ./temp/processed/prediction_unscaled.npy:
+2023-10-25 20:05:24,727:backend_utils.py:save_metrics:INFO:Forecast metrics saved to file: ./temp/processed/metrics.json:
+2023-10-25 20:05:35,056:app.py:retrieve:INFO:Retrieving file: ./temp/processed/dataX.npy and corresponding actual targets:
+2023-10-25 20:05:35,057:backend_utils.py:unscale_data:INFO:Unscaling test and prediction targets:
+2023-10-25 20:05:35,057:backend_utils.py:unscale_data:INFO:Unscaled data saved to ./temp/processed/dataY_unscaled.npy and ./temp/processed/prediction_unscaled.npy:
+2023-10-25 20:05:35,058:backend_utils.py:save_metrics:INFO:Forecast metrics saved to file: ./temp/processed/metrics.json:
+2023-10-25 20:13:03,628:app.py:retrieve:INFO:Retrieving file: ./temp/processed/dataX.npy and corresponding actual targets:
+2023-10-25 20:13:03,629:backend_utils.py:unscale_data:INFO:Unscaling test and prediction targets:
+2023-10-25 20:13:03,629:backend_utils.py:unscale_data:INFO:Unscaled data saved to ./temp/processed/dataY_unscaled.npy and ./temp/processed/prediction_unscaled.npy:
+2023-10-25 20:13:03,630:backend_utils.py:save_metrics:INFO:Forecast metrics saved to file: ./temp/processed/metrics.json:
+2023-10-25 20:13:12,906:app.py:retrieve:INFO:Retrieving file: ./temp/processed/dataX.npy and corresponding actual targets:
+2023-10-25 20:13:12,906:backend_utils.py:unscale_data:INFO:Unscaling test and prediction targets:
+2023-10-25 20:13:12,907:backend_utils.py:unscale_data:INFO:Unscaled data saved to ./temp/processed/dataY_unscaled.npy and ./temp/processed/prediction_unscaled.npy:
+2023-10-25 20:13:12,908:backend_utils.py:save_metrics:INFO:Forecast metrics saved to file: ./temp/processed/metrics.json:
+2023-10-25 20:13:34,271:app.py:retrieve:INFO:Retrieving file: ./temp/processed/dataX.npy and corresponding actual targets:
+2023-10-25 20:13:34,271:backend_utils.py:unscale_data:INFO:Unscaling test and prediction targets:
+2023-10-25 20:13:34,272:backend_utils.py:unscale_data:INFO:Unscaled data saved to ./temp/processed/dataY_unscaled.npy and ./temp/processed/prediction_unscaled.npy:
+2023-10-25 20:13:34,272:backend_utils.py:save_metrics:INFO:Forecast metrics saved to file: ./temp/processed/metrics.json:
+2023-10-25 20:14:33,165:app.py:retrieve:INFO:Retrieving file: ./temp/processed/dataX.npy and corresponding actual targets:
+2023-10-25 20:14:33,166:backend_utils.py:unscale_data:INFO:Unscaling test and prediction targets:
+2023-10-25 20:14:33,166:backend_utils.py:unscale_data:INFO:Unscaled data saved to ./temp/processed/dataY_unscaled.npy and ./temp/processed/prediction_unscaled.npy:
+2023-10-25 20:14:33,167:backend_utils.py:save_metrics:INFO:Forecast metrics saved to file: ./temp/processed/metrics.json:
+2023-10-25 20:17:39,841:app.py:retrieve:INFO:Retrieving file: ./temp/processed/dataX.npy and corresponding actual targets:
+2023-10-25 20:17:39,842:backend_utils.py:unscale_data:INFO:Unscaling test and prediction targets:
+2023-10-25 20:17:39,843:backend_utils.py:unscale_data:INFO:Unscaled data saved to ./temp/processed/dataY_unscaled.npy and ./temp/processed/prediction_unscaled.npy:
+2023-10-25 20:17:39,843:backend_utils.py:save_metrics:INFO:Forecast metrics saved to file: ./temp/processed/metrics.json:
+2023-10-25 20:21:50,250:app.py:retrieve:INFO:Retrieving file: ./temp/processed/dataX.npy and corresponding actual targets:
+2023-10-25 20:21:50,251:backend_utils.py:unscale_data:INFO:Unscaling test and prediction targets:
+2023-10-25 20:21:50,251:backend_utils.py:unscale_data:INFO:Unscaled data saved to ./temp/processed/dataY_unscaled.npy and ./temp/processed/prediction_unscaled.npy:
+2023-10-25 20:21:50,252:backend_utils.py:save_metrics:INFO:Forecast metrics saved to file: ./temp/processed/metrics.json:
+2023-10-25 20:22:59,685:app.py:retrieve:INFO:Retrieving file: ./temp/processed/dataX.npy and corresponding actual targets:
+2023-10-25 20:22:59,686:backend_utils.py:unscale_data:INFO:Unscaling test and prediction targets:
+2023-10-25 20:22:59,686:backend_utils.py:unscale_data:INFO:Unscaled data saved to ./temp/processed/dataY_unscaled.npy and ./temp/processed/prediction_unscaled.npy:
+2023-10-25 20:22:59,687:backend_utils.py:save_metrics:INFO:Forecast metrics saved to file: ./temp/processed/metrics.json:
+2023-10-25 20:22:59,795:app.py:retrieve:INFO:Retrieving file: ./temp/processed/dataX.npy and corresponding actual targets:
+2023-10-25 20:22:59,795:backend_utils.py:unscale_data:INFO:Unscaling test and prediction targets:
+2023-10-25 20:22:59,796:backend_utils.py:unscale_data:INFO:Unscaled data saved to ./temp/processed/dataY_unscaled.npy and ./temp/processed/prediction_unscaled.npy:
+2023-10-25 20:22:59,796:backend_utils.py:save_metrics:INFO:Forecast metrics saved to file: ./temp/processed/metrics.json:
+2023-10-25 20:32:19,401:app.py:retrieve:INFO:Retrieving file: ./temp/processed/dataX.npy and corresponding actual targets:
+2023-10-25 20:32:19,402:backend_utils.py:unscale_data:INFO:Unscaling test and prediction targets:
+2023-10-25 20:32:19,402:backend_utils.py:unscale_data:INFO:Unscaled data saved to ./temp/processed/dataY_unscaled.npy and ./temp/processed/prediction_unscaled.npy:
+2023-10-25 20:32:19,403:backend_utils.py:save_metrics:INFO:Forecast metrics saved to file: ./temp/processed/metrics.json:
+2023-10-25 20:37:04,705:app.py:retrieve:INFO:Retrieving file: ./temp/processed/dataX.npy and corresponding actual targets:
+2023-10-25 20:37:04,706:backend_utils.py:unscale_data:INFO:Unscaling test and prediction targets:
+2023-10-25 20:37:04,706:backend_utils.py:unscale_data:INFO:Unscaled data saved to ./temp/processed/dataY_unscaled.npy and ./temp/processed/prediction_unscaled.npy:
+2023-10-25 20:37:04,707:backend_utils.py:save_metrics:INFO:Forecast metrics saved to file: ./temp/processed/metrics.json:
+2023-10-25 20:37:04,801:app.py:retrieve:INFO:Retrieving file: ./temp/processed/dataX.npy and corresponding actual targets:
+2023-10-25 20:37:04,802:backend_utils.py:unscale_data:INFO:Unscaling test and prediction targets:
+2023-10-25 20:37:04,802:backend_utils.py:unscale_data:INFO:Unscaled data saved to ./temp/processed/dataY_unscaled.npy and ./temp/processed/prediction_unscaled.npy:
+2023-10-25 20:37:04,803:backend_utils.py:save_metrics:INFO:Forecast metrics saved to file: ./temp/processed/metrics.json:
+2023-10-25 20:37:07,370:app.py:retrieve:INFO:Retrieving file: ./temp/processed/dataX.npy and corresponding actual targets:
+2023-10-25 20:37:07,371:backend_utils.py:unscale_data:INFO:Unscaling test and prediction targets:
+2023-10-25 20:37:07,371:backend_utils.py:unscale_data:INFO:Unscaled data saved to ./temp/processed/dataY_unscaled.npy and ./temp/processed/prediction_unscaled.npy:
+2023-10-25 20:37:07,372:backend_utils.py:save_metrics:INFO:Forecast metrics saved to file: ./temp/processed/metrics.json:
+2023-10-25 20:37:41,243:app.py:retrieve:INFO:Retrieving file: ./temp/processed/dataX.npy and corresponding actual targets:
+2023-10-25 20:37:41,243:app.py:retrieve:INFO:Retrieving file: ./temp/processed/dataX.npy and corresponding actual targets:
+2023-10-25 20:37:41,244:backend_utils.py:unscale_data:INFO:Unscaling test and prediction targets:
+2023-10-25 20:37:41,245:backend_utils.py:unscale_data:INFO:Unscaling test and prediction targets:
+2023-10-25 20:37:41,245:backend_utils.py:unscale_data:INFO:Unscaled data saved to ./temp/processed/dataY_unscaled.npy and ./temp/processed/prediction_unscaled.npy:
+2023-10-25 20:37:41,246:backend_utils.py:unscale_data:INFO:Unscaled data saved to ./temp/processed/dataY_unscaled.npy and ./temp/processed/prediction_unscaled.npy:
+2023-10-25 20:37:41,246:backend_utils.py:save_metrics:INFO:Forecast metrics saved to file: ./temp/processed/metrics.json:
+2023-10-25 20:37:41,246:backend_utils.py:save_metrics:INFO:Forecast metrics saved to file: ./temp/processed/metrics.json:
+2023-10-25 20:43:08,356:app.py:predict:INFO:Predicting file: ./temp/processed/dataX.npy:
+2023-10-25 20:43:08,356:app.py:predict:INFO:Loading file: ./temp/processed/dataX.npy:
+2023-10-25 20:43:08,360:app.py:predict:INFO:Predicting file: ./temp/processed/dataX.npy:
+2023-10-25 20:44:09,714:app.py:predict:INFO:File ./temp/processed/dataX.npy predicted successfully!:
+2023-10-25 20:44:20,926:app.py:retrieve:INFO:Retrieving file: ./temp/processed/dataX.npy and corresponding actual targets:
+2023-10-25 20:44:20,927:backend_utils.py:unscale_data:INFO:Unscaling test and prediction targets:
+2023-10-25 20:44:20,927:backend_utils.py:unscale_data:INFO:Unscaled data saved to ./temp/processed/dataY_unscaled.npy and ./temp/processed/prediction_unscaled.npy:
+2023-10-25 20:44:20,927:backend_utils.py:save_metrics:INFO:Forecast metrics saved to file: ./temp/processed/metrics.json:
+2023-10-25 20:47:50,192:app.py:retrieve:INFO:Retrieving file: ./temp/processed/dataX.npy and corresponding actual targets:
+2023-10-25 20:47:50,193:backend_utils.py:unscale_data:INFO:Unscaling test and prediction targets:
+2023-10-25 20:47:50,204:backend_utils.py:unscale_data:INFO:Unscaled data saved to ./temp/processed/dataY_unscaled.npy and ./temp/processed/prediction_unscaled.npy:
+2023-10-25 20:47:50,205:backend_utils.py:save_metrics:INFO:Forecast metrics saved to file: ./temp/processed/metrics.json:
+2023-10-25 20:55:37,498:app.py:retrieve:INFO:Retrieving file: ./temp/processed/dataX.npy and corresponding actual targets:
+2023-10-25 20:55:37,499:backend_utils.py:unscale_data:INFO:Unscaling test and prediction targets:
+2023-10-25 20:55:37,500:backend_utils.py:unscale_data:INFO:Unscaled data saved to ./temp/processed/dataY_unscaled.npy and ./temp/processed/prediction_unscaled.npy:
+2023-10-25 20:55:37,501:backend_utils.py:save_metrics:INFO:Forecast metrics saved to file: ./temp/processed/metrics.json:
+2023-10-25 20:55:39,927:app.py:retrieve:INFO:Retrieving file: ./temp/processed/dataX.npy and corresponding actual targets:
+2023-10-25 20:55:39,928:backend_utils.py:unscale_data:INFO:Unscaling test and prediction targets:
+2023-10-25 20:55:39,928:backend_utils.py:unscale_data:INFO:Unscaled data saved to ./temp/processed/dataY_unscaled.npy and ./temp/processed/prediction_unscaled.npy:
+2023-10-25 20:55:39,929:backend_utils.py:save_metrics:INFO:Forecast metrics saved to file: ./temp/processed/metrics.json:
+2023-10-25 20:55:40,635:app.py:retrieve:INFO:Retrieving file: ./temp/processed/dataX.npy and corresponding actual targets:
+2023-10-25 20:55:40,636:backend_utils.py:unscale_data:INFO:Unscaling test and prediction targets:
+2023-10-25 20:55:40,637:backend_utils.py:unscale_data:INFO:Unscaled data saved to ./temp/processed/dataY_unscaled.npy and ./temp/processed/prediction_unscaled.npy:
+2023-10-25 20:55:40,637:backend_utils.py:save_metrics:INFO:Forecast metrics saved to file: ./temp/processed/metrics.json:
+2023-10-25 20:55:40,793:app.py:retrieve:INFO:Retrieving file: ./temp/processed/dataX.npy and corresponding actual targets:
+2023-10-25 20:55:40,794:backend_utils.py:unscale_data:INFO:Unscaling test and prediction targets:
+2023-10-25 20:55:40,795:backend_utils.py:unscale_data:INFO:Unscaled data saved to ./temp/processed/dataY_unscaled.npy and ./temp/processed/prediction_unscaled.npy:
+2023-10-25 20:55:40,795:backend_utils.py:save_metrics:INFO:Forecast metrics saved to file: ./temp/processed/metrics.json:
+2023-10-25 20:55:41,070:app.py:retrieve:INFO:Retrieving file: ./temp/processed/dataX.npy and corresponding actual targets:
+2023-10-25 20:55:41,070:backend_utils.py:unscale_data:INFO:Unscaling test and prediction targets:
+2023-10-25 20:55:41,071:backend_utils.py:unscale_data:INFO:Unscaled data saved to ./temp/processed/dataY_unscaled.npy and ./temp/processed/prediction_unscaled.npy:
+2023-10-25 20:55:41,071:backend_utils.py:save_metrics:INFO:Forecast metrics saved to file: ./temp/processed/metrics.json:
+2023-10-25 20:55:41,297:app.py:retrieve:INFO:Retrieving file: ./temp/processed/dataX.npy and corresponding actual targets:
+2023-10-25 20:55:41,298:backend_utils.py:unscale_data:INFO:Unscaling test and prediction targets:
+2023-10-25 20:55:41,299:backend_utils.py:unscale_data:INFO:Unscaled data saved to ./temp/processed/dataY_unscaled.npy and ./temp/processed/prediction_unscaled.npy:
+2023-10-25 20:55:41,299:backend_utils.py:save_metrics:INFO:Forecast metrics saved to file: ./temp/processed/metrics.json:
+2023-10-25 20:55:49,458:app.py:retrieve:INFO:Retrieving file: ./temp/processed/dataX.npy and corresponding actual targets:
+2023-10-25 20:55:49,459:backend_utils.py:unscale_data:INFO:Unscaling test and prediction targets:
+2023-10-25 20:55:49,459:backend_utils.py:unscale_data:INFO:Unscaled data saved to ./temp/processed/dataY_unscaled.npy and ./temp/processed/prediction_unscaled.npy:
+2023-10-25 20:55:49,460:backend_utils.py:save_metrics:INFO:Forecast metrics saved to file: ./temp/processed/metrics.json:
+2023-10-25 20:58:16,593:app.py:retrieve:INFO:Retrieving file: ./temp/processed/dataX.npy and corresponding actual targets:
+2023-10-25 20:58:16,594:backend_utils.py:unscale_data:INFO:Unscaling test and prediction targets:
+2023-10-25 20:58:16,595:backend_utils.py:unscale_data:INFO:Unscaled data saved to ./temp/processed/dataY_unscaled.npy and ./temp/processed/prediction_unscaled.npy:
+2023-10-25 20:58:16,595:backend_utils.py:save_metrics:INFO:Forecast metrics saved to file: ./temp/processed/metrics.json:
+2023-10-25 20:58:16,665:app.py:retrieve:INFO:Retrieving file: ./temp/processed/dataX.npy and corresponding actual targets:
+2023-10-25 20:58:16,666:backend_utils.py:unscale_data:INFO:Unscaling test and prediction targets:
+2023-10-25 20:58:16,666:backend_utils.py:unscale_data:INFO:Unscaled data saved to ./temp/processed/dataY_unscaled.npy and ./temp/processed/prediction_unscaled.npy:
+2023-10-25 20:58:16,667:backend_utils.py:save_metrics:INFO:Forecast metrics saved to file: ./temp/processed/metrics.json:
+2023-10-25 20:58:23,204:app.py:retrieve:INFO:Retrieving file: ./temp/processed/dataX.npy and corresponding actual targets:
+2023-10-25 20:58:23,204:backend_utils.py:unscale_data:INFO:Unscaling test and prediction targets:
+2023-10-25 20:58:23,205:backend_utils.py:unscale_data:INFO:Unscaled data saved to ./temp/processed/dataY_unscaled.npy and ./temp/processed/prediction_unscaled.npy:
+2023-10-25 20:58:23,205:backend_utils.py:save_metrics:INFO:Forecast metrics saved to file: ./temp/processed/metrics.json:
+2023-10-25 21:04:05,352:app.py:retrieve:INFO:Retrieving file: ./temp/processed/dataX.npy and corresponding actual targets:
+2023-10-25 21:04:05,353:backend_utils.py:unscale_data:INFO:Unscaling test and prediction targets:
+2023-10-25 21:04:05,353:backend_utils.py:unscale_data:INFO:Unscaled data saved to ./temp/processed/dataY_unscaled.npy and ./temp/processed/prediction_unscaled.npy:
+2023-10-25 21:04:05,354:backend_utils.py:save_metrics:INFO:Forecast metrics saved to file: ./temp/processed/metrics.json:
+2023-10-25 21:05:16,223:app.py:retrieve:INFO:Retrieving file: ./temp/processed/dataX.npy and corresponding actual targets:
+2023-10-25 21:05:16,224:backend_utils.py:unscale_data:INFO:Unscaling test and prediction targets:
+2023-10-25 21:05:16,224:backend_utils.py:unscale_data:INFO:Unscaled data saved to ./temp/processed/dataY_unscaled.npy and ./temp/processed/prediction_unscaled.npy:
+2023-10-25 21:05:16,225:backend_utils.py:save_metrics:INFO:Forecast metrics saved to file: ./temp/processed/metrics.json:
+2023-10-25 21:05:34,035:app.py:retrieve:INFO:Retrieving file: ./temp/processed/dataX.npy and corresponding actual targets:
+2023-10-25 21:05:34,036:backend_utils.py:unscale_data:INFO:Unscaling test and prediction targets:
+2023-10-25 21:05:34,036:backend_utils.py:unscale_data:INFO:Unscaled data saved to ./temp/processed/dataY_unscaled.npy and ./temp/processed/prediction_unscaled.npy:
+2023-10-25 21:05:34,037:backend_utils.py:save_metrics:INFO:Forecast metrics saved to file: ./temp/processed/metrics.json:
+2023-10-25 21:05:57,258:app.py:retrieve:INFO:Retrieving file: ./temp/processed/dataX.npy and corresponding actual targets:
+2023-10-25 21:05:57,259:backend_utils.py:unscale_data:INFO:Unscaling test and prediction targets:
+2023-10-25 21:05:57,259:backend_utils.py:unscale_data:INFO:Unscaled data saved to ./temp/processed/dataY_unscaled.npy and ./temp/processed/prediction_unscaled.npy:
+2023-10-25 21:05:57,260:backend_utils.py:save_metrics:INFO:Forecast metrics saved to file: ./temp/processed/metrics.json:
+2023-10-25 21:06:21,120:app.py:retrieve:INFO:Retrieving file: ./temp/processed/dataX.npy and corresponding actual targets:
+2023-10-25 21:06:21,121:backend_utils.py:unscale_data:INFO:Unscaling test and prediction targets:
+2023-10-25 21:06:21,122:backend_utils.py:unscale_data:INFO:Unscaled data saved to ./temp/processed/dataY_unscaled.npy and ./temp/processed/prediction_unscaled.npy:
+2023-10-25 21:06:21,122:backend_utils.py:save_metrics:INFO:Forecast metrics saved to file: ./temp/processed/metrics.json:
+2023-10-25 21:06:40,931:app.py:retrieve:INFO:Retrieving file: ./temp/processed/dataX.npy and corresponding actual targets:
+2023-10-25 21:06:40,932:backend_utils.py:unscale_data:INFO:Unscaling test and prediction targets:
+2023-10-25 21:06:40,932:backend_utils.py:unscale_data:INFO:Unscaled data saved to ./temp/processed/dataY_unscaled.npy and ./temp/processed/prediction_unscaled.npy:
+2023-10-25 21:06:40,933:backend_utils.py:save_metrics:INFO:Forecast metrics saved to file: ./temp/processed/metrics.json:
+2023-10-25 21:07:01,324:app.py:retrieve:INFO:Retrieving file: ./temp/processed/dataX.npy and corresponding actual targets:
+2023-10-25 21:07:01,325:backend_utils.py:unscale_data:INFO:Unscaling test and prediction targets:
+2023-10-25 21:07:01,325:backend_utils.py:unscale_data:INFO:Unscaled data saved to ./temp/processed/dataY_unscaled.npy and ./temp/processed/prediction_unscaled.npy:
+2023-10-25 21:07:01,326:backend_utils.py:save_metrics:INFO:Forecast metrics saved to file: ./temp/processed/metrics.json:
+2023-10-25 21:07:27,766:app.py:retrieve:INFO:Retrieving file: ./temp/processed/dataX.npy and corresponding actual targets:
+2023-10-25 21:07:27,767:backend_utils.py:unscale_data:INFO:Unscaling test and prediction targets:
+2023-10-25 21:07:27,767:backend_utils.py:unscale_data:INFO:Unscaled data saved to ./temp/processed/dataY_unscaled.npy and ./temp/processed/prediction_unscaled.npy:
+2023-10-25 21:07:27,768:backend_utils.py:save_metrics:INFO:Forecast metrics saved to file: ./temp/processed/metrics.json:
+2023-10-25 21:08:07,065:app.py:retrieve:INFO:Retrieving file: ./temp/processed/dataX.npy and corresponding actual targets:
+2023-10-25 21:08:07,066:backend_utils.py:unscale_data:INFO:Unscaling test and prediction targets:
+2023-10-25 21:08:07,066:backend_utils.py:unscale_data:INFO:Unscaled data saved to ./temp/processed/dataY_unscaled.npy and ./temp/processed/prediction_unscaled.npy:
+2023-10-25 21:08:07,067:backend_utils.py:save_metrics:INFO:Forecast metrics saved to file: ./temp/processed/metrics.json:
+2023-10-25 21:08:58,407:app.py:retrieve:INFO:Retrieving file: ./temp/processed/dataX.npy and corresponding actual targets:
+2023-10-25 21:08:58,408:backend_utils.py:unscale_data:INFO:Unscaling test and prediction targets:
+2023-10-25 21:08:58,408:backend_utils.py:unscale_data:INFO:Unscaled data saved to ./temp/processed/dataY_unscaled.npy and ./temp/processed/prediction_unscaled.npy:
+2023-10-25 21:08:58,409:backend_utils.py:save_metrics:INFO:Forecast metrics saved to file: ./temp/processed/metrics.json:
+2023-10-25 21:09:39,720:app.py:retrieve:INFO:Retrieving file: ./temp/processed/dataX.npy and corresponding actual targets:
+2023-10-25 21:09:39,720:backend_utils.py:unscale_data:INFO:Unscaling test and prediction targets:
+2023-10-25 21:09:39,721:backend_utils.py:unscale_data:INFO:Unscaled data saved to ./temp/processed/dataY_unscaled.npy and ./temp/processed/prediction_unscaled.npy:
+2023-10-25 21:09:39,721:backend_utils.py:save_metrics:INFO:Forecast metrics saved to file: ./temp/processed/metrics.json:
+2023-10-25 21:11:41,481:app.py:retrieve:INFO:Retrieving file: ./temp/processed/dataX.npy and corresponding actual targets:
+2023-10-25 21:11:41,482:backend_utils.py:unscale_data:INFO:Unscaling test and prediction targets:
+2023-10-25 21:11:41,482:backend_utils.py:unscale_data:INFO:Unscaled data saved to ./temp/processed/dataY_unscaled.npy and ./temp/processed/prediction_unscaled.npy:
+2023-10-25 21:11:41,483:backend_utils.py:save_metrics:INFO:Forecast metrics saved to file: ./temp/processed/metrics.json:
+2023-10-25 21:12:03,458:app.py:retrieve:INFO:Retrieving file: ./temp/processed/dataX.npy and corresponding actual targets:
+2023-10-25 21:12:03,459:backend_utils.py:unscale_data:INFO:Unscaling test and prediction targets:
+2023-10-25 21:12:03,460:backend_utils.py:unscale_data:INFO:Unscaled data saved to ./temp/processed/dataY_unscaled.npy and ./temp/processed/prediction_unscaled.npy:
+2023-10-25 21:12:03,460:backend_utils.py:save_metrics:INFO:Forecast metrics saved to file: ./temp/processed/metrics.json:
+2023-10-25 21:15:58,531:app.py:retrieve:INFO:Retrieving file: ./temp/processed/dataX.npy and corresponding actual targets:
+2023-10-25 21:15:58,532:backend_utils.py:unscale_data:INFO:Unscaling test and prediction targets:
+2023-10-25 21:15:58,533:backend_utils.py:unscale_data:INFO:Unscaled data saved to ./temp/processed/dataY_unscaled.npy and ./temp/processed/prediction_unscaled.npy:
+2023-10-25 21:15:58,533:backend_utils.py:save_metrics:INFO:Forecast metrics saved to file: ./temp/processed/metrics.json:
+2023-10-25 21:18:12,528:app.py:retrieve:INFO:Retrieving file: ./temp/processed/dataX.npy and corresponding actual targets:
+2023-10-25 21:18:12,529:backend_utils.py:unscale_data:INFO:Unscaling test and prediction targets:
+2023-10-25 21:18:12,529:backend_utils.py:unscale_data:INFO:Unscaled data saved to ./temp/processed/dataY_unscaled.npy and ./temp/processed/prediction_unscaled.npy:
+2023-10-25 21:18:12,530:backend_utils.py:save_metrics:INFO:Forecast metrics saved to file: ./temp/processed/metrics.json:
+2023-10-25 21:19:18,414:app.py:retrieve:INFO:Retrieving file: ./temp/processed/dataX.npy and corresponding actual targets:
+2023-10-25 21:19:18,415:backend_utils.py:unscale_data:INFO:Unscaling test and prediction targets:
+2023-10-25 21:19:18,415:backend_utils.py:unscale_data:INFO:Unscaled data saved to ./temp/processed/dataY_unscaled.npy and ./temp/processed/prediction_unscaled.npy:
+2023-10-25 21:19:18,416:backend_utils.py:save_metrics:INFO:Forecast metrics saved to file: ./temp/processed/metrics.json:
+2023-10-25 21:20:05,508:app.py:retrieve:INFO:Retrieving file: ./temp/processed/dataX.npy and corresponding actual targets:
+2023-10-25 21:20:05,509:backend_utils.py:unscale_data:INFO:Unscaling test and prediction targets:
+2023-10-25 21:20:05,509:backend_utils.py:unscale_data:INFO:Unscaled data saved to ./temp/processed/dataY_unscaled.npy and ./temp/processed/prediction_unscaled.npy:
+2023-10-25 21:20:05,510:backend_utils.py:save_metrics:INFO:Forecast metrics saved to file: ./temp/processed/metrics.json:
+2023-10-25 21:21:00,594:app.py:retrieve:INFO:Retrieving file: ./temp/processed/dataX.npy and corresponding actual targets:
+2023-10-25 21:21:00,595:backend_utils.py:unscale_data:INFO:Unscaling test and prediction targets:
+2023-10-25 21:21:00,596:backend_utils.py:unscale_data:INFO:Unscaled data saved to ./temp/processed/dataY_unscaled.npy and ./temp/processed/prediction_unscaled.npy:
+2023-10-25 21:21:00,596:backend_utils.py:save_metrics:INFO:Forecast metrics saved to file: ./temp/processed/metrics.json:
+2023-10-25 21:22:34,337:app.py:retrieve:INFO:Retrieving file: ./temp/processed/dataX.npy and corresponding actual targets:
+2023-10-25 21:22:34,337:backend_utils.py:unscale_data:INFO:Unscaling test and prediction targets:
+2023-10-25 21:22:34,338:backend_utils.py:unscale_data:INFO:Unscaled data saved to ./temp/processed/dataY_unscaled.npy and ./temp/processed/prediction_unscaled.npy:
+2023-10-25 21:22:34,338:backend_utils.py:save_metrics:INFO:Forecast metrics saved to file: ./temp/processed/metrics.json:
+2023-10-25 21:23:44,215:app.py:retrieve:INFO:Retrieving file: ./temp/processed/dataX.npy and corresponding actual targets:
+2023-10-25 21:23:44,216:backend_utils.py:unscale_data:INFO:Unscaling test and prediction targets:
+2023-10-25 21:23:44,217:backend_utils.py:unscale_data:INFO:Unscaled data saved to ./temp/processed/dataY_unscaled.npy and ./temp/processed/prediction_unscaled.npy:
+2023-10-25 21:23:44,217:backend_utils.py:save_metrics:INFO:Forecast metrics saved to file: ./temp/processed/metrics.json:
+2023-10-25 21:24:14,187:app.py:retrieve:INFO:Retrieving file: ./temp/processed/dataX.npy and corresponding actual targets:
+2023-10-25 21:24:14,187:backend_utils.py:unscale_data:INFO:Unscaling test and prediction targets:
+2023-10-25 21:24:14,188:backend_utils.py:unscale_data:INFO:Unscaled data saved to ./temp/processed/dataY_unscaled.npy and ./temp/processed/prediction_unscaled.npy:
+2023-10-25 21:24:14,189:backend_utils.py:save_metrics:INFO:Forecast metrics saved to file: ./temp/processed/metrics.json:
+2023-10-25 21:25:16,487:app.py:retrieve:INFO:Retrieving file: ./temp/processed/dataX.npy and corresponding actual targets:
+2023-10-25 21:25:16,488:backend_utils.py:unscale_data:INFO:Unscaling test and prediction targets:
+2023-10-25 21:25:16,489:backend_utils.py:unscale_data:INFO:Unscaled data saved to ./temp/processed/dataY_unscaled.npy and ./temp/processed/prediction_unscaled.npy:
+2023-10-25 21:25:16,489:backend_utils.py:save_metrics:INFO:Forecast metrics saved to file: ./temp/processed/metrics.json:
+2023-10-25 21:25:46,564:app.py:retrieve:INFO:Retrieving file: ./temp/processed/dataX.npy and corresponding actual targets:
+2023-10-25 21:25:46,565:backend_utils.py:unscale_data:INFO:Unscaling test and prediction targets:
+2023-10-25 21:25:46,565:backend_utils.py:unscale_data:INFO:Unscaled data saved to ./temp/processed/dataY_unscaled.npy and ./temp/processed/prediction_unscaled.npy:
+2023-10-25 21:25:46,566:backend_utils.py:save_metrics:INFO:Forecast metrics saved to file: ./temp/processed/metrics.json:
+2023-10-25 21:26:12,086:app.py:retrieve:INFO:Retrieving file: ./temp/processed/dataX.npy and corresponding actual targets:
+2023-10-25 21:26:12,086:backend_utils.py:unscale_data:INFO:Unscaling test and prediction targets:
+2023-10-25 21:26:12,087:backend_utils.py:unscale_data:INFO:Unscaled data saved to ./temp/processed/dataY_unscaled.npy and ./temp/processed/prediction_unscaled.npy:
+2023-10-25 21:26:12,088:backend_utils.py:save_metrics:INFO:Forecast metrics saved to file: ./temp/processed/metrics.json:
+2023-10-25 21:26:33,843:app.py:retrieve:INFO:Retrieving file: ./temp/processed/dataX.npy and corresponding actual targets:
+2023-10-25 21:26:33,844:backend_utils.py:unscale_data:INFO:Unscaling test and prediction targets:
+2023-10-25 21:26:33,845:backend_utils.py:unscale_data:INFO:Unscaled data saved to ./temp/processed/dataY_unscaled.npy and ./temp/processed/prediction_unscaled.npy:
+2023-10-25 21:26:33,845:backend_utils.py:save_metrics:INFO:Forecast metrics saved to file: ./temp/processed/metrics.json:
+2023-10-25 21:26:33,931:app.py:retrieve:INFO:Retrieving file: ./temp/processed/dataX.npy and corresponding actual targets:
+2023-10-25 21:26:33,931:backend_utils.py:unscale_data:INFO:Unscaling test and prediction targets:
+2023-10-25 21:26:33,932:backend_utils.py:unscale_data:INFO:Unscaled data saved to ./temp/processed/dataY_unscaled.npy and ./temp/processed/prediction_unscaled.npy:
+2023-10-25 21:26:33,933:backend_utils.py:save_metrics:INFO:Forecast metrics saved to file: ./temp/processed/metrics.json:
+2023-10-25 21:26:53,770:app.py:retrieve:INFO:Retrieving file: ./temp/processed/dataX.npy and corresponding actual targets:
+2023-10-25 21:26:53,771:backend_utils.py:unscale_data:INFO:Unscaling test and prediction targets:
+2023-10-25 21:26:53,771:backend_utils.py:unscale_data:INFO:Unscaled data saved to ./temp/processed/dataY_unscaled.npy and ./temp/processed/prediction_unscaled.npy:
+2023-10-25 21:26:53,772:backend_utils.py:save_metrics:INFO:Forecast metrics saved to file: ./temp/processed/metrics.json:
+2023-10-25 21:36:38,813:app.py:retrieve:INFO:Retrieving file: ./temp/processed/dataX.npy and corresponding actual targets:
+2023-10-25 21:36:38,814:backend_utils.py:unscale_data:INFO:Unscaling test and prediction targets:
+2023-10-25 21:36:38,815:backend_utils.py:unscale_data:INFO:Unscaled data saved to ./temp/processed/dataY_unscaled.npy and ./temp/processed/prediction_unscaled.npy:
+2023-10-25 21:36:38,815:backend_utils.py:save_metrics:INFO:Forecast metrics saved to file: ./temp/processed/metrics.json:
+2023-10-25 21:41:27,757:app.py:retrieve:INFO:Retrieving file: ./temp/processed/dataX.npy and corresponding actual targets:
+2023-10-25 21:41:27,758:backend_utils.py:unscale_data:INFO:Unscaling test and prediction targets:
+2023-10-25 21:41:27,758:backend_utils.py:unscale_data:INFO:Unscaled data saved to ./temp/processed/dataY_unscaled.npy and ./temp/processed/prediction_unscaled.npy:
+2023-10-25 21:41:27,759:backend_utils.py:save_metrics:INFO:Forecast metrics saved to file: ./temp/processed/metrics.json:
+2023-10-25 21:41:55,502:app.py:retrieve:INFO:Retrieving file: ./temp/processed/dataX.npy and corresponding actual targets:
+2023-10-25 21:41:55,503:backend_utils.py:unscale_data:INFO:Unscaling test and prediction targets:
+2023-10-25 21:41:55,504:backend_utils.py:unscale_data:INFO:Unscaled data saved to ./temp/processed/dataY_unscaled.npy and ./temp/processed/prediction_unscaled.npy:
+2023-10-25 21:41:55,504:backend_utils.py:save_metrics:INFO:Forecast metrics saved to file: ./temp/processed/metrics.json:
+2023-10-25 21:42:39,654:app.py:retrieve:INFO:Retrieving file: ./temp/processed/dataX.npy and corresponding actual targets:
+2023-10-25 21:42:39,655:backend_utils.py:unscale_data:INFO:Unscaling test and prediction targets:
+2023-10-25 21:42:39,655:backend_utils.py:unscale_data:INFO:Unscaled data saved to ./temp/processed/dataY_unscaled.npy and ./temp/processed/prediction_unscaled.npy:
+2023-10-25 21:42:39,656:backend_utils.py:save_metrics:INFO:Forecast metrics saved to file: ./temp/processed/metrics.json:
+2023-10-25 21:42:51,132:app.py:retrieve:INFO:Retrieving file: ./temp/processed/dataX.npy and corresponding actual targets:
+2023-10-25 21:42:51,133:backend_utils.py:unscale_data:INFO:Unscaling test and prediction targets:
+2023-10-25 21:42:51,133:backend_utils.py:unscale_data:INFO:Unscaled data saved to ./temp/processed/dataY_unscaled.npy and ./temp/processed/prediction_unscaled.npy:
+2023-10-25 21:42:51,134:backend_utils.py:save_metrics:INFO:Forecast metrics saved to file: ./temp/processed/metrics.json:
+2023-10-25 21:48:53,965:app.py:retrieve:INFO:Retrieving file: ./temp/processed/dataX.npy and corresponding actual targets:
+2023-10-25 21:48:53,966:backend_utils.py:unscale_data:INFO:Unscaling test and prediction targets:
+2023-10-25 21:48:53,966:backend_utils.py:unscale_data:INFO:Unscaled data saved to ./temp/processed/dataY_unscaled.npy and ./temp/processed/prediction_unscaled.npy:
+2023-10-25 21:48:53,967:backend_utils.py:save_metrics:INFO:Forecast metrics saved to file: ./temp/processed/metrics.json:
+2023-10-25 21:48:54,026:app.py:retrieve:INFO:Retrieving file: ./temp/processed/dataX.npy and corresponding actual targets:
+2023-10-25 21:48:54,027:backend_utils.py:unscale_data:INFO:Unscaling test and prediction targets:
+2023-10-25 21:48:54,027:backend_utils.py:unscale_data:INFO:Unscaled data saved to ./temp/processed/dataY_unscaled.npy and ./temp/processed/prediction_unscaled.npy:
+2023-10-25 21:48:54,028:backend_utils.py:save_metrics:INFO:Forecast metrics saved to file: ./temp/processed/metrics.json:
+2023-10-25 21:49:42,610:app.py:retrieve:INFO:Retrieving file: ./temp/processed/dataX.npy and corresponding actual targets:
+2023-10-25 21:49:42,611:backend_utils.py:unscale_data:INFO:Unscaling test and prediction targets:
+2023-10-25 21:49:42,612:backend_utils.py:unscale_data:INFO:Unscaled data saved to ./temp/processed/dataY_unscaled.npy and ./temp/processed/prediction_unscaled.npy:
+2023-10-25 21:49:42,612:backend_utils.py:save_metrics:INFO:Forecast metrics saved to file: ./temp/processed/metrics.json:
+2023-10-25 21:50:13,129:app.py:retrieve:INFO:Retrieving file: ./temp/processed/dataX.npy and corresponding actual targets:
+2023-10-25 21:50:13,130:backend_utils.py:unscale_data:INFO:Unscaling test and prediction targets:
+2023-10-25 21:50:13,130:backend_utils.py:unscale_data:INFO:Unscaled data saved to ./temp/processed/dataY_unscaled.npy and ./temp/processed/prediction_unscaled.npy:
+2023-10-25 21:50:13,131:backend_utils.py:save_metrics:INFO:Forecast metrics saved to file: ./temp/processed/metrics.json:
+2023-10-25 21:50:55,685:app.py:retrieve:INFO:Retrieving file: ./temp/processed/dataX.npy and corresponding actual targets:
+2023-10-25 21:50:55,686:backend_utils.py:unscale_data:INFO:Unscaling test and prediction targets:
+2023-10-25 21:50:55,686:backend_utils.py:unscale_data:INFO:Unscaled data saved to ./temp/processed/dataY_unscaled.npy and ./temp/processed/prediction_unscaled.npy:
+2023-10-25 21:50:55,687:backend_utils.py:save_metrics:INFO:Forecast metrics saved to file: ./temp/processed/metrics.json:
+2023-10-25 21:53:11,933:app.py:retrieve:INFO:Retrieving file: ./temp/processed/dataX.npy and corresponding actual targets:
+2023-10-25 21:53:11,934:backend_utils.py:unscale_data:INFO:Unscaling test and prediction targets:
+2023-10-25 21:53:11,934:backend_utils.py:unscale_data:INFO:Unscaled data saved to ./temp/processed/dataY_unscaled.npy and ./temp/processed/prediction_unscaled.npy:
+2023-10-25 21:53:11,935:backend_utils.py:save_metrics:INFO:Forecast metrics saved to file: ./temp/processed/metrics.json:
+2023-10-25 21:53:41,994:app.py:retrieve:INFO:Retrieving file: ./temp/processed/dataX.npy and corresponding actual targets:
+2023-10-25 21:53:41,995:backend_utils.py:unscale_data:INFO:Unscaling test and prediction targets:
+2023-10-25 21:53:41,995:backend_utils.py:unscale_data:INFO:Unscaled data saved to ./temp/processed/dataY_unscaled.npy and ./temp/processed/prediction_unscaled.npy:
+2023-10-25 21:53:41,996:backend_utils.py:save_metrics:INFO:Forecast metrics saved to file: ./temp/processed/metrics.json:
+2023-10-25 21:55:45,189:app.py:retrieve:INFO:Retrieving file: ./temp/processed/dataX.npy and corresponding actual targets:
+2023-10-25 21:55:45,190:backend_utils.py:unscale_data:INFO:Unscaling test and prediction targets:
+2023-10-25 21:55:45,190:backend_utils.py:unscale_data:INFO:Unscaled data saved to ./temp/processed/dataY_unscaled.npy and ./temp/processed/prediction_unscaled.npy:
+2023-10-25 21:55:45,191:backend_utils.py:save_metrics:INFO:Forecast metrics saved to file: ./temp/processed/metrics.json:
+2023-10-25 21:58:32,937:app.py:retrieve:INFO:Retrieving file: ./temp/processed/dataX.npy and corresponding actual targets:
+2023-10-25 21:58:32,938:backend_utils.py:unscale_data:INFO:Unscaling test and prediction targets:
+2023-10-25 21:58:32,938:backend_utils.py:unscale_data:INFO:Unscaled data saved to ./temp/processed/dataY_unscaled.npy and ./temp/processed/prediction_unscaled.npy:
+2023-10-25 21:58:32,939:backend_utils.py:save_metrics:INFO:Forecast metrics saved to file: ./temp/processed/metrics.json:
+2023-10-25 21:59:03,986:app.py:retrieve:INFO:Retrieving file: ./temp/processed/dataX.npy and corresponding actual targets:
+2023-10-25 21:59:03,987:backend_utils.py:unscale_data:INFO:Unscaling test and prediction targets:
+2023-10-25 21:59:03,987:backend_utils.py:unscale_data:INFO:Unscaled data saved to ./temp/processed/dataY_unscaled.npy and ./temp/processed/prediction_unscaled.npy:
+2023-10-25 21:59:03,988:backend_utils.py:save_metrics:INFO:Forecast metrics saved to file: ./temp/processed/metrics.json:
+2023-10-25 21:59:18,499:app.py:retrieve:INFO:Retrieving file: ./temp/processed/dataX.npy and corresponding actual targets:
+2023-10-25 21:59:18,500:backend_utils.py:unscale_data:INFO:Unscaling test and prediction targets:
+2023-10-25 21:59:18,500:backend_utils.py:unscale_data:INFO:Unscaled data saved to ./temp/processed/dataY_unscaled.npy and ./temp/processed/prediction_unscaled.npy:
+2023-10-25 21:59:18,501:backend_utils.py:save_metrics:INFO:Forecast metrics saved to file: ./temp/processed/metrics.json:
+2023-10-25 21:59:18,596:app.py:retrieve:INFO:Retrieving file: ./temp/processed/dataX.npy and corresponding actual targets:
+2023-10-25 21:59:18,597:backend_utils.py:unscale_data:INFO:Unscaling test and prediction targets:
+2023-10-25 21:59:18,597:backend_utils.py:unscale_data:INFO:Unscaled data saved to ./temp/processed/dataY_unscaled.npy and ./temp/processed/prediction_unscaled.npy:
+2023-10-25 21:59:18,598:backend_utils.py:save_metrics:INFO:Forecast metrics saved to file: ./temp/processed/metrics.json:
+2023-10-25 21:59:34,152:app.py:retrieve:INFO:Retrieving file: ./temp/processed/dataX.npy and corresponding actual targets:
+2023-10-25 21:59:34,153:backend_utils.py:unscale_data:INFO:Unscaling test and prediction targets:
+2023-10-25 21:59:34,153:backend_utils.py:unscale_data:INFO:Unscaled data saved to ./temp/processed/dataY_unscaled.npy and ./temp/processed/prediction_unscaled.npy:
+2023-10-25 21:59:34,154:backend_utils.py:save_metrics:INFO:Forecast metrics saved to file: ./temp/processed/metrics.json:
+2023-10-25 22:00:37,031:app.py:retrieve:INFO:Retrieving file: ./temp/processed/dataX.npy and corresponding actual targets:
+2023-10-25 22:00:37,032:backend_utils.py:unscale_data:INFO:Unscaling test and prediction targets:
+2023-10-25 22:00:37,033:backend_utils.py:unscale_data:INFO:Unscaled data saved to ./temp/processed/dataY_unscaled.npy and ./temp/processed/prediction_unscaled.npy:
+2023-10-25 22:00:37,033:backend_utils.py:save_metrics:INFO:Forecast metrics saved to file: ./temp/processed/metrics.json:
+2023-10-25 22:01:03,065:app.py:retrieve:INFO:Retrieving file: ./temp/processed/dataX.npy and corresponding actual targets:
+2023-10-25 22:01:03,066:backend_utils.py:unscale_data:INFO:Unscaling test and prediction targets:
+2023-10-25 22:01:03,066:backend_utils.py:unscale_data:INFO:Unscaled data saved to ./temp/processed/dataY_unscaled.npy and ./temp/processed/prediction_unscaled.npy:
+2023-10-25 22:01:03,067:backend_utils.py:save_metrics:INFO:Forecast metrics saved to file: ./temp/processed/metrics.json:
+2023-10-25 22:05:12,638:app.py:retrieve:INFO:Retrieving file: ./temp/processed/dataX.npy and corresponding actual targets:
+2023-10-25 22:05:12,639:backend_utils.py:unscale_data:INFO:Unscaling test and prediction targets:
+2023-10-25 22:05:12,640:backend_utils.py:unscale_data:INFO:Unscaled data saved to ./temp/processed/dataY_unscaled.npy and ./temp/processed/prediction_unscaled.npy:
+2023-10-25 22:05:12,640:backend_utils.py:save_metrics:INFO:Forecast metrics saved to file: ./temp/processed/metrics.json:
+2023-10-25 22:23:16,644:app.py:retrieve:INFO:Retrieving file: ./temp/processed/dataX.npy and corresponding actual targets:
+2023-10-25 22:23:16,645:backend_utils.py:unscale_data:INFO:Unscaling test and prediction targets:
+2023-10-25 22:23:16,646:backend_utils.py:unscale_data:INFO:Unscaled data saved to ./temp/processed/dataY_unscaled.npy and ./temp/processed/prediction_unscaled.npy:
+2023-10-25 22:23:16,646:backend_utils.py:save_metrics:INFO:Forecast metrics saved to file: ./temp/processed/metrics.json:
+2023-10-25 22:24:27,173:app.py:retrieve:INFO:Retrieving file: ./temp/processed/dataX.npy and corresponding actual targets:
+2023-10-25 22:24:27,174:backend_utils.py:unscale_data:INFO:Unscaling test and prediction targets:
+2023-10-25 22:24:27,175:backend_utils.py:unscale_data:INFO:Unscaled data saved to ./temp/processed/dataY_unscaled.npy and ./temp/processed/prediction_unscaled.npy:
+2023-10-25 22:24:27,175:backend_utils.py:save_metrics:INFO:Forecast metrics saved to file: ./temp/processed/metrics.json:
+2023-10-25 22:25:03,159:app.py:retrieve:INFO:Retrieving file: ./temp/processed/dataX.npy and corresponding actual targets:
+2023-10-25 22:25:03,160:backend_utils.py:unscale_data:INFO:Unscaling test and prediction targets:
+2023-10-25 22:25:03,161:backend_utils.py:unscale_data:INFO:Unscaled data saved to ./temp/processed/dataY_unscaled.npy and ./temp/processed/prediction_unscaled.npy:
+2023-10-25 22:25:03,162:backend_utils.py:save_metrics:INFO:Forecast metrics saved to file: ./temp/processed/metrics.json:
+2023-10-25 22:25:18,335:app.py:retrieve:INFO:Retrieving file: ./temp/processed/dataX.npy and corresponding actual targets:
+2023-10-25 22:25:18,336:backend_utils.py:unscale_data:INFO:Unscaling test and prediction targets:
+2023-10-25 22:25:18,337:backend_utils.py:unscale_data:INFO:Unscaled data saved to ./temp/processed/dataY_unscaled.npy and ./temp/processed/prediction_unscaled.npy:
+2023-10-25 22:25:18,338:backend_utils.py:save_metrics:INFO:Forecast metrics saved to file: ./temp/processed/metrics.json:
+2023-10-25 22:25:39,529:app.py:retrieve:INFO:Retrieving file: ./temp/processed/dataX.npy and corresponding actual targets:
+2023-10-25 22:25:39,530:backend_utils.py:unscale_data:INFO:Unscaling test and prediction targets:
+2023-10-25 22:25:39,530:backend_utils.py:unscale_data:INFO:Unscaled data saved to ./temp/processed/dataY_unscaled.npy and ./temp/processed/prediction_unscaled.npy:
+2023-10-25 22:25:39,531:backend_utils.py:save_metrics:INFO:Forecast metrics saved to file: ./temp/processed/metrics.json:
+2023-10-25 22:26:07,245:app.py:retrieve:INFO:Retrieving file: ./temp/processed/dataX.npy and corresponding actual targets:
+2023-10-25 22:26:07,245:backend_utils.py:unscale_data:INFO:Unscaling test and prediction targets:
+2023-10-25 22:26:07,246:backend_utils.py:unscale_data:INFO:Unscaled data saved to ./temp/processed/dataY_unscaled.npy and ./temp/processed/prediction_unscaled.npy:
+2023-10-25 22:26:07,247:backend_utils.py:save_metrics:INFO:Forecast metrics saved to file: ./temp/processed/metrics.json:
+2023-10-25 22:26:26,142:app.py:retrieve:INFO:Retrieving file: ./temp/processed/dataX.npy and corresponding actual targets:
+2023-10-25 22:26:26,142:backend_utils.py:unscale_data:INFO:Unscaling test and prediction targets:
+2023-10-25 22:26:26,143:backend_utils.py:unscale_data:INFO:Unscaled data saved to ./temp/processed/dataY_unscaled.npy and ./temp/processed/prediction_unscaled.npy:
+2023-10-25 22:26:26,144:backend_utils.py:save_metrics:INFO:Forecast metrics saved to file: ./temp/processed/metrics.json:
+2023-10-25 22:27:53,115:app.py:retrieve:INFO:Retrieving file: ./temp/processed/dataX.npy and corresponding actual targets:
+2023-10-25 22:27:53,116:backend_utils.py:unscale_data:INFO:Unscaling test and prediction targets:
+2023-10-25 22:27:53,116:backend_utils.py:unscale_data:INFO:Unscaled data saved to ./temp/processed/dataY_unscaled.npy and ./temp/processed/prediction_unscaled.npy:
+2023-10-25 22:27:53,117:backend_utils.py:save_metrics:INFO:Forecast metrics saved to file: ./temp/processed/metrics.json:
+2023-10-25 22:29:29,008:app.py:retrieve:INFO:Retrieving file: ./temp/processed/dataX.npy and corresponding actual targets:
+2023-10-25 22:29:29,009:backend_utils.py:unscale_data:INFO:Unscaling test and prediction targets:
+2023-10-25 22:29:29,010:backend_utils.py:unscale_data:INFO:Unscaled data saved to ./temp/processed/dataY_unscaled.npy and ./temp/processed/prediction_unscaled.npy:
+2023-10-25 22:29:29,010:backend_utils.py:save_metrics:INFO:Forecast metrics saved to file: ./temp/processed/metrics.json:
+2023-10-26 11:16:03,262:app.py:retrieve:INFO:Retrieving file: ./temp/processed/dataX.npy and corresponding actual targets:
+2023-10-26 11:16:03,264:backend_utils.py:unscale_data:INFO:Unscaling test and prediction targets:
+2023-10-26 11:16:03,264:backend_utils.py:unscale_data:INFO:Unscaled data saved to ./temp/processed/dataY_unscaled.npy and ./temp/processed/prediction_unscaled.npy:
+2023-10-26 11:16:03,265:backend_utils.py:save_metrics:INFO:Forecast metrics saved to file: ./temp/processed/metrics.json:
+2023-10-26 11:17:04,423:app.py:retrieve:INFO:Retrieving file: ./temp/processed/dataX.npy and corresponding actual targets:
+2023-10-26 11:17:04,424:backend_utils.py:unscale_data:INFO:Unscaling test and prediction targets:
+2023-10-26 11:17:04,424:backend_utils.py:unscale_data:INFO:Unscaled data saved to ./temp/processed/dataY_unscaled.npy and ./temp/processed/prediction_unscaled.npy:
+2023-10-26 11:17:04,425:backend_utils.py:save_metrics:INFO:Forecast metrics saved to file: ./temp/processed/metrics.json:
