@@ -1,9 +1,34 @@
+"""
+Pipeline Module
+
+This module defines a pipeline with multiple stages:
+1. Preprocess Data
+2. Train Model
+3. Evaluate Model
+
+Each stage can be controlled by specifying whether to execute it (True) or skip it (False).
+
+Example:
+    To run the pipeline, set the execution flags for the desired stages and run this module.
+
+        STAGE_01 = ["Preprocess Data", True]
+        STAGE_02 = ["Train Model", True]
+        STAGE_03 = ["Evaluate Model", True]
+
+    Setting a stage to True will execute it, while False will skip it.
+
+Attributes:
+    STAGE_01 (list): A list representing the first stage with a description and execution flag.
+    STAGE_02 (list): A list representing the second stage with a description and execution flag.
+    STAGE_03 (list): A list representing the third stage with a description and execution flag.
+"""
+
 from src.data.preprocess import preprocessPipeline
 from src.models.train_model import modelPipeline
 from src.utils.pipeline_log_config import pipeline as logger
 
 if __name__ == "__main__":
-    STAGE_01 = ["Preprocess Data", False]
+    STAGE_01 = ["Preprocess Data", True]
     STAGE_02 = ["Train Model", False]
     STAGE_03 = ["Evaluate Model", True]
     logger.info(f"Running pipeline in stages: {STAGE_01}, {STAGE_02}, {STAGE_03}")

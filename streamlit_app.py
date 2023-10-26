@@ -1,3 +1,26 @@
+"""
+Electricity Load Forecasting Streamlit Interface
+
+This module provides a Streamlit web user interface for electricity load forecasting. 
+The interface allows users to upload previous load consumption data, 
+process the data on the server, request load predictions, and display the results.
+
+Usage:
+- Upload consumption history data.
+- Process the uploaded data on the server.
+- Request electricity load predictions.
+- Display the results and performance metrics.
+
+The interface connects to a backend API server for data processing and predictions.
+
+Requirements:
+- The `streamlit` library should be installed.
+- A backend API server is expected to be running and accessible at the specified URL.
+
+Example:
+To use this module, run the script. The Streamlit web interface will start, allowing users to upload data and interact with the forecasting model.
+"""
+
 import os
 import numpy as np
 import json
@@ -7,11 +30,7 @@ from io import BytesIO
 import zipfile
 import requests
 
-
-# specify temporary files folder
-temp_folder = os.path.join(os.path.dirname(__file__), "temp")
-os.makedirs(temp_folder, exist_ok=True)
-
+# Set server URL
 server: str = 'http://127.0.0.1:8000' # Local
 
 
@@ -21,7 +40,8 @@ def run():
 
     - Allows user to upload previous load consumption data to server
     - Allows user to toggle file processing on server
-    - Sends request to backend API to make prediction and then displays results
+    - Sends request to backend API to make prediction
+    - Sends request to backend for predicted data and then displays results
     """
 
     st.set_page_config(page_title="Load Forecasting",
@@ -35,14 +55,15 @@ def run():
                     "2. Upload file\n"
                     "3. Process file\n"
                     "4. Request prediction\n"
-                    "5. Display results")
+                    "5. Request for, and Display results")
     
+    # File selection interface
     with st.spinner("Adding file to queue..."):
         file = st.file_uploader("Choose consumption history (CSV)", type=['csv'])
 
 
     if file is not None:
-        # Create a session state object
+        # Create a session state object to hold the file name
         st.session_state['filename'] = file.name
 
         # File upload
@@ -72,17 +93,16 @@ def run():
 
         # Forecasting
         if st.button("Forecast"):
-            # Send request to process uploaded file
+            # Send request to predict on uploaded file
             with st.spinner("Forecasting..."):
                 pred = requests.post(server+"/predict", verify=False)
                 # Parse request response
                 if pred.status_code == 200:
                     pred = pred.json()
                     if pred['pred_time'] != "Invalid":
-                        st.info(f"{pred['pred_time']}, {pred['single_pred_time']}")
+                        st.success(f"Total Inference Time: {round(pred['pred_time'], 4)} secs")
+                        st.success(f"Time per Inference: {round(pred['single_pred_time'], 4)}")
                         st.session_state['filename'] = pred['filename']
-
-
                     else:
                         st.warning(f"Error making predictions on server")
                 else:
@@ -141,10 +161,10 @@ def run():
 
 
                         # Display the metrics
-                        st.write("RMSE:", str(round(json_dict[0]['rmse'], 4)),"kWh")
-                        st.write("RMSE less than 10% of mean:", "True" if json_dict[0]['rmse_less_10'] == 1 else "False")
-                        st.write("NRMSE mean:", str(round(json_dict[0]['nrmse_mean'], 4)))
-                        st.write("NRMSE max-min:", str(round(json_dict[0]['nrmse_max_min'], 4)))
+                        st.info(f"RMSE: {str(round(json_dict[0]['rmse'], 4))} kWh")
+                        st.info(f"RMSE less than 10% of mean: {'True' if json_dict[0]['rmse_less_10'] == 1 else 'False'}")
+                        st.info(f"NRMSE by mean: {str(round(json_dict[0]['nrmse_mean'], 4))}")
+                        st.info(f"NRMSE by range: {str(round(json_dict[0]['nrmse_max_min'], 4))}")
 
 if __name__ == "__main__":
     run()

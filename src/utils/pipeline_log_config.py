@@ -7,7 +7,7 @@ from logging import Logger
 
 
 def logger_pipeline() -> Logger:
-    """Format logger, configure file handler and add handler
+    """Format logger, configure file handler, stream handler and add handlers
     for pipeline logger.
 
     Returns:

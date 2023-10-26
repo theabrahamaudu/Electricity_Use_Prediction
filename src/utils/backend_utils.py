@@ -7,8 +7,36 @@ from src.utils.backend_log_config import backend as logger
 
 class metricsUtils:
     def __init__(self, scaler_path: str = "./temp/processed/scaler.pkl"):
+        """
+        Initialize a metricsUtils instance.
+
+        Args:
+            scaler_path (str, optional): Path to the scaler file. Defaults to "./temp/processed/scaler.pkl".
+
+        Example:
+            # Create a metricsUtils instance
+            metrics = metricsUtils()
+        """
         self.scaler = joblib.load(scaler_path)
+    
+
     def unscale_data(self, y_test: np.ndarray, yhat: np.ndarray) -> tuple[np.ndarray, np.ndarray]:
+        """
+        Unscale test and prediction data.
+
+        This method takes scaled test and prediction data, unscales it, and saves the unscaled data to files.
+
+        Args:
+            y_test (np.ndarray): Scaled test data.
+            yhat (np.ndarray): Scaled prediction data.
+
+        Returns:
+            tuple[np.ndarray, np.ndarray]: A tuple containing unscaled test and prediction data.
+
+        Example:
+            # Unscaled test and prediction data
+            y_test_unscaled, yhat_unscaled = metrics.unscale_data(y_test, yhat)
+        """
         logger.info("Unscaling test and prediction targets")
         try:
             y_test_unscaled = self.scaler.inverse_transform(y_test)
@@ -24,10 +52,30 @@ class metricsUtils:
 
     def stat_eval(self, y_test: np.ndarray, yhat: np.ndarray) -> tuple[float, int, float, float]:
         """
-        Carries out statistical evaluation of model based on test data and 
-        prediction. 
-        
-        Prints and returns a summary dictionary
+        Perform statistical evaluation of model predictions.
+
+        This method calculates various statistical metrics to evaluate the model's performance based on
+        test data and predictions. It calculates Root Mean Squared Error (RMSE), Normalized RMSE (NRMSE) with 
+        respect to mean and range, and checks if RMSE is less than 10% of the mean value.
+
+        Args:
+            y_test (np.ndarray): Test data.
+            yhat (np.ndarray): Model predictions.
+
+        Returns:
+            tuple[float, int, float, float]: A tuple containing RMSE, an indicator of whether RMSE is 
+            less than 10% of the mean value, NRMSE with respect to mean, and NRMSE with respect to the 
+            range of test data.
+
+        Example:
+            # Evaluate the model's predictions
+            rmse, rmse_less_10, nrmse_mean, nrmse_max_min = metrics.stat_eval(y_test, yhat)
+
+            # Print the evaluation results
+            print("RMSE:", rmse)
+            print("Is RMSE less than 10% of the mean:", rmse_less_10)
+            print("NRMSE with respect to mean:", nrmse_mean)
+            print("NRMSE with respect to range:", nrmse_max_min)
         """
         # unscaling test and prediction targets
         y_test, yhat = self.unscale_data(y_test, yhat)
@@ -57,18 +105,20 @@ class metricsUtils:
                     overwrite: bool = True
                     ):
         """
-        Saves metrics to a JSON file.
+        Save metrics to a JSON file.
 
-        Parameters:
-        rmse (float): Root Mean Squared Error.
-        rmse_less_10 (bool): Boolean indicating if RMSE is less than 10.
-        nrmse_mean (float): NRMSE calculated using mean.
-        nrmse_max_min (float): NRMSE calculated using max and min.
-        file_path (str): Path to the JSON file.
-        overwrite (bool): If True, overwrite the existing file.
+        This method saves the calculated metrics to a JSON file, and you can choose to overwrite the file or append the data.
 
-        Returns:
-        None
+        Args:
+            rmse (float): Root Mean Squared Error.
+            rmse_less_10 (int): Indicator of whether RMSE is less than 10% of the mean value (0 or 1).
+            nrmse_mean (float): Normalized RMSE with respect to mean.
+            nrmse_max_min (float): Normalized RMSE with respect to the range of test data.
+            overwrite (bool, optional): If True, overwrite the existing JSON file. Defaults to True.
+
+        Example:
+            # Save metrics to a JSON file
+            metrics.save_metrics(rmse, rmse_less_10, nrmse_mean, nrmse_max_min, overwrite=True)
         """
         new_metrics = {
                 "rmse": rmse,
