@@ -66,7 +66,8 @@ The dataset was then preprocessed to transform the timestamp codes to standard d
 Finally, the data was restructured using a sliding window approach which allows the model to take the previous `n_steps` as input to predict the next `m_steps` into the future.
 
 ## Architechture
-Below is the project architecture.
+Below is the project architecture:  
+![architecture.png](https://github.com/theabrahamaudu/Electricity_Use_Prediction/blob/main/docs/Electricity%20Consumption%20Forecasting.png)
 
 ## Model Performance
 Several AutoEncoder LSTM model architectures were experimented in order to develop the final model
@@ -122,7 +123,7 @@ OS Level:
 * Windows/MacOS/Ubuntu (Tested on Ubuntu)
 * graphviz (standalone app required by Keras for plotting model)  
 
-Python:
+Python (3.10):
 * ipykernel
 * pandas
 * dask
